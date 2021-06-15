@@ -23,8 +23,9 @@ export class RegisterformComponent implements OnInit {
   
   message :any;
   // user : any;
-  pid: number = 1;
-  user : User = new User('','','','','','',this.pid);
+  pid: number = 0;
+
+ user : User = new User('','','','','','',0);
   
   constructor(private service : UserServiceService , public routes:ActivatedRoute) {}
 
@@ -63,7 +64,9 @@ export class RegisterformComponent implements OnInit {
     }
 
   public registernow(){
+    this.user.pid = this.pid;
     let response = this.service.reguser(this.user);
+    console.log(this.user);
     response.subscribe(data=>{
         this.message = data;
     })
