@@ -1,0 +1,21 @@
+.abc{
+    position: absolute;
+    top: 40%;
+    bottom: 60%;
+    left: 30%;
+    right: 20%;
+    color: #fff;
+    font: 7em 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 5px grey;
+}
+
+.bc{
+    position: absolute;
+    top: 55%;
+    bottom: 45%;
+    left: 31.5%;
+    right: 20%;
+    color: #fff;
+    font: 2em georgia;
+    letter-spacing: 6px;
+}

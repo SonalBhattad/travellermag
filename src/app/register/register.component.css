@@ -1,0 +1,24 @@
+
+  h1{
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .example-card{
+    padding: 2em;
+  }
+
+  .card{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 4%;
+  }
+
+  mat-card {
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 800px;
+} 
+

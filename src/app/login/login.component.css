@@ -1,0 +1,64 @@
+.main{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  font-size: 2.2em;
+  color: midnightblue;
+  padding: 0.4em 0 0.6em 0;
+}
+ 
+
+.form-container{
+  width: 30%;
+  display: inline-block;
+}
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  background-color:mintcream;
+  text-align: center;
+  max-height: 800px;
+} 
+
+::ng-deep .mat-form-field {
+  font-size: 14px;
+}
+
+.card-container{
+  padding: 10px;
+  width: 400px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.full-width {
+  width: 60%;
+}
+
+.aLink{
+  float: right;
+  padding-right: 60px;
+  text-decoration: none;
+} 
+
+ ::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: black !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: black !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: black !important;;
+}
+
+
