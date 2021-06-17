@@ -1,0 +1,45 @@
+.main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+h3{
+  font-size: 2.5em;
+  color: midnightblue;
+  padding: 0.3em 0 0.5em 0;
+}
+  
+h4{
+  text-align: center;
+}
+
+.form-container{
+    width: 35%;
+    display: inline-block;
+}
+
+mat-card {
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 800px;
+} 
+
+.card-container{
+    padding: 10px;
+    width: 500px;
+    text-align: center;
+    font-size: 2em;
+  }
+  
+.full-width {
+    width: 60%;
+  }
+  
+.aLink{
+    float: right;
+    padding-right: 60px;
+    text-decoration: none;
+  } 

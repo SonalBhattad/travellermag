@@ -1,0 +1,37 @@
+<div style="background-image: url(../assets/Images/login1.png); background-position:auto-fill; background-repeat: no-repeat; " >
+<div class="main">
+
+<form  class="form-container">
+  <mat-card > 
+    <h3>Login</h3>
+    <mat-card-content>
+    <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input  [(ngModel)]="user.username" name="username" matInput placeholder="Enter Username" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input [(ngModel)]="user.password" name="password" matInput [type]="hide ? 'password' : 'text'" [ngModelOptions]="{standalone: true}">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+          </mat-form-field>
+        </div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions style="padding: 0.4em; ">
+      <button (click)="loginUser()" mat-raised-button color="primary" style="font-size: 1.2em;">Login</button>
+    </mat-card-actions>
+    <div class="button-row">
+      <p style="font-size: 1em;">Don't have an account? <a [routerLink]="['/register']">Register here</a></p>
+    </div>
+  </mat-card>
+</form> 
+</div>
+</div>
+<router-outlet></router-outlet>
