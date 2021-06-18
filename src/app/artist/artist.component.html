@@ -1,23 +1,78 @@
 <div class="abc" style="height: 90vh;" >
-<mat-toolbar color="primary" class="example-toolbar">
-	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-	<h1 class="example-app-name">Artist Dashboard</h1>
-</mat-toolbar>
-    <div>
-<div class="jumbotron text-center" >
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">&nbsp; Artist Dashboard</h1>
+    <div class="spacer"></div>
+    <mat-icon (click)="toggle()">library_add</mat-icon>
+    
+    
+      <!-- <div dir="rtl"><mat-form-field>
+      <input matInput type="search" placeholder="search here"><mat-icon>search</mat-icon></mat-form-field></div> -->
+  </mat-toolbar>
+<mat-sidenav-container class="example-container" autosize style="background-color: azure;">
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon>list</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;To-Do List</span> 
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon>spellcheck</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="toggle()">&nbsp;Editor</span> 
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon>turned_in</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Drafts</span> 
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon>library_books</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Published Work</span> 
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon>account_balance_wallet</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Payment</span> 
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+    <mat-icon mat-list-icon routerLink="/login">power_settings_new</mat-icon>
+         <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Logout</span> 
+          <!-- <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon> -->
+      </mat-list-item>
+    </mat-nav-list>
+	</mat-sidenav>
+
+  <div *ngIf="show">
+    <div class="jumbotron text-center" >
+       
+       
+      <mat-toolbar class="edittoolbar">
+
+        <h1 style="text-align:center">Input your thoughts here</h1>
+
+    </mat-toolbar>
+      <div class="container" style="align-items: center;">
+          <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+            
+        <div class="form-group" style="background-color: white;">
+
+              <angular-editor [placeholder]="'Enter text here...'" formControlName="description"></angular-editor>
+              <div *ngIf="formdata.controls.description.errors && formdata.controls.description.touched" class="error">description is required(Max 400 - Min 5).</div>
+            </div>
+          
+            <button type="submit" class="btn btn-primary"  style="float: right;">Submit</button>
+          </form>
+      </div>
+      </div>
+    </div>
+	
+</mat-sidenav-container>
    
-   
-  
-  <div class="container" style="align-items: center;">
-      <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
-    <div class="form-group" style="background-color: white;">
-          <label for="email">Description:</label>
-          <angular-editor [placeholder]="'Enter text here...'" formControlName="description"></angular-editor>
-          <div *ngIf="formdata.controls.description.errors && formdata.controls.description.touched" class="error">description is required(Max 400 - Min 5).</div>
-        </div>
-      
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-  </div>
-  </div>
-</div>

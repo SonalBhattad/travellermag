@@ -12,6 +12,9 @@ export class UserServiceService {
   public reguser(user: User){
     return this.http.post("http://localhost:8080/save-user", user, {responseType : "text" as "json"});
   }
+  public loginuser(user:User){
+    return this.http.post("http://localhost:8080/login",user)
+  }
 }
 
 

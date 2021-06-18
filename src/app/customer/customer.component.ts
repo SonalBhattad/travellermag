@@ -14,12 +14,13 @@ export default class CustomerComponent implements OnInit {
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
-
+  public show :boolean =true;
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing = true;
     }
   }
+  
 
   mouseleave() {
     if (!this.isExpanded) {
@@ -28,4 +29,7 @@ export default class CustomerComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+  toggle() {
+
+    this.show = !this.show;}
 }

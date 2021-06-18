@@ -21,8 +21,8 @@ export class RegisterformComponent implements OnInit {
 
   hide=true;
   
-  profile_id:number=1;
-  user : User = new User('','','','','','',this.profile_id);
+  profile_id:number=0;
+  user : User = new User('','','','','','',0);
   message :any;
   
  
@@ -65,7 +65,9 @@ export class RegisterformComponent implements OnInit {
     }
 
   public registernow(){
+    this.user.profile_id = this.profile_id
     let response = this.service.reguser(this.user);
+    console.log(this.user);
     response.subscribe(data=>{
         this.message = data;
     })

@@ -13,6 +13,7 @@ export class ArtistComponent implements OnInit {
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
+  public show :boolean =true;
 
   mouseenter() {
     if (!this.isExpanded) {
@@ -41,6 +42,11 @@ export class ArtistComponent implements OnInit {
       description: ['', [Validators.required,
         Validators.maxLength(400), Validators.minLength(5)]]
   });
+  
+   
   }
+  toggle() {
+
+    this.show = !this.show;}
 
 }

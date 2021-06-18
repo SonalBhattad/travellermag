@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
+import { User } from '../user';
+import { UserServiceService } from '../user-service.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher{
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -17,8 +20,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher{
 export class LoginComponent implements OnInit {
   
   hide=true;
-
-  constructor(private fb: FormBuilder) {}
+  user: User = new User('','','','','','',2);
+  constructor(private fb: FormBuilder, private service: UserServiceService, public routes: Router ) {}
 
   loginForm=this.fb.group({
     UserName:['',Validators.required, Validators.minLength(5)]
@@ -29,5 +32,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  loginUser(){
+    this.service.loginuser(this.user).subscribe(
+      data=>{console.log("response Recieved");
+      this.routes.navigate(['/customer'])    
+    },
+      error=>console.log("exception occured") 
+    
+    )
   }
 }

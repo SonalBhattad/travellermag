@@ -31,6 +31,7 @@ import{MatListModule} from'@angular/material/list';
 import { ArtistComponent } from './artist/artist.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     MatSidenavModule,
     MatListModule,
     MatDividerModule,
-    AngularEditorModule
+    AngularEditorModule, 
+    NgMatSearchBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

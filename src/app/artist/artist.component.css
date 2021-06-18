@@ -1,5 +1,5 @@
-.example-container {
-    height: 500px;
+  .example-container {
+    height: 730px;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
   .example-sidenav-content {
@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
   }
+  
   .example-sidenav {
      user-select: none;
   }
@@ -34,16 +35,161 @@
   .container{
       width: 90%;
       height: 90%;
-      margin-top: 10%;
+      margin-top: 1%;
+      margin-left:5% ;
+      margin-right: 5%;
+
       
   }
-  .abc{background: #74ebd5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
+  /* .abc{background: #74ebd5;  /* fallback for old browsers */
+   /* background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+   /* background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*} */
 
     angular-editor{
         background-color: white;
     }
+    button{
+        width:95px;
+        height: 30px;
+    }
+
+    a{
+      font-size: 0.9em;
+  }
+  :host ::ng-deep .logo {
+    font-size: 2em !important;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
 
 
+
+.full-width {
+  width: 100%;
+}
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 850px;
+} 
+
+/* p{
+color: #5317dd;
+text-align: left;
+} */
+
+.card 
+{
+margin-left: 8%;
+margin-right: 8%;
+}
+.spacer{
+  flex: 8 auto;
+}
+
+
+.example-card{
+padding: 1.8em;
+}
+.example-container {
+  height: 730px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.example-sidenav {
+   user-select: none;
+}
+.full-width {
+  width: 100%;
+}
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 850px;
+} 
+
+/* p{
+color: #5317dd;
+text-align: left;
+} */
+
+.card 
+{
+margin-left: 8%;
+margin-right: 8%;
+}
+.spacer{
+  flex: 8 auto;
+}
+
+
+.example-card{
+padding: 1.8em;
+}
+
+.searchbar{
+align-content: center;
+}
+.edittoolbar{
+  margin-left:5%;
+  max-width:90%;
+  margin-right:5%;
+
+  margin-top:5%;
+
+  border-radius: 5px;
+
+  background-color: #a8d0e6;
+
+  color:rgba(0, 0, 0, 0.6);
+
+}

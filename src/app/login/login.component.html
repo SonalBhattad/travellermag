@@ -7,15 +7,18 @@
         <div class="col-md-6">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Username</mat-label>
-            <input formControlName="UserName" matInput placeholder="Enter Username">
+            <input  [(ngModel)]="user.username"  name="username"
+             matInput placeholder="Enter Username"[ngModelOptions]="{standalone: true}">
           </mat-form-field>
         </div>
 
         <div class="col-md-6">
           <mat-form-field class="full-width" appearance="outline">
               <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <input  [(ngModel)]="user.password" name="password" 
+              matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+               [attr.aria-pressed]="hide">
                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
           </mat-form-field>
@@ -24,9 +27,8 @@
     </mat-card-content>
     <mat-card-actions style="padding: 0.4em; ">
    <!-- <button  mat-raised-button color="primary" style="font-size: 1.2em;" routerLink="customer">Login</button>-->
-   <button mat-button color="primary"style="font-size: 1.2em;" [routerLink]="['/employee']">Employee</button>
-   <button mat-button color="primary"style="font-size: 1.2em;" [routerLink]="['/artist']">Artist</button>   
-   <button mat-button color="primary"style="font-size: 1.2em;" [routerLink]="['/customer']">customer</button>
+   <button (click)="loginUser()" mat-button color="primary"style="font-size: 1.2em;">Login</button>
+   
     </mat-card-actions>
     <div class="button-row">
       <p style="font-size: 1em;">Don't have an account? <a [routerLink]="['/register']">Register here</a></p>
