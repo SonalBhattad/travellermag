@@ -31,6 +31,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule} from '@angular/material/list';
 import { BidiModule } from '@angular/cdk/bidi';
 import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -69,7 +71,12 @@ import {MatTableModule} from '@angular/material/table';
     MatSidenavModule,
     MatListModule,
     BidiModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
+    MatFormFieldModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

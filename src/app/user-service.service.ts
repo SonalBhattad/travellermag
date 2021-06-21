@@ -26,9 +26,9 @@ export class UserServiceService {
     return this.http.get("http://localhost:8080/delete/"+username);
   }
 
-  // public getProfile(){
-  //   return this.http.get("http://localhost:8080/profile");
-  // }
+  public getProfile(){
+    return this.http.get("http://localhost:8080/profile");
+  }
   
 }
 

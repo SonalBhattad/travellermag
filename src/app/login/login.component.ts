@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { User } from '../user';
 import { UserServiceService } from '../user-service.service';
 
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
   hide=true;
   profile_id:number=0;
   user: User = new User('','','','','','',2);
+  message:any;
 
   constructor(private fb: FormBuilder, private service: UserServiceService, public routes: Router,public router:ActivatedRoute ) {}
 
@@ -35,7 +37,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
-    
+   let response = this.service.getProfile()
+   response.subscribe(data=>{
+     this.message=data
+     console.log("hello the data is "+this.message);})
+
+   
+   
+     
+   
 
   }
 
