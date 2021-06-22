@@ -1,60 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../user-service.service';
-import {ViewChild} from '@angular/core';
-import {MatTable, MatTableDataSource} from '@angular/material/table';
-import { User } from '../user';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-
-
+import { Template } from '@angular/compiler/src/render3/r3_ast';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MatSidenav } from '@angular/material/sidenav';
+import { EmployeelistComponent } from './employeelist/employeelist.component';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  styleUrls: ['./employee.component.css'],
+  
 })
 export class EmployeeComponent implements OnInit {
 
+  @ViewChild('sidenav') sidenav: MatSidenav | undefined;
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+  showSubSubMenu: boolean = false;
+
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
+  }
  
-
-  ELEMENT_DATA : User = new User('','','','','','',0);
-  
-  displayedColumns: string[] = ['empid', 'username', 'dob', 'email', 'password', 'profile_id'];
-  dataSource = this.ELEMENT_DATA;
-  
-  @ViewChild(MatPaginator)
-  paginator !: MatPaginator;
-
-  @ViewChild(MatSort)
-  sort: MatSort = new MatSort;
   
 
-
-
-  users : any;
-  
-  constructor(private service : UserServiceService) { }
-
-  ngOnInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    let response = this.service.getUser()
-    response.subscribe(report=>this.dataSource=report as User);
+  ngOnInit(): void {
+    
   }
-
-  
-
-
-  public removeUser(username : string){
-    let response = this.service.deleteUser(username);
-    response.subscribe(data => this.users = data);
-  }
-
-  applyFilter(filterValue: String) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  
-  }
-
-
 
 }

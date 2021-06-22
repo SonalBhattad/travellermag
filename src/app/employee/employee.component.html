@@ -1,52 +1,37 @@
-<mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Mia" #input>
-  </mat-form-field>
+<div class="abc" style="height: 90vh;" >
+  <mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name">&nbsp; Employee Dashboard</h1>
+  <div class="spacer"></div>
+  <mat-search-bar></mat-search-bar>
+</mat-toolbar>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">>
+<mat-sidenav-container class="example-container" autosize style="background-color: azure;">
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon> group</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Employee List </span> 
+        </mat-list-item>
+        <mat-list-item>
+        <mat-icon> import_contacts</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Magazines List </span> 
+      </mat-list-item>
+        <mat-list-item>
+        <mat-icon>new_releases</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Campaigns</span> 
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>equalizer</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Statistics</span> 
+        </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+        <mat-icon mat-list-icon routerLink="/login">power_settings_new</mat-icon>
+         <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Logout</span> 
+      </mat-list-item>
+    </mat-nav-list>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="empid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> EmployeeID </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="username">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-    </ng-container>
-  
-    <!-- dob Column -->
-    <ng-container matColumnDef="dob">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Birth </th>
-      <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
-    </ng-container>
-  
-    <!-- email Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> EmailID </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
+  </mat-sidenav>
+  <app-employeelist></app-employeelist>
+</mat-sidenav-container>
 
-    <!--  Column -->
-    <ng-container matColumnDef="password">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
-        <td mat-cell *matCellDef="let element"> {{element.password}} </td>
-      </ng-container>
-
-    <!-- email Column -->
-    <ng-container matColumnDef="profile_id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Profile</th>
-        <td mat-cell *matCellDef="let element"> {{element.profile_id}} </td>
-      </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[2, 3, 5]" showFirstLastButtons></mat-paginator>
-  

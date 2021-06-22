@@ -33,6 +33,8 @@ import { BidiModule } from '@angular/cdk/bidi';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
+
 
 
 
@@ -46,7 +48,9 @@ import { MatSortModule } from '@angular/material/sort';
     RegisterComponent,
     RegisterformComponent,
     EmployeeComponent,
-    CustomerComponent
+    CustomerComponent,
+    EmployeelistComponent
+    
   ],
   imports: [
     BrowserModule,

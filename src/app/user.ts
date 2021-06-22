@@ -1,8 +1,8 @@
 export class User {
     paginator: any;
     sort: any;
-    filter: string | undefined;
-     
+    filter: string;
+    
     constructor(
         public empid: string,
         public username : string,
