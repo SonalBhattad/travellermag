@@ -1,5 +1,5 @@
 .main{
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,9 +20,10 @@ h3{
 mat-card {
   max-width: 600px;
   margin: 2em auto;
-  background-color:mintcream;
+  background-color:rgba(245, 255, 250, 0.747);
   text-align: center;
   max-height: 800px;
+  
 } 
 
 ::ng-deep .mat-form-field {
@@ -45,20 +46,3 @@ mat-card {
   padding-right: 60px;
   text-decoration: none;
 } 
-
- ::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: black !important;
- }
-
- ::ng-deep.mat-form-field-underline {
-  /*change color of underline*/
-  background-color: black !important;
-} 
-
-::ng-deep.mat-form-field-ripple {
- /*change color of underline when focused*/
- background-color: black !important;;
-}
-
-

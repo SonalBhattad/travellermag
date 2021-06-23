@@ -32,7 +32,7 @@
     <mat-nav-list>
       <mat-list-item>
         <mat-icon>library_books</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Published Work</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="toggle()">&nbsp;Published Work</span> 
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
@@ -50,21 +50,19 @@
     </mat-nav-list>
 	</mat-sidenav>
 
-  <div *ngIf="show">
+  <!-- <div *ngIf="show">
     <div class="jumbotron text-center" >
-       
-       
-      <mat-toolbar class="edittoolbar">
+       <div class="container" style="align-items: center;">
 
-        <h1 style="text-align:center">Input your thoughts here</h1>
-
-    </mat-toolbar>
-      <div class="container" style="align-items: center;">
-          <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+          <form [formGroup] = "formdata" (ngSubmit) = "addPost()"> -->
             
-        <div class="form-group" style="background-color: white;">
-
-              <angular-editor [placeholder]="'Enter text here...'" formControlName="description"></angular-editor>
+            <!-- <input  class="edittoolbar"type="text" style="text-align:center"placeholder="Input Title here" formControlName="title" [(ngModel)]="Editor.title" name="title"> -->
+            
+        <!-- <div class="form-group" style="background-color: white;">
+          <mat-form-field class="edittoolbar">
+            <input [(ngModel)]="Editor.title" name="title" matInput placeholder="Enter your Title Here">
+          </mat-form-field>
+              <angular-editor [placeholder]="'Enter text here...'" formControlName="description" [(ngModel)]="Editor.body"></angular-editor>
               <div *ngIf="formdata.controls.description.errors && formdata.controls.description.touched" class="error">description is required(Max 400 - Min 5).</div>
             </div>
           
@@ -72,7 +70,52 @@
           </form>
       </div>
       </div>
-    </div>
+    </div> -->
 	
+    
+      
+        <div  *ngIf="show" >
+          <mat-toolbar class="edittoolbar">
+              <h1>Input your thoughts here</h1>
+           </mat-toolbar>
+           <div class="titletype">
+             <mat-form-field appearance="outline" style="width: 60%;">
+                <mat-label>Title</mat-label>
+              <input matInput placeholder="Enter Title" [(ngModel)]="Editor.title" name="title">
+         </mat-form-field>
+      
+          <mat-form-field appearance="outline" style="width: 37%; padding-left: 3%;">
+             <mat-label>Select</mat-label>
+             <mat-select [(ngModel)]="Editor.type" name="type">
+                <mat-option value="Summer">Summer</mat-option>
+                <mat-option value="Winter">Winter</mat-option>
+                <mat-option value="Monsoon">Monsoon</mat-option>
+            </mat-select>
+              </mat-form-field>
+          </div>
+            
+            
+            <div>
+                <div class="jumbotron text-center" >
+                   <div class="container" style="align-items: center;">
+            
+                      <form [formGroup] = "formdata" >
+                      <div class="form-group" style="background-color: white;">
+                       <angular-editor [placeholder]="'Enter text here...'" formControlName="description" [(ngModel)]="Editor.body"></angular-editor>
+                          <div *ngIf="formdata.controls.description.errors && formdata.controls.description.touched" class="error">description is required(Max 400 - Min 5).</div>
+                      </div>
+                      
+                        <button (click)="addPost()" mat-raised-button color="primary" style="float: right;">Submit</button> 
+                     </form>
+                      
+                    </div>
+                </div>
+              </div> 
+  
+  </div>
+  <div >
+    <app-publish></app-publish>
+  </div>
 </mat-sidenav-container>
+
    

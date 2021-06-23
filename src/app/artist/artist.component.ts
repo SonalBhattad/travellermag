@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
 import{MatSidenav}from'@angular/material/sidenav';
 import { ViewChild } from '@angular/core';
+import { Editor } from './Editor';
+import { EditorServiceService } from '../editor-service.service';
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
@@ -14,6 +16,7 @@ export class ArtistComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
   public show :boolean =true;
+  user: any;
 
   mouseenter() {
     if (!this.isExpanded) {
@@ -27,7 +30,14 @@ export class ArtistComponent implements OnInit {
     }
   }
   formdata;
-  constructor(private formBuilder: FormBuilder) { }
+    message:any;
+  //username: [''];
+  Editor : Editor = new Editor('','','',''," ");
+  constructor(private formBuilder: FormBuilder,public service: EditorServiceService) {
+    
+
+    
+   }
   onClickSubmit(data) {
       if(this.formdata.invalid)
      {
@@ -48,5 +58,14 @@ export class ArtistComponent implements OnInit {
   toggle() {
 
     this.show = !this.show;}
+
+    public addPost(){
+      //this.Editor.username = this.user.username
+       let response = this.service.addPost(this.Editor);
+      console.log(this.Editor);
+      response.subscribe(data=>{
+          this.message = data;
+      })
+    }
 
 }

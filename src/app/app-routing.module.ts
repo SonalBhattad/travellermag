@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArtistComponent } from './artist/artist.component';
+import { PublishComponent } from './artist/publish/publish.component';
+import { BilingformComponent } from './bilingform/bilingform.component';
 import CustomerComponent from './customer/customer.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+
 import { RegisterComponent } from './register/register.component';
 import { RegisterformComponent } from './registerform/registerform.component';
 //import {CustomerComponent} from './customer/customer.component';
@@ -20,6 +23,8 @@ const routes: Routes = [
   {path:'customer', component:CustomerComponent},
   {path:'artist', component:ArtistComponent},
   {path:'employee', component:EmployeeComponent},
+  {path:'bilingform', component:BilingformComponent},  
+  {path:'publish', component:PublishComponent}, 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

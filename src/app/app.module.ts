@@ -32,7 +32,13 @@ import { ArtistComponent } from './artist/artist.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
+import { BilingformComponent } from './bilingform/bilingform.component';
+//import{MatTableDataSource}from'@angular/material/table';
+import { BidiModule } from '@angular/cdk/bidi';
+import {MatTableModule} from '@angular/material/table';
 
+import { PublishComponent } from './artist/publish/publish.component';
+import { CdkTableModule, CDK_TABLE } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,10 @@ import { NgMatSearchBarModule } from 'ng-mat-search-bar';
     RegisterformComponent,
     CustomerComponent,
     ArtistComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    BilingformComponent,
+    PublishComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -70,7 +79,12 @@ import { NgMatSearchBarModule } from 'ng-mat-search-bar';
     MatListModule,
     MatDividerModule,
     AngularEditorModule, 
-    NgMatSearchBarModule
+    NgMatSearchBarModule,
+    BidiModule,
+    MatTableModule,
+    CdkTableModule
+    //MatTableDataSource
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

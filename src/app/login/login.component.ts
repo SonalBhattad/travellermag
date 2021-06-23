@@ -33,13 +33,32 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  loginUser(){
-    this.service.loginuser(this.user).subscribe(
-      data=>{console.log("response Recieved");
-      this.routes.navigate(['/customer'])    
-    },
-      error=>console.log("exception occured") 
+   loginUser(){
+     this.service.loginuser(this.user).subscribe(
+       data=>{console.log("response Recieved");
+       this.routes.navigate(['/artist'])    
+     },
+       error=>{console.log("exception occured") 
+          alert("Wrong username or password");
+          }
     
-    )
-  }
-}
+     )
+   }
+ }
+// loginUser(){
+    
+//   this.service.loginuser(this.user).subscribe(
+//     data=>{console.log("response Recieved");
+//       this.routes.navigate(['/customer'])   
+//   },
+//     error=>{console.log("exception occured")
+//     alert("Wrong username or Password");
+//   }
+    
+  
+//   )
+// }
+
+
+
+
