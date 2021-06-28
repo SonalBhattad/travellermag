@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from 'src/app/user-service.service';
 import {ViewChild} from '@angular/core';
-import {MatTable, MatTableDataSource} from '@angular/material/table';
+import {MatTable, MatTableDataSource, _MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/user';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -18,10 +18,10 @@ export class EmployeelistComponent implements OnInit {
 
  
 
-  ELEMENT_DATA : User = new User('','','','','','',0);
+  ELEMENT_DATA : User[] = [];
   
-  displayedColumns: string[] = ['empid', 'username', 'dob', 'email', 'profile_id'];
-  dataSource = this.ELEMENT_DATA;
+  displayedColumns: string[] = ['empid', 'username', 'dob', 'email', 'profile_id', 'actions'];
+  dataSource = new _MatTableDataSource<User>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator)paginator : MatPaginator;
 
@@ -36,18 +36,35 @@ export class EmployeelistComponent implements OnInit {
   constructor(private service : UserServiceService) { }
 
   ngOnInit() {
-    this.dataSource.sort = this.sort;
+  
+    this.refresh();
+
+   
+
+  }
+
+  ngAfterViewInit() {
+
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
+  }
+
+  public refresh(){
     let response = this.service.getUser()
-    response.subscribe(report=>this.dataSource=report as User);
+    response.subscribe(report=>this.dataSource.data=report as User[]);
   }
 
   
 
 
   public removeUser(username : string){
-    let response = this.service.deleteUser(username);
-    response.subscribe(data => this.users = data);
+    if(confirm('are you sure to delete??')){
+      this.service.deleteUser(username).subscribe(res=>{
+        this.refresh()
+      });
+    }
+    
   }
 
   applyFilter(filterValue: String) {

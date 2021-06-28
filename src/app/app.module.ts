@@ -34,6 +34,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
+import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
 
 
 
@@ -49,7 +50,8 @@ import { EmployeelistComponent } from './employee/employeelist/employeelist.comp
     RegisterformComponent,
     EmployeeComponent,
     CustomerComponent,
-    EmployeelistComponent
+    EmployeelistComponent,
+    MagzinelistComponent
     
   ],
   imports: [

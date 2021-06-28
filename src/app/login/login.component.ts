@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user';
 import { UserServiceService } from '../user-service.service';
 
-export class MyErrorStateMatcher implements ErrorStateMatcher{
+export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
@@ -19,50 +19,62 @@ export class MyErrorStateMatcher implements ErrorStateMatcher{
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+
+  hide = true;
+  profile_id: number;
   
-  hide=true;
-  profile_id:number=0;
-  user: User = new User('','','','','','',2);
-  message:any;
+  user : User = new User('','','','','','',2,'');
+  message: any;
+  
 
-  constructor(private fb: FormBuilder, private service: UserServiceService, public routes: Router,public router:ActivatedRoute ) {}
+  constructor(private fb: FormBuilder, private service: UserServiceService, public routes: Router, public router: ActivatedRoute) { }
 
-  loginForm=this.fb.group({
-    UserName:['',Validators.required, Validators.minLength(5)]
+  loginForm = this.fb.group({
+    UserName: ['', Validators.required, Validators.minLength(5)]
   });
 
-  saveForm(){
-    console.log('Form value ',this.loginForm.value);
+  saveForm() {
+    console.log('Form value ', this.loginForm.value);
   }
 
   ngOnInit() {
 
-   let response = this.service.getProfile()
-   response.subscribe(data=>{
-     this.message=data
-     console.log("hello the data is "+this.message);})
-
-   
-   
-     
-   
-
   }
 
-  
- 
 
-  loginUser(){
-    
+
+
+
+  loginUser() {
+   
     this.service.loginuser(this.user).subscribe(
-      data=>{console.log("response Recieved");
-        this.routes.navigate(['/employee'])   
-    },
-      error=>{console.log("exception occured")
-      alert("Wrong username or Password");
-    }
+      data => {
+        console.log("response Recieved" + this.user.username);
+        console.log("response Recieved" + this.user.password);
+        console.log("response Recieved" + this.user.email);
+        console.log("response Recieved" + this.user.profile_name);
+        console.log("response Recieved" + this.user.profile_id);
+
+         if (this.profile_id == 2) {
+           this.routes.navigate(['/employee'])
+          }else if(this.profile_id == 1){
+            this.routes.navigate(['/customer'])
+          }else if(this.profile_id == 3){
+            this.routes.navigate(['/home'])
+          }
+
       
-    
+        
+        
+
+      },
+
+      error => {
+        console.log("exception occured")
+        alert("Wrong username or Password");
+      }
+
+
     )
   }
 
