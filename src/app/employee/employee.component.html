@@ -1,0 +1,39 @@
+<div class="abc" style="height: 90vh;" >
+  <mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name">&nbsp; Employee Dashboard</h1>
+  <div class="spacer"></div>
+  <mat-search-bar></mat-search-bar>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize style="background-color: azure;">
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon> group</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Employee List </span> 
+        </mat-list-item>
+        <mat-list-item>
+        <mat-icon> import_contacts</mat-icon>
+        <span class="full-width"  *ngIf="isExpanded || isShowing" [routerLink]="['/magzinelist']">&nbsp;Magazines List </span> 
+      </mat-list-item>
+        <mat-list-item>
+        <mat-icon>new_releases</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Campaigns</span> 
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>equalizer</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Statistics</span> 
+        </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+        <mat-icon mat-list-icon routerLink="/login">power_settings_new</mat-icon>
+         <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Logout</span> 
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <app-employeelist></app-employeelist>
+
+  <app-magzinelist></app-magzinelist>
+</mat-sidenav-container>
+
