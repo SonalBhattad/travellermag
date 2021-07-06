@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   hide = true;
   profile_id: number;
   
-  user : User = new User('','','','','','',2,'');
+  
+  user = new User('','','','','','',0,'');
   message: any;
   
 
@@ -51,8 +52,7 @@ export class LoginComponent implements OnInit {
       data => {
         console.log("response Recieved" + this.user.username);
         console.log("response Recieved" + this.user.password);
-        console.log("response Recieved" + this.user.email);
-        console.log("response Recieved" + this.user.profile_name);
+        console.log("response Recieved" + this.profile_id);
         console.log("response Recieved" + this.user.profile_id);
 
          if (this.profile_id == 2) {
