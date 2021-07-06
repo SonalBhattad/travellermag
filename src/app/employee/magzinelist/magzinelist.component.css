@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top:3%;
+  }
+  ng-container{
+    color: blue;
+  }
+  button{
+    background-color:rgb(14, 201, 14)
+  }

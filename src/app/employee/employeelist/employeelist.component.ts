@@ -20,7 +20,7 @@ export class EmployeelistComponent implements OnInit {
 
   ELEMENT_DATA : User[] = [];
   
-  displayedColumns: string[] = ['empid', 'username', 'dob', 'email', 'profile_id', 'actions'];
+  displayedColumns: string[] = ['empid', 'username', 'dob', 'email', 'profileid', 'actions'];
   dataSource = new _MatTableDataSource<User>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator)paginator : MatPaginator;
@@ -67,7 +67,7 @@ export class EmployeelistComponent implements OnInit {
     
   }
 
-  applyFilter(filterValue: String) {
+  applyColumnFilter(filterValue: String) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   
   }

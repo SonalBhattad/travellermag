@@ -11,12 +11,12 @@
     <mat-nav-list>
       <mat-list-item>
         <mat-icon> group</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Employee List </span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['employeelist']"> &nbsp;Employee List </span> 
 
         </mat-list-item>
         <mat-list-item>
         <mat-icon> import_contacts</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Magazines List </span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['magzinelist']" >&nbsp;Magazines List </span> 
       </mat-list-item>
         <mat-list-item>
         <mat-icon>new_releases</mat-icon>
@@ -33,9 +33,9 @@
     </mat-nav-list>
 
   </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+  
+  <router-outlet></router-outlet>
+  
   
 </mat-sidenav-container>
 

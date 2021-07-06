@@ -82,7 +82,7 @@ export class RegisterformComponent implements OnInit {
 
   public registernow() {
 
-    this.user.profile_id = this.profile_id;
+    this.user.profileid = this.profile_id;
     let response = this.service.reguser(this.user);
     response.subscribe(data => {
       this.message = data;

@@ -11,7 +11,7 @@ export class User {
         public email : string,
         public password : string,
         public gender : string,
-        public profile_id : number,
+        public profileid : number,
         public profile_name : string
     ){}
 }

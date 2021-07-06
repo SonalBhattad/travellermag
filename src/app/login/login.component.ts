@@ -21,10 +21,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent implements OnInit {
 
   hide = true;
-  profile_id: number;
+  profileid: number=0;
   
   
-  user = new User('','','','','','',0,'');
+  user = new User('','','','','','',this.profileid,'');
   message: any;
   
 
@@ -52,14 +52,14 @@ export class LoginComponent implements OnInit {
       data => {
         console.log("response Recieved" + this.user.username);
         console.log("response Recieved" + this.user.password);
-        console.log("response Recieved" + this.profile_id);
-        console.log("response Recieved" + this.user.profile_id);
+        console.log("response Recieved" + this.profileid);
+        console.log("response Recieved" + this.user.profileid);
 
-         if (this.profile_id == 2) {
+         if (this.profileid == 2) {
            this.routes.navigate(['/employee'])
-          }else if(this.profile_id == 1){
+          }else if(this.profileid == 1){
             this.routes.navigate(['/customer'])
-          }else if(this.profile_id == 3){
+          }else if(this.profileid == 3){
             this.routes.navigate(['/home'])
           }
 

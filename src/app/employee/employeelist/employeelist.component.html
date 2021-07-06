@@ -1,8 +1,10 @@
-
+<div>
 <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Mia" #input>
 </mat-form-field>
+
+
 
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">>
 
@@ -11,7 +13,12 @@
 
     <!-- Position Column -->
     <ng-container matColumnDef="empid">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> EmployeeID </th>
+        <th  mat-header-cell *matHeaderCellDef mat-sort-header > EmployeeID 
+        <br>
+        <div class="eps-footer-call mat-header-cell mat-column-mag_name" role="columnheader">
+            <input [style.color]="'blue'" matInput (keyup)="applyColumnFilter('mag_id',$event.target.value)" placeholder="Ex. Mia" #input>
+        </div>
+        </th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
@@ -40,9 +47,9 @@
     </ng-container>
 
     <!-- email Column -->
-    <ng-container matColumnDef="profile_id">
+    <ng-container matColumnDef="profileid">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Profile</th>
-        <td mat-cell *matCellDef="let element"> {{element.profile_id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.profileid}} </td>
     </ng-container>
 
     <!-- Actions Column -->
@@ -57,5 +64,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<mat-paginator [pageSizeOptions]="[2, 3, 5]" showFirstLastButtons></mat-paginator>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
 
