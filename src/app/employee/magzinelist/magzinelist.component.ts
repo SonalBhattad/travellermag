@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { _MatTableDataSource } from '@angular/material/table';
@@ -7,72 +8,20 @@ import { User } from 'src/app/user';
 import { UserServiceService } from 'src/app/user-service.service';
 import { Magzine } from '../../../../../travellermag-gamma/src/app/magzine';
 
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 @Component({
   selector: 'app-magzinelist',
   templateUrl: './magzinelist.component.html',
   styleUrls: ['./magzinelist.component.css']
 })
 export class MagzinelistComponent implements OnInit {
-
-  
-  // ELEMENT_DATA : Magzine[] = [];
-  
-  // displayedColumns: string[] = ['mag_id', 'mag_name', 'mag_price', 'mag_type'];
-  // dataSource = new _MatTableDataSource<Magzine>(this.ELEMENT_DATA);
-  
-  // @ViewChild(MatPaginator)paginator : MatPaginator;
-
-  // @ViewChild(MatSort)
-  // sort: MatSort = new MatSort;
-  
-
-
-
-  // users : any;
-  
-  // constructor(private service : UserServiceService) { }
-
-  // ngOnInit() {
-  
-  //   this.refresh();
-
-   
-
-  // }
-
-  // ngAfterViewInit() {
-
-  //   this.dataSource.paginator = this.paginator;
-  //   this.dataSource.sort = this.sort;
-
-  // }
-
-  // public refresh(){
-  //   let response = this.service.getUser()
-  //   response.subscribe(report=>this.dataSource.data=report as Magzine[]);
-  // }
-
-  
-
-
-  // public removeUser(username : string){
-  //   if(confirm('are you sure to delete??')){
-  //     this.service.deleteUser(username).subscribe(res=>{
-  //       this.refresh()
-  //     });
-  //   }
-    
-  // }
-
-  // applyFilter(filterValue: String) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  
-  // }
-
-
+  magzine : Magzine = new Magzine(0,'',0,'');
   ELEMENT_DATA : Magzine[] = [];
   
-  displayedColumns: string[] = ['mag_id', 'mag_name', 'mag_price', 'mag_type'];
+  displayedColumns: string[] = ['mag_id', 'mag_name', 'mag_price', 'mag_type','actions'];
   dataSource = new _MatTableDataSource<Magzine>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator)paginator : MatPaginator;
@@ -80,21 +29,15 @@ export class MagzinelistComponent implements OnInit {
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
   durationInSeconds: 5;
-  _snackBar: any;
   
-
-
-
+  message: Object;
   
   
-  constructor(private service : MagzineServiceService) { }
-
+  
+  constructor(private service : MagzineServiceService, public dialog: MatDialog) { }
+ 
   ngOnInit() {
-  
     this.refresh();
-
-   
-
   }
 
   ngAfterViewInit() {
@@ -109,8 +52,6 @@ export class MagzinelistComponent implements OnInit {
     response.subscribe(report=>this.dataSource.data=report as Magzine[]);
   }
 
-  
-
 
   public removeUser(mag_name : string){
     if(confirm('are you sure to delete??')){
@@ -121,10 +62,29 @@ export class MagzinelistComponent implements OnInit {
     
   }
 
+  public regMagzine(){
+  let response =this.service.regmaguser(this.magzine)
+  response.subscribe(data => {
+    this.message = data;
+
+    alert("magzine added");
+    this.refresh()
+    
+  })
+}
+  
   applyFilter(filterValue: String) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   
   }
-
-
+  openDialog() {
+    this.dialog.open(DialogDataExampleDialog);
+  }
+}
+@Component({
+  selector: 'dialog-data-example-dialog',
+  templateUrl: 'dialog-data-example-dialog.html',
+})
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }

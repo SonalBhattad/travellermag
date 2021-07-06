@@ -4,6 +4,6 @@ table {
   ng-container{
     color: blue;
   }
-  button{
-    background-color:rgb(14, 201, 14)
-  }
+ div{
+   background-color: rgb(131, 95, 160);
+ }

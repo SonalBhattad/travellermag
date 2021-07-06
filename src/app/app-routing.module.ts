@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BilingComponent } from './biling/biling.component';
+import { AccountComponent } from './customer/account/account.component';
+import { BilingComponent } from './customer/biling/biling.component';
+
 import { CustomerComponent } from './customer/customer.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
@@ -16,7 +18,11 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path:'customer', component:CustomerComponent},
+  {path:'customer', component:CustomerComponent,
+  children:[
+    {path:'account', component:AccountComponent},
+    {path:'biling', component:BilingComponent},
+  ]},
   {path:'employee', component:EmployeeComponent,
   children:[
     { path:'employeelist', component:EmployeelistComponent},
@@ -25,7 +31,7 @@ const routes: Routes = [
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},
   {path:'regformArt/:profile_id', component:RegisterformComponent,data : {user:3}},
-  {path:'biling', component:BilingComponent},
+  
   
   
 ];

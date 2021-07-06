@@ -6,6 +6,7 @@ import { Magzine } from '../../../travellermag-gamma/src/app/magzine';
   providedIn: 'root'
 })
 export class MagzineServiceService {
+  regMag: any;
 
   constructor(private http : HttpClient) { }
 
@@ -17,6 +18,6 @@ public getMagzine(){
 }
 
 public deleteUser(mag_name){
-  return this.http.delete("http://localhost:8080/delete/{name}"+mag_name);
+  return this.http.delete("http://localhost:8080/deletemag/"+mag_name);
 }
 }

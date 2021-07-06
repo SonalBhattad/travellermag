@@ -35,9 +35,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
-import { BilingComponent } from './biling/biling.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatDialogModule} from '@angular/material/dialog';
+import { BilingComponent } from './customer/biling/biling.component';
+import { AccountComponent } from './customer/account/account.component';
 //import { StepperComponent } from './stepper/stepper.component';
 
 
@@ -49,7 +50,6 @@ import {MatDialogModule} from '@angular/material/dialog';
   declarations: [
     AppComponent,
     ToolbarComponent,
-    BilingComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent,
@@ -58,6 +58,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     CustomerComponent,
     EmployeelistComponent,
     MagzinelistComponent,
+    BilingComponent,
+    AccountComponent,
 
    
   ],
