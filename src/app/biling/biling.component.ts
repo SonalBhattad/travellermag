@@ -20,8 +20,8 @@ export class BilingComponent implements OnInit {
  
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  bil : Biling = new Biling('','','',1,'','','',1);
-  card : Card = new Card(1,'','',1);
+  bil : Biling = new Biling('','','',0,'','','',1);
+  card : Card = new Card(1,'','',0);
 
 
   constructor(private _formBuilder: FormBuilder, private service : BilingServiceService) {
@@ -60,26 +60,6 @@ export class BilingComponent implements OnInit {
     })
   }
 
-  //ngOnInit(): void {
- //}
-
+  
 }
-// export class BilingComponent implements OnInit {
 
-//   bil : Biling = new Biling('','','',1,'','','',0);
-//   card : Card = new Card(1,'','',3);
-  
-//   message : any;
-
-//   constructor(private service : BilingServiceService){}
-  
-
-//   public registerNow(){
-//     let response = this.service.regcard(this.card);
-    
-//     response.subscribe(data=>{
-//         this.message = data;
-//     })
-//   }
-  
-// }
