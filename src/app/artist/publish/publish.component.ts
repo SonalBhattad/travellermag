@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Editor } from 'src/app/artist/Editor';
+import {Blog} from 'src/app/artist/blog';
 import {MatTable, MatTableDataSource} from '@angular/material/table';
-import { EditorServiceService } from 'src/app/editor-service.service';
+import { BlogServiceService } from 'src/app/blog-service.service';
 import { DataSource } from '@angular/cdk/collections';
 
 @Component({
@@ -11,20 +11,30 @@ import { DataSource } from '@angular/cdk/collections';
 })
 
 export class PublishComponent implements OnInit {
-  Editor : Editor[]=[];
-  //Editor : Editor = new Editor('','','','',"yy-mm-dd hh:mm:ss");
-  displayedColumns: string[] = ['id','title', 'type', 'body', 'createdon'];
-  //dataSource = this.Editor;
-  dataSource = new MatTableDataSource<Editor>(this.Editor);
+  Blog : Blog[]=[];
+  displayedColumns: string[] = ['id','title', 'type',  'createdon','action'];
+  dataSource = new MatTableDataSource<Blog>(this.Blog);
  
-  constructor(private service:EditorServiceService) { }
-
+  constructor(private service:BlogServiceService) { }
+  posts:any;
   ngOnInit() {
+    this.refresh();
+  }
+    public refresh(){
     let response = this.service.getPost()
-    response.subscribe(report=>this.dataSource.data=report as Editor[]);
+    response.subscribe(report=>this.dataSource.data=report as Blog[]);
+    }
+  
+    public deletePost(id:number){
+      let response = this.service.deletePost(id);
+      response.subscribe(data => this.refresh());
+      console.log(id);
+    }
   }
 
-}
+ 
+
+
 
 
 

@@ -32,13 +32,23 @@ import { ArtistComponent } from './artist/artist.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
-import { BilingformComponent } from './bilingform/bilingform.component';
+
 //import{MatTableDataSource}from'@angular/material/table';
 import { BidiModule } from '@angular/cdk/bidi';
 import {MatTableModule} from '@angular/material/table';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { PublishComponent } from './artist/publish/publish.component';
 import { CdkTableModule, CDK_TABLE } from '@angular/cdk/table';
+import { EditorComponent } from './artist/editor/editor.component';
+import { TodoComponent } from './artist/todo/todo.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DraftsComponent } from './artist/drafts/drafts.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { AccountComponent } from './customer/account/account.component';
+import { StoreComponent } from './customer/store/store.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +61,12 @@ import { CdkTableModule, CDK_TABLE } from '@angular/cdk/table';
     CustomerComponent,
     ArtistComponent,
     EmployeeComponent,
-    BilingformComponent,
-    PublishComponent
+    PublishComponent,
+    EditorComponent,
+    TodoComponent,
+    DraftsComponent,
+    AccountComponent,
+    StoreComponent
   
   ],
   imports: [
@@ -81,10 +95,22 @@ import { CdkTableModule, CDK_TABLE } from '@angular/cdk/table';
     AngularEditorModule, 
     NgMatSearchBarModule,
     BidiModule,
-    MatTableModule,
-    CdkTableModule
-    //MatTableDataSource
-   
+    MatSnackBarModule,
+      MatTableModule,
+    CdkTableModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    //MatTableDataSourc
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyA6udjfyzSagLVH2KJZOd5Qfvoja9bcHWI",
+    authDomain: "todo-790e1.firebaseapp.com",
+    projectId: "todo-790e1",
+    storageBucket: "todo-790e1.appspot.com",
+    messagingSenderId: "125185098851",
+    appId: "1:125185098851:web:e280b4177b3a1caa236456",
+    measurementId: "G-2BXL9T2KXR"
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

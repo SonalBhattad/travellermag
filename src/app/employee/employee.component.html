@@ -25,8 +25,8 @@
 					<span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Statistics</span> 
 		  		</mat-list-item>
 				<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-					<mat-icon mat-list-icon routerLink="/login">power_settings_new</mat-icon>
-					 <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Logout</span> 
+					<mat-icon mat-list-icon>power_settings_new</mat-icon>
+					 <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/login">&nbsp;Logout</span> 
 				</mat-list-item>
 			</mat-nav-list>
 		</mat-sidenav>

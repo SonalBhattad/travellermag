@@ -9,15 +9,15 @@
     <mat-nav-list>
       <mat-list-item>
         <mat-icon>store</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="toggle()">&nbsp;Store</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/customer/store">&nbsp;Store</span> 
       </mat-list-item>
       <mat-list-item>
         <mat-icon>shopping_cart</mat-icon>
         <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Subscription</span> 
       </mat-list-item>
       <mat-list-item>
-        <mat-icon>account_balance</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Payout</span> 
+        <mat-icon routerLink="customer/account">account_balance</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/customer/account">&nbsp;Account</span> 
       </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
         <mat-icon>list</mat-icon>
@@ -29,13 +29,13 @@
         </mat-select>
       </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu"  class="parent">
-        <mat-icon mat-list-icon routerLink="/login">power_settings_new</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Logout</span> 
+        <mat-icon mat-list-icon>power_settings_new</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/login">&nbsp;Logout</span> 
         </mat-list-item>
       </mat-nav-list>
     
 	</mat-sidenav>
-
+<!-- 
 	<div class="card" *ngIf="show">
         <table>
           <tr>
@@ -130,5 +130,6 @@
 </td>
 </tr>
     </table>
-    </div>
+    </div> -->
+    <router-outlet></router-outlet>
 </mat-sidenav-container>

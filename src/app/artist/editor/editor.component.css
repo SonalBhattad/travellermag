@@ -1,0 +1,36 @@
+.edittoolbar{
+  margin-left:5%;
+  width:89.6%;
+  height: 5vh;
+  margin-right:5%;
+  margin-top:5%;
+  border-radius: 5px;
+  background-color: #a8d0e6;
+  color:rgba(0, 0, 0, 0.6);
+}
+.titletype{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  font-size: 1.2em;
+  color: black;
+} 
+angular-editor{
+  background-color: white;
+}
+.container{
+  width: 90%;
+  height: 90%;
+  margin-top: 1%;
+  margin-left:5% ;
+  margin-right: 5%;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.spacer{
+  flex: 1 1 auto;
+}

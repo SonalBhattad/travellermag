@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
 import{MatSidenav}from'@angular/material/sidenav';
 import { ViewChild } from '@angular/core';
-import { Editor } from './Editor';
-import { EditorServiceService } from '../editor-service.service';
+import { Blog } from './blog';
+import { BlogServiceService} from '../blog-service.service';
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
@@ -31,9 +31,10 @@ export class ArtistComponent implements OnInit {
   }
   formdata;
     message:any;
+    Blog:any;
   //username: [''];
-  Editor : Editor = new Editor('','','',''," ");
-  constructor(private formBuilder: FormBuilder,public service: EditorServiceService) {
+  blog : Blog = new Blog(0,'','',''," ",'','');
+  constructor(private formBuilder: FormBuilder,public service: BlogServiceService) {
     
 
     
@@ -61,8 +62,8 @@ export class ArtistComponent implements OnInit {
 
     public addPost(){
       //this.Editor.username = this.user.username
-       let response = this.service.addPost(this.Editor);
-      console.log(this.Editor);
+       let response = this.service.addPost(this.Blog);
+      console.log(this.Blog);
       response.subscribe(data=>{
           this.message = data;
       })

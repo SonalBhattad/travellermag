@@ -1,38 +1,42 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
+<div>
+  <mat-toolbar class="edittoolbar">
+    <h1>View Your Submitted Work!!</h1>
+  </mat-toolbar>
+</div>
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
-  
-    <!-- Name Column -->
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef> Title</th>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     </ng-container>
-  
-    <!-- Weight Column -->
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef> Type </th>
       <td mat-cell *matCellDef="let element"> {{element.type}} </td>
     </ng-container>
-  
-    <!-- Symbol Column -->
     <ng-container matColumnDef="body">
       <th mat-header-cell *matHeaderCellDef> Body </th>
       <td mat-cell *matCellDef="let element"> {{element.body}} </td>
     </ng-container>
     <ng-container matColumnDef="createdon">
-        <th mat-header-cell *matHeaderCellDef> createdon </th>
+        <th mat-header-cell *matHeaderCellDef> Created on </th>
         <td mat-cell *matCellDef="let element"> {{element.createdon}} </td>
       </ng-container>
+      <ng-container matColumnDef="action">
+        <tr><th mat-header-cell *matHeaderCellDef> Action </th></tr>
+        <tr>
+        <td mat-cell *matCellDef="let row" style="width:20%">
+          <button mat-icon-button color="primary" ><mat-icon>preview</mat-icon></button>
+           <button mat-icon-button color="primary" (click)="deletePost(row.id)" ><mat-icon>delete</mat-icon></button>
+          </td>
+          <tr>
+        </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  
+</div> 
   

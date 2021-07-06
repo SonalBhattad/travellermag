@@ -3,36 +3,36 @@
     <button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
     <h1 class="example-app-name">&nbsp; Artist Dashboard</h1>
     <div class="spacer"></div>
-    <mat-icon (click)="toggle()">library_add</mat-icon>
+    <mat-icon routerLink="/artist/editor">library_add</mat-icon>
     
     
       <!-- <div dir="rtl"><mat-form-field>
       <input matInput type="search" placeholder="search here"><mat-icon>search</mat-icon></mat-form-field></div> -->
   </mat-toolbar>
-<mat-sidenav-container class="example-container" autosize style="background-color: azure;">
+<mat-sidenav-container class="example-container" autosize style="background-image: linear-gradient(20deg, #e6f2f7 0%, #9df5cd 100%);">
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <mat-nav-list>
       <mat-list-item>
         <mat-icon>list</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;To-Do List</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/artist/todo">&nbsp;To-Do List</span> 
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
       <mat-list-item>
         <mat-icon>spellcheck</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="toggle()">&nbsp;Editor</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/artist/editor">&nbsp;Editor</span> 
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
       <mat-list-item>
         <mat-icon>turned_in</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Drafts</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/artist/drafts">&nbsp;Drafts</span> 
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
       <mat-list-item>
         <mat-icon>library_books</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="toggle()">&nbsp;Published Work</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/artist/publish">&nbsp;Published Work</span> 
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
@@ -43,8 +43,8 @@
     </mat-nav-list>
     <mat-nav-list>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-    <mat-icon mat-list-icon routerLink="/login">power_settings_new</mat-icon>
-         <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Logout</span> 
+    <mat-icon mat-list-icon >power_settings_new</mat-icon>
+         <span class="full-width" *ngIf="isExpanded || isShowing" routerLink="/login">&nbsp;Logout</span> 
           <!-- <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon> -->
       </mat-list-item>
     </mat-nav-list>
@@ -74,7 +74,7 @@
 	
     
       
-        <div  *ngIf="show" >
+        <!-- <div  *ngIf="show" >
           <mat-toolbar class="edittoolbar">
               <h1>Input your thoughts here</h1>
            </mat-toolbar>
@@ -112,10 +112,8 @@
                 </div>
               </div> 
   
-  </div>
-  <div >
-    <app-publish></app-publish>
-  </div>
+  </div> -->
+  <router-outlet></router-outlet>
 </mat-sidenav-container>
 
    
