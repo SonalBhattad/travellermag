@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BilingComponent } from './biling/biling.component';
 import { CustomerComponent } from './customer/customer.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
+import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,11 +17,16 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'customer', component:CustomerComponent},
-  {path:'employee', component:EmployeeComponent},
+  {path:'employee', component:EmployeeComponent,
+  children:[
+    { path:'employeelist', component:EmployeelistComponent},
+    {path:'magzinelist', component:MagzinelistComponent},
+    ]},
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},
   {path:'regformArt/:profile_id', component:RegisterformComponent,data : {user:3}},
   {path:'biling', component:BilingComponent},
+  
   
 ];
 

@@ -20,18 +20,21 @@ export class BilingComponent implements OnInit {
  
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  bil : Biling = new Biling('','','',0,'','','',1);
-  card : Card = new Card(1,'','',0);
+
+  bil : Biling = new Biling('','','',0,'','','',7);
+  card : Card = new Card(1,'','',6);
 
 
-  constructor(private _formBuilder: FormBuilder, private service : BilingServiceService) {
+  constructor(private service : BilingServiceService, private _formBuilder: FormBuilder,) {
     this.firstFormGroup;
     this.secondFormGroup;
    this.firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required]
+    //firstCtrl: ['', Validators.required]
+    firstCtrl: ''
   });
   this.secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required]
+    //secondCtrl: ['', Validators.required]
+    secondCtrl: ''
   });
   }
 

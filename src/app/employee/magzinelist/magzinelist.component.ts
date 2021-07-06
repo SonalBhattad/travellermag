@@ -79,6 +79,8 @@ export class MagzinelistComponent implements OnInit {
 
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
+  durationInSeconds: 5;
+  _snackBar: any;
   
 
 
@@ -126,4 +128,3 @@ export class MagzinelistComponent implements OnInit {
 
 
 }
-

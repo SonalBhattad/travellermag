@@ -1,3 +1,9 @@
 table {
     width: 100%;
   }
+  ng-container{
+    color: blue;
+  }
+  button{
+    background-color:rgb(14, 201, 14)
+  }
