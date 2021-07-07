@@ -1,12 +1,23 @@
-table {
-    width: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top:3%;
-  }
+.demo-table {
+  width:90%;
+  margin-left:5%;
+  margin-right: 10%;
+  margin-top:3%;      
+}
+
+.mat-table{
+width:100%;
+margin-right: 50%;
+}
+
+th{
+text-align-last: left;
+}
+td{
+text-align-last: justify;
+}
+
   ng-container{
     color: blue;
   }
-  button{
-    background-color:rgb(14, 201, 14)
-  }
+  

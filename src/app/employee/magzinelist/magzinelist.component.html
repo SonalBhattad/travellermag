@@ -1,41 +1,7 @@
-<mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input [style.color]="'blue'" matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Mia" #input>
-</mat-form-field>
-<br>
 
-
-<table class="example-full-width" cellspacing="0">
-  <tr>
-    <td>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label [style.color]="'purple'" >Magzine_ID</mat-label>
-        <input matInput [(ngModel)]="magzine.mag_id">
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label [style.color]="'purple'">Magzine_Name</mat-label>
-        <input matInput [(ngModel)]="magzine.mag_name">
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label [style.color]="'purple'">Magzine_Price</mat-label>
-        <input matInput [(ngModel)]="magzine.mag_price">
-      </mat-form-field>
-    </td>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label [style.color]="'purple'">Magzine_Type</mat-label>
-      <input matInput [(ngModel)]="magzine.mag_type">
-    </mat-form-field>
-
-
-    <td><button mat-raised-button (click)=" regMagzine()">Add</button></td>
-  </tr>
-</table>
-<br>
-
+<button mat-raised-button (click)="openDialog()" color="primary">Add Magzine</button>
+<div class="mat-elevation-z8 demo-table">
+<div class="mat-table">
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
 
@@ -77,5 +43,8 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>
 
 <mat-paginator [pageSizeOptions]="[2, 3, 5,10]" showFirstLastButtons></mat-paginator>
+
+</div>

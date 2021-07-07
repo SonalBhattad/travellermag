@@ -35,6 +35,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -81,7 +82,9 @@ import { MagzinelistComponent } from './employee/magzinelist/magzinelist.compone
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
+    
 
   ],
   providers: [],

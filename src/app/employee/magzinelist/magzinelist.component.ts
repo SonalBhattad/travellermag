@@ -1,10 +1,15 @@
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { _MatTableDataSource } from '@angular/material/table';
 import { Magzine } from 'src/app/magzine';
 import { MagzineserviceService } from 'src/app/magzineservice.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 
 @Component({
   selector: 'app-magzinelist',
@@ -24,6 +29,7 @@ export class MagzinelistComponent implements OnInit {
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
   message: any;
+  dialog: any;
 
   constructor(private service : MagzineserviceService) { }
 
@@ -74,9 +80,23 @@ export class MagzinelistComponent implements OnInit {
   
   }
 
-
-
-
-
-
+  openDialog() {
+    this.dialog.open(DialogDataExampleDialog);
+  }
 }
+
+@Component({
+  selector: 'dialog-data-example-dialog',
+  templateUrl: 'dialog-data-example-dialog.html',
+})
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+}
+
+
+
+
+
+
+
+

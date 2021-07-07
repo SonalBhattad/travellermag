@@ -1,15 +1,32 @@
-table {
-    width:100%;
-    padding-left: inline;
-    
+.demo-table {
+    width:90%;
+    margin-left:5%;
+    margin-right: 10%;
+    margin-top:3%;      
+}
+
+.mat-table{
+ width:100%;
+ margin-right: 50%;
+}
+
+th{
+  text-align-last: left;
+}
+td{
+  text-align-last: justify;
 }
 
 
-  .mat-row {
-    height: auto;
-    width:auto
-  }
+
+
+
+
+
+
+
+
+
+
   
-  .mat-cell {
-    padding: 8px 8px 8px 0;
-  }
+  
