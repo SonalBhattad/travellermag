@@ -1,129 +1,44 @@
-<mat-toolbar color="primary" class="example-toolbar">
+<mat-toolbar class="example-toolbar">
 	<button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
 	<h1 class="example-app-name">&nbsp; Customer Dashboard</h1>
-    <!-- <div dir="rtl"><mat-form-field>
-    <input matInput type="search" placeholder="search here"><mat-icon>search</mat-icon></mat-form-field></div> -->
+  <mat-form-field style="margin-left: 60%; width: 12%; color: azure;"><input matInput type="search" value="search here"><mat-icon class="search">search</mat-icon></mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <mat-form-field>
+    <mat-label>Sort by Price</mat-label>
+    <mat-select disableRipple>
+      <mat-option value="1">Low to High</mat-option>
+      <mat-option value="2">High to Low</mat-option>
+    </mat-select>
+  </mat-form-field>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-		<mat-nav-list>
-			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-				<span class="full-width" *ngIf="isExpanded || isShowing">Sort By</span>
-				<mat-icon mat-list-icon>home</mat-icon>
-				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
-			</mat-list-item>
-			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-                <a mat-list-item> All </a>
-				<a mat-list-item> Summer </a>
-				<a mat-list-item> Winter </a>
-                <a mat-list-item> Monsoon </a>
-				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
-					<span class="full-width" *ngIf="isExpanded || isShowing">Price</span>
-					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
-				</mat-list-item>
-				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
-					<mat-list-item>Low to High</mat-list-item>
-					<mat-list-item>High to low</mat-list-item>
-				</div>
-			</div>
-		</mat-nav-list>
-    <mat-nav-list>
-</mat-nav-list>
-	</mat-sidenav>
-
-	<div class="card">
-        <table>
-          <tr>
-            <td style="padding: 2em;">
-      <mat-card class="example-card mat-elevation-z6">
-        <img mat-card-image src="../../assets/Images/summer1.png" style="max-height: 430px; max-width: 480px;">
-        <mat-card-content>
-            <h2> Travel+Leisure <br> Price: Rs 624 </h2>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-        </mat-card-actions>
-      </mat-card>
-          </td>
-          <td style="padding: 2em;">
-      <mat-card class="example-card mat-elevation-z6">
-        <img mat-card-image src="../../assets/Images/summer2.png" style="max-height: 430px; max-width: 480px;">
-        <h2> Budget Travel <br><div> Price: Rs 512 </div></h2>
-        <mat-card-actions>
-          <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-        </mat-card-actions>
-      </mat-card>
-    </td>
-    <td style="padding: 2em;">
-        <mat-card class="example-card mat-elevation-z6">
-          <img mat-card-image src="../../assets/Images/summer3.png" style="max-height: 430px; max-width: 480px;">
-          <h2> LA Travel <br> Price: Rs 786 </h2>
-          <mat-card-actions>
-            <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-          </mat-card-actions>
-        </mat-card>
-      </td>
-   </tr>
-
-   <tr>
-    <td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/winter1.png" style="max-height: 430px; max-width: 480px;">
-<h2> The Newyorker <br> Price: Rs 512 </h2>
-<mat-card-actions>
-  <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-  </td>
-  <td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/winter2.png" style="max-height: 430px; max-width: 480px;">
-<h2> Travel+Leisure <br> Price: Rs 512 </h2>
-<mat-card-actions>
-  <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-  <img mat-card-image src="../../assets/Images/winter3.png" style="max-height: 430px; max-width: 480px;">
-  <h2> Traveller <br> Price: Rs 512 </h2>
-  <mat-card-actions>
-    <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-  </mat-card-actions>
-</mat-card>
-</td>
-</tr>
-
-<tr>
-    <td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/monsoon1.png" style="max-height: 430px; max-width: 480px;">
-<h2> World Travel <br> Price: Rs 512 </h2>
-<mat-card-actions>
-  <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-  </td>
-  <td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/monsoon2.png" style="max-height: 430px; max-width: 480px;"> 
-<h2> Planet-goa <br> Price: Rs 512 </h2>
-<mat-card-actions>
-  <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-  <img mat-card-image src="../../assets/Images/monsoon3.png" style="max-height: 430px; max-width: 480px;">
-  <h2> Wanderlust <br> Price: Rs 512 </h2>
-  <mat-card-actions>
-    <button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-  </mat-card-actions>
-</mat-card>
-</td>
-</tr>
-    </table>
-    </div>
+					<mat-nav-list>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['store']">&nbsp; Store</span>
+							<mat-icon mat-list-icon>store</mat-icon>
+						</mat-list-item>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['biling']">&nbsp; Subscriptions</span>
+							<mat-icon mat-list-icon>shopping_cart</mat-icon>
+						</mat-list-item>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['account']">&nbsp; Account</span>
+							<mat-icon mat-list-icon>account_balance</mat-icon>
+						</mat-list-item>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Filter</span>
+							<mat-icon mat-list-icon>list</mat-icon>
+              <mat-select>
+                <mat-option value="one">Summer</mat-option>
+                <mat-option value="two">Winter</mat-option>
+                <mat-option value="two">Monsoon</mat-option>
+              </mat-select>
+						</mat-list-item>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['/login']">&nbsp; Logout</span>
+							<mat-icon mat-list-icon>power_settings_new</mat-icon>
+						</mat-list-item>
+      </mat-nav-list>
+</mat-sidenav>
+<router-outlet></router-outlet>
 </mat-sidenav-container>

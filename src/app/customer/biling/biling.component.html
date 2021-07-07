@@ -1,0 +1,111 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Biling Information</ng-template>
+  
+        <mat-form-field class="mat-form-field--inline" appearance="outline">
+          <mat-label>FirstName</mat-label>
+          <input [(ngModel)]="bil.firstname" name="FirstName" matInput placeholder="" formControlName="firstCtrl" required>
+        </mat-form-field>
+        
+        &nbsp; 
+        <mat-form-field class="mat-form-field--inline" appearance="outline">
+          <mat-label>LastName</mat-label>
+          <input [(ngModel)]="bil.lastname" name="LastName" matInput placeholder="" formControlName="firstCtrl" required>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="bil.email" name="Email" matInput placeholder="Enter valid email" formControlName="firstCtrl" required>
+        </mat-form-field>
+        &nbsp; 
+        
+        <mat-form-field appearance="outline">
+          <mat-label>PhoneNumber</mat-label>
+            <input [(ngModel)]="bil.phoneno" name="PhoneNumber" matInput placeholder="Ex: 0123456789" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <br>
+
+        <!-- <div class="col-md-6"> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <input [(ngModel)]="bil.address" name="Address" matInput placeholder="Enter Your full address" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <!-- </div> -->
+        <br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+          <input [(ngModel)]="bil.country" name="Country" matInput placeholder="country" formControlName="firstCtrl" required>
+      </mat-form-field>
+
+      &nbsp; 
+     <mat-form-field appearance="outline">
+        <mat-label>State</mat-label>
+          <input [(ngModel)]="bil.state" name="state" matInput placeholder="state" formControlName="firstCtrl" required>
+      </mat-form-field>
+      &nbsp; 
+
+      <mat-form-field appearance="outline">
+        <mat-label>zip</mat-label>
+          <input [(ngModel)]="bil.zip" name="zip" matInput placeholder="Enter pincode" formControlName="firstCtrl" required>
+      </mat-form-field>
+
+        <div>
+          <button mat-button style="font-size: 1em;" [routerLink]= "['/cart']">Back</button>
+          <button mat-button matStepperNext  (click)="registerNow()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Payment">
+      <form [formGroup]="secondFormGroup">
+
+        <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Card Number</mat-label>
+            <input [(ngModel)]="card.cardnumber" matInput formControlName="secondCtrl" placeholder="Enter your card number "
+                required>
+        </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Your name on card</mat-label>
+            <input [(ngModel)]="card.cardname" matInput formControlName="secondCtrl" placeholder="Enter your card name "
+              required>
+        </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Month/Year</mat-label>
+            <input [(ngModel)]="card.expdate" matInput formControlName="secondCtrl" placeholder="Ex: 06/21 "
+            required>
+        </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>cvv</mat-label>
+            <input [(ngModel)]="card.cvv" matInput formControlName="secondCtrl" placeholder="Enter your cvv number  "
+          required>
+        </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext color="primary" (click)="registercardNow()">Submit</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are subscription was done.</p>
+      <button mat-raised-button color="primary" style="font-size: 1.25em;" [routerLink]="['/customer']">OK</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+  <router-outlet></router-outlet>

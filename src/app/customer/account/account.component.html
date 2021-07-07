@@ -1,0 +1,106 @@
+
+  <br><mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header style="background-color: rgb(169, 220, 233);">
+        <mat-panel-title style="color: rgb(50, 17, 167);">
+          PROFILE
+        </mat-panel-title>
+        <mat-panel-description style="color: rgb(23, 35, 209);">
+          your personal information
+          <mat-icon style="color: rgb(17, 20, 167);">account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  <br>
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput type="text" value="John">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Last name</mat-label>
+        <input matInput type="text" value="Petal">
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" value="John@gmail.com">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>DOB</mat-label>
+        <input matInput type="text" value="20/9/1993">
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field>
+        <mat-label>Phonenumber</mat-label>
+        <input matInput type="text" value="1234587698">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <input matInput type="text" value="Male">
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field>
+        <mat-label>Adress</mat-label>
+        <input matInput type="text" value="Bangalore">
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input matInput type="text" value="India">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>State</mat-label>
+        <input matInput type="text" value="Karnataka">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>zip</mat-label>
+        <input matInput type="text" value="123456">
+      </mat-form-field>
+  
+    </mat-expansion-panel>
+  
+   
+ 
+
+      <br><mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle >
+        <mat-expansion-panel-header style="background-color: rgb(169, 220, 233);">
+          <mat-panel-title style="color: rgb(17, 20, 167);"> 
+            WALLET
+          </mat-panel-title>
+          <mat-panel-description style="color: rgb(40, 17, 167);" >
+            Your card details
+            <mat-icon style="color: rgb(17, 20, 167);">account_balance</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <br>
+        <mat-form-field>
+          <mat-label>Card name</mat-label>
+          <input matInput type="text" value="John petal">
+        </mat-form-field>
+        <br>
+  
+        <mat-form-field>
+          <mat-label>Card Number</mat-label>
+          <input matInput type="text" value="1234 5678 3456">
+        </mat-form-field>
+  <br>
+    
+        <mat-form-field>
+          <mat-label>Expiry Date</mat-label>
+          <input matInput type="text" value="07/23">
+        </mat-form-field>
+    
+      </mat-expansion-panel>
+  
+      
+    </mat-accordion>
+  
+  <br>

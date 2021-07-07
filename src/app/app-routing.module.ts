@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountComponent } from './customer/account/account.component';
+import { BilingComponent } from './customer/biling/biling.component';
 import { CustomerComponent } from './customer/customer.component';
+import { StoreComponent } from './customer/store/store.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
@@ -14,7 +17,12 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path:'customer', component:CustomerComponent},
+  {path:'customer', component:CustomerComponent,
+  children:[
+    {path:'account', component:AccountComponent},
+    {path:'biling', component:BilingComponent},
+    {path:'store', component:StoreComponent},
+  ]},
   {path:'employee', component:EmployeeComponent,
   children:[
       {path:'employeelist',component:EmployeelistComponent},

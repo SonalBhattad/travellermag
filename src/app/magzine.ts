@@ -4,11 +4,16 @@ export class Magzine {
     sort: any;
     filter: string;
 
+    public mag_id: number;
+    public mag_name : string;
+    public mag_price : number;
+    public mag_type : string;
+
     
     constructor(
-        public mag_id: number,
-        public mag_name : string,
-        public mag_price : number,
-        public mag_type : string,
+        // public mag_id: number,
+        // public mag_name : string,
+        // public mag_price : number,
+        // public mag_type : string,
     ){}
 }

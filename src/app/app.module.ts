@@ -36,6 +36,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { StoreComponent } from './customer/store/store.component';
+import { BilingComponent } from './customer/biling/biling.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { AccountComponent } from './customer/account/account.component';
+
 
 
 
@@ -52,7 +58,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     EmployeeComponent,
     CustomerComponent,
     EmployeelistComponent,
-    MagzinelistComponent
+    MagzinelistComponent,
+    StoreComponent,
+    BilingComponent,
+    AccountComponent
     
   ],
   imports: [
@@ -83,7 +92,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule,
+    MatStepperModule
     
 
   ],

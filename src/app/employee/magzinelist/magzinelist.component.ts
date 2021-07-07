@@ -5,11 +5,7 @@ import { Magzine } from 'src/app/magzine';
 import { MagzineserviceService } from 'src/app/magzineservice.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
 
 @Component({
   selector: 'app-magzinelist',
@@ -18,7 +14,7 @@ export interface DialogData {
 })
 export class MagzinelistComponent implements OnInit {
 
-  magzine : Magzine = new Magzine(0,'',0,'');
+  magzine : Magzine = new Magzine();
   ELEMENT_DATA : Magzine[] = [];
   
   displayedColumns: string[] = ['mag_id', 'mag_name', 'mag_price', 'mag_type', 'actions'];
@@ -31,7 +27,7 @@ export class MagzinelistComponent implements OnInit {
   message: any;
   
 
-  constructor(private service : MagzineserviceService,public dialog: MatDialog) { }
+  constructor(private service : MagzineserviceService) { }
 
   ngOnInit(): void {
 
@@ -80,18 +76,9 @@ export class MagzinelistComponent implements OnInit {
   
   }
 
-  openDialog() {
-    this.dialog.open(DialogDataExampleDialog);
-  }
 }
 
-@Component({
-  selector: 'dialog-data-example-dialog',
-  templateUrl: 'dialog-data-example-dialog.html',
-})
-export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-}
+
 
 
 
