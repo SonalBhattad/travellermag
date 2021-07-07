@@ -14,7 +14,7 @@
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
 					<mat-nav-list>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Store</span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['store']">&nbsp; Store</span>
 							<mat-icon mat-list-icon>store</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
@@ -41,7 +41,7 @@
       </mat-nav-list>
 </mat-sidenav>
 
-	<div class="card">
+	<!-- <div class="card">
         <table>
           <tr>
             <td style="padding: 2em;">
@@ -135,6 +135,11 @@
 </td>
 </tr>
     </table>
-    </div>
-</mat-sidenav-container>
+    </div> -->
+    <!-- <app-biling></app-biling> -->
+    <!-- <app-account></app-account>
+    <app-store></app-store> -->
 
+
+<router-outlet></router-outlet>
+</mat-sidenav-container>

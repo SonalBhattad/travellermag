@@ -39,6 +39,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BilingComponent } from './customer/biling/biling.component';
 import { AccountComponent } from './customer/account/account.component';
+import { StoreComponent } from './customer/store/store.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 //import { StepperComponent } from './stepper/stepper.component';
 
 
@@ -60,6 +62,7 @@ import { AccountComponent } from './customer/account/account.component';
     MagzinelistComponent,
     BilingComponent,
     AccountComponent,
+    StoreComponent,
 
    
   ],
@@ -93,6 +96,7 @@ import { AccountComponent } from './customer/account/account.component';
     MatFormFieldModule,
     MatStepperModule,
     MatDialogModule,
+    MatExpansionModule,
 
   ],
   providers: [],

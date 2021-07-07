@@ -17,23 +17,53 @@
 <div mat-dialog-content>
 <mat-form-field class="example-full-width" appearance="fill">
     <mat-label [style.color]="'purple'">Magzine_Name : </mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="magzine.mag_name">
   </mat-form-field><br>
 <br>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label [style.color]="'purple'">Magzine_Price : </mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="magzine.mag_price">
   </mat-form-field><br>
   <br>
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label [style.color]="'purple'">Magzine_Type : </mat-label>
-    <input matInput>
+    <mat-label [style.color]="'purple'" >Magzine_Type : </mat-label>
+    <input matInput [(ngModel)]="magzine.mag_type">
   </mat-form-field><br>
 <br>
   
 
   <div mat-dialog-actions color="primary">
-    <button mat-button (click)="regMagzine()" color="primary">OK </button>
-    <!-- <button mat-button  cdkFocusInitial>Ok</button> -->
+    <button mat-raised-button (click)=" regMagzine()">OK</button>
+    <button mat-button  cdkFocusInitial>Cancel</button> 
   </div>
   </div>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label [style.color]="'purple'" >Magzine_ID</mat-label>
+          <input matInput [(ngModel)]="magzine.mag_id">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label [style.color]="'purple'">Magzine_Name</mat-label>
+          <input matInput [(ngModel)]="magzine.mag_name">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label [style.color]="'purple'">Magzine_Price</mat-label>
+          <input matInput [(ngModel)]="magzine.mag_price">
+        </mat-form-field>
+      </td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label [style.color]="'purple'">Magzine_Type</mat-label>
+        <input matInput [(ngModel)]="magzine.mag_type">
+      </mat-form-field>
+  
+  
+      <td><button mat-raised-button (click)=" regMagzine()">Add</button></td>
+    </tr>
+  </table>

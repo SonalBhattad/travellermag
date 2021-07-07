@@ -18,10 +18,12 @@ export interface DialogData {
   styleUrls: ['./magzinelist.component.css']
 })
 export class MagzinelistComponent implements OnInit {
+
   magzine : Magzine = new Magzine(0,'',0,'');
+
   ELEMENT_DATA : Magzine[] = [];
   
-  displayedColumns: string[] = ['mag_id', 'mag_name', 'mag_price', 'mag_type','actions'];
+  displayedColumns: string[] = ['mag_id','mag_name','mag_price','mag_type','actions'];
   dataSource = new _MatTableDataSource<Magzine>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator)paginator : MatPaginator;

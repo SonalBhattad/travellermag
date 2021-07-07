@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-account',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
   panelOpenState = false;
+ 
   //constructor() { }
   step = 0;
 
@@ -25,5 +26,9 @@ export class AccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+}
+
+function MatAccordion(MatAccordion: any) {
+  throw new Error('Function not implemented.');
 }
 
