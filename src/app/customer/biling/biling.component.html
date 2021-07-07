@@ -5,21 +5,23 @@
     </mat-toolbar>
   </p> -->
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
+  
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Biling Information</ng-template>
   
+        <div class="col-md-12">
         <mat-form-field class="mat-form-field--inline" appearance="outline">
           <mat-label>FirstName</mat-label>
-          <input [(ngModel)]="bil.firstname" name="FirstName" matInput placeholder="" formControlName="firstCtrl" required>
+          <input class="col-xs-3" [(ngModel)]="bil.firstname" name="FirstName" matInput placeholder="" formControlName="firstCtrl" required>
         </mat-form-field>
         
      
         <mat-form-field class="mat-form-field--inline" appearance="outline">
           <mat-label>LastName</mat-label>
-          <input [(ngModel)]="bil.lastname" name="LastName" matInput placeholder="" formControlName="firstCtrl" required>
+          <input class="col-xs-4" [(ngModel)]="bil.lastname" name="LastName" matInput placeholder="" formControlName="firstCtrl" required>
         </mat-form-field>
-
+</div>
         <br>
 
         <mat-form-field appearance="outline">

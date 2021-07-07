@@ -10,8 +10,8 @@ import { BilingServiceService } from 'src/app/biling-service.service';
 })
 export class BilingComponent implements OnInit {
 
-  bil : Biling = new Biling('','','',1,'','','',0);
-  card : Card = new Card(1,'','',3);
+  bil : Biling = new Biling();
+  card : Card = new Card();
   mes : any;
   
   message : any;
