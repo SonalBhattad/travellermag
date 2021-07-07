@@ -19,7 +19,7 @@ export interface DialogData {
 })
 export class MagzinelistComponent implements OnInit {
 
-  magzine : Magzine = new Magzine(1,'',1,'');
+  magzine : Magzine = new Magzine('',0,'');
 
   ELEMENT_DATA : Magzine[] = [];
   
@@ -36,7 +36,7 @@ export class MagzinelistComponent implements OnInit {
   
   
   
-  constructor(private service : MagzineServiceService, public dialog: MatDialog) { }
+  constructor(private service : MagzineServiceService) { }
  
   ngOnInit() {
     this.refresh();
@@ -64,7 +64,7 @@ export class MagzinelistComponent implements OnInit {
     
   }
 
-  public regMagzine(){
+  public regM(){
   let response =this.service.regMagzine(this.magzine)
   response.subscribe(data => {
     this.message = data;
@@ -79,14 +79,5 @@ export class MagzinelistComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   
   }
-  openDialog() {
-    this.dialog.open(DialogDataExampleDialog);
-  }
-}
-@Component({
-  selector: 'dialog-data-example-dialog',
-  templateUrl: 'dialog-data-example-dialog.html',
-})
-export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  
 }
