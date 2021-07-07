@@ -6,8 +6,8 @@ import { _MatTableDataSource } from '@angular/material/table';
 import { MagzineServiceService } from 'src/app/magzine-service.service';
 import { User } from 'src/app/user';
 import { UserServiceService } from 'src/app/user-service.service';
-import { Magzine } from '../../../../../travellermag-gamma/src/app/magzine';
-
+//import { Magzine } from '../../../../../travellermag-gamma/src/app/magzine';
+import { Magzine } from 'src/app/magzine';
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -19,7 +19,7 @@ export interface DialogData {
 })
 export class MagzinelistComponent implements OnInit {
 
-  magzine : Magzine = new Magzine('',0,'');
+  magzine : Magzine = new Magzine();
 
   ELEMENT_DATA : Magzine[] = [];
   
