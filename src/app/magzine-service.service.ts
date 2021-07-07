@@ -10,7 +10,7 @@ export class MagzineServiceService {
 
   constructor(private http : HttpClient) { }
 
-  public regmaguser(magzine: Magzine){
+  public regMagzine(magzine: Magzine){
     return this.http.post("http://localhost:8080/save-maz", magzine, {responseType : "text" as "json"});
 }
 public getMagzine(){

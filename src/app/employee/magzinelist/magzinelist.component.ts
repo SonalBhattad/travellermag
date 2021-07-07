@@ -19,7 +19,7 @@ export interface DialogData {
 })
 export class MagzinelistComponent implements OnInit {
 
-  magzine : Magzine = new Magzine(0,'',0,'');
+  magzine : Magzine = new Magzine(1,'',1,'');
 
   ELEMENT_DATA : Magzine[] = [];
   
@@ -65,12 +65,12 @@ export class MagzinelistComponent implements OnInit {
   }
 
   public regMagzine(){
-  let response =this.service.regmaguser(this.magzine)
+  let response =this.service.regMagzine(this.magzine)
   response.subscribe(data => {
     this.message = data;
 
     alert("magzine added");
-    this.refresh()
+    this.refresh();
     
   })
 }
