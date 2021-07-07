@@ -4,6 +4,7 @@ import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
 import { CustomerComponent } from './customer/customer.component';
 import { StoreComponent } from './customer/store/store.component';
+import { CampaignsComponent } from './employee/campaigns/campaigns.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   children:[
     {path:'account', component:AccountComponent},
     {path:'biling', component:BilingComponent},
+    {path: 'campaigns', component:CampaignsComponent},
     {path:'store', component:StoreComponent},
   ]},
   {path:'employee', component:EmployeeComponent,

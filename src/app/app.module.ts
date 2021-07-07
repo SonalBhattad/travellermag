@@ -41,6 +41,7 @@ import { BilingComponent } from './customer/biling/biling.component';
 import { AccountComponent } from './customer/account/account.component';
 import { StoreComponent } from './customer/store/store.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { CampaignsComponent } from './employee/campaigns/campaigns.component';
 //import { StepperComponent } from './stepper/stepper.component';
 
 
@@ -63,6 +64,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     BilingComponent,
     AccountComponent,
     StoreComponent,
+    CampaignsComponent,
 
    
   ],

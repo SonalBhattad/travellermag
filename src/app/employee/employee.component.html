@@ -15,11 +15,11 @@
         </mat-list-item>
         <mat-list-item>
         <mat-icon> import_contacts</mat-icon>
-        <span class="full-width"  *ngIf="isExpanded || isShowing" [routerLink]="['magzinelist']">&nbsp;Magazines List </span> 
+        <span class="full-width"  *ngIf="isExpanded || isShowing" [routerLink]="['magzinelist']">&nbsp;Magazines</span> 
       </mat-list-item>
         <mat-list-item>
         <mat-icon>new_releases</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Campaigns</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['campaigns']">&nbsp;Campaigns</span> 
       </mat-list-item>
       <mat-list-item>
         <mat-icon>equalizer</mat-icon>
@@ -33,8 +33,8 @@
 
   </mat-sidenav>
   <router-outlet></router-outlet>
+  <app-campaigns></app-campaigns>
   <!-- <app-employeelist></app-employeelist>
-
   <app-magzinelist></app-magzinelist> -->
 </mat-sidenav-container >
 
