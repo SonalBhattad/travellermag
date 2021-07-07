@@ -29,9 +29,9 @@ export class MagzinelistComponent implements OnInit {
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
   message: any;
-  dialog: any;
+  
 
-  constructor(private service : MagzineserviceService) { }
+  constructor(private service : MagzineserviceService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
