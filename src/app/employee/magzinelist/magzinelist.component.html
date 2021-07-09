@@ -34,7 +34,12 @@
         </td>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label [style.color]="'purple'">Magzine_Type</mat-label>
-          <input matInput [(ngModel)]="magzine.mag_type">
+          <!-- <input matInput [(ngModel)]="magzine.mag_type"> -->
+          <mat-select [(ngModel)]="magzine.mag_type">
+            <mat-option value="Summer">Summer</mat-option>
+            <mat-option value="Winter">Winter</mat-option>
+            <mat-option value="Mansoon">Mansoon</mat-option>
+          </mat-select>
         </mat-form-field>
     
     
@@ -80,7 +85,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell style="background-color: rgb(169, 220, 233);"*matHeaderCellDef></th>
     <td mat-cell *matCellDef="let row">
-      <button (click)="removeUser(row.mag_name)" mat-icon-button color="warn">
+      <button (click)="removeUser(row.magname)" mat-icon-button color="warn">
         <mat-icon>delete_outline</mat-icon>
       </button>
     </td>

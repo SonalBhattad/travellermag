@@ -54,7 +54,6 @@ export class MagzinelistComponent implements OnInit {
     response.subscribe(report=>this.dataSource.data=report as Magzine[]);
   }
 
-
   public removeUser(mag_name : string){
     if(confirm('are you sure to delete??')){
       this.service.deleteUser(mag_name).subscribe(res=>{

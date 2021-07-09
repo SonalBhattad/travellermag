@@ -8,27 +8,24 @@
               <input matInput placeholder="Ex. Holi" [(ngModel)]="campaign.festname">
             </mat-form-field>
           <br>
-            
-      
+
             <mat-form-field class="example-full" appearance="outline">
               <mat-label [style.color]="'black'">Offer Start date</mat-label>
-              <input matInput [matDatepicker]="picker" [(ngModel)]="campaign.startdate">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <input matInput [matDatepicker]="picker1" [(ngModel)]="campaign.startdate">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
-
-            
 
             <mat-form-field class="example-full" appearance="outline">
               <mat-label [style.color]="'black'">Offer End date</mat-label>
-              <input matInput [matDatepicker]="picker" [(ngModel)]="campaign.enddate">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <input matInput [matDatepicker]="picker2" [(ngModel)]="campaign.enddate">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
 
             <mat-form-field class="example-full" appearance="outline">
               <mat-label [style.color]="'black'">Offer</mat-label>
-              <mat-select >
+              <mat-select [(ngModel)]="campaign.offer">
                 <mat-option value="10%">10%</mat-option>
                 <mat-option value="15%">15%</mat-option>
                 <mat-option value="30%">30%</mat-option>
@@ -38,20 +35,20 @@
            
             <mat-form-field class="example-full" appearance="outline">
               <mat-label [style.color]="'black'">Status</mat-label>
-              <mat-select >
+              <mat-select [(ngModel)]="campaign.status">
                 <mat-option value="Active">Active</mat-option>
                 <mat-option value="Deactive">Deactive</mat-option>
               </mat-select>
             </mat-form-field>
             
-            <mat-form-field class="example-full-width" appearance="outline">
+            <!-- <mat-form-field class="example-full-width" appearance="outline">
               <mat-label [style.color]="'black'">Add Image</mat-label>
               <input matInput>
               <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" >
-            </mat-form-field>
+            </mat-form-field> -->
           </form>
           </div>
-    <button mat-raised-button color="accent" (click)="regCam()" style="margin-left:90%;">Save</button>
+    <button mat-raised-button color="accent" (click)="regCamp()" style="margin-left:90%;">Save</button>
     </mat-card>
 
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -84,13 +81,11 @@
     
       <!-- Actions Column -->
       <ng-container matColumnDef="actions">
-        <th mat-header-cell style="background-color: rgb(169, 220, 233);"*matHeaderCellDef></th>
+        <th mat-header-cell style="background-color: rgb(169, 220, 233);" *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let row">
-          <button (click)="removeCam(row.festname)" mat-icon-button color="warn">
-            <mat-icon>delete_outline</mat-icon>
-          </button>
+        <button (click)="removeCam(row.festname)" mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
         </td>
-      </ng-container>
+    </ng-container>
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

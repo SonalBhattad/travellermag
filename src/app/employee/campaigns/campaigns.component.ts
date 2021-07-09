@@ -19,7 +19,7 @@ export class CampaignsComponent implements OnInit {
 
   ELEMENT_DATA : Campaign[] = [];
   
-  displayedColumns: string[] = ['festname','startdate','enddate','offer','status'];
+  displayedColumns: string[] = ['festname','startdate','enddate','offer','status','actions'];
   dataSource = new _MatTableDataSource<Campaign>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator)paginator : MatPaginator;
@@ -51,7 +51,7 @@ export class CampaignsComponent implements OnInit {
   }
 
 
-  public removeCam(festname : string){
+  public removeCam(festname){
     if(confirm('are you sure to delete??')){
       this.service.deleteCamp(festname).subscribe(res=>{
         this.refresh()
@@ -60,12 +60,12 @@ export class CampaignsComponent implements OnInit {
     
   }
 
-  public regCam(){
-  let response =this.service.regCampaign(this.campaign)
+  public regCamp(){
+  let response =this.service.regCampaigns(this.campaign)
   response.subscribe(data => {
     this.message = data;
 
-    alert("magzine added");
+    alert("campaign offer added");
     this.refresh();
     
   })
