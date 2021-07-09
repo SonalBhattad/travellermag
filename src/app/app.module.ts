@@ -42,6 +42,14 @@ import { AccountComponent } from './customer/account/account.component';
 import { StoreComponent } from './customer/store/store.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { CampaignsComponent } from './employee/campaigns/campaigns.component';
+import { ArtistComponent } from './artist/artist.component';
+//mport { AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
+import { DraftsComponent } from './artist/drafts/drafts.component';
+import { EditorComponent } from './artist/editor/editor.component';
+import { PublishedComponent } from './artist/published/published.component';
+import { TodoComponent } from './artist/todo/todo.component';
+import { AngularFireModule } from '@angular/fire';
+
 //import { StepperComponent } from './stepper/stepper.component';
 
 
@@ -59,14 +67,18 @@ import { CampaignsComponent } from './employee/campaigns/campaigns.component';
     RegisterformComponent,
     EmployeeComponent,
     CustomerComponent,
+    CampaignsComponent,
     EmployeelistComponent,
     MagzinelistComponent,
     BilingComponent,
     AccountComponent,
     StoreComponent,
-    CampaignsComponent,
-
-   
+    ArtistComponent,
+  
+    DraftsComponent,
+    EditorComponent,
+    PublishedComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +111,15 @@ import { CampaignsComponent } from './employee/campaigns/campaigns.component';
     MatStepperModule,
     MatDialogModule,
     MatExpansionModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyA6udjfyzSagLVH2KJZOd5Qfvoja9bcHWI",
+      authDomain: "todo-790e1.firebaseapp.com",
+      projectId: "todo-790e1",
+      storageBucket: "todo-790e1.appspot.com",
+      messagingSenderId: "125185098851",
+      appId: "1:125185098851:web:e280b4177b3a1caa236456",
+      measurementId: "G-2BXL9T2KXR"
+      }),
 
   ],
   providers: [],

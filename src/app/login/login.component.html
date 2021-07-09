@@ -25,7 +25,7 @@
     </div>
     </mat-card-content>
     <mat-card-actions style="padding: 0.4em; ">
-      <button (click)="loginUser()" mat-raised-button color="primary" style="font-size: 1.2em;">Login</button>
+      <button (click)="loginUser()" mat-raised-button color="primary" style="font-size: 1.2em;" [routerLink]="['/employee']">Login</button>
     </mat-card-actions>
     <div class="button-row">
       <p style="font-size: 1em;">Don't have an account? <a [routerLink]="['/register']">Register here</a></p>

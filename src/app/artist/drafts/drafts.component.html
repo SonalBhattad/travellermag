@@ -1,0 +1,21 @@
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+    <h1 style="margin-left: 45%; font-size: 1.2em;">MY DRAFTS</h1>
+</mat-toolbar>
+<div class="wrapper">
+<mat-card class="card-con" [style.background]="getColor()" *ngFor="let post of posts | async">
+    <div class="head" style="margin-left:80%">
+        <mat-icon class="btn"> edit</mat-icon>
+        <mat-icon class="btn">delete</mat-icon>
+    </div>
+    <div>
+     <mat-card-title style="line-height: 1.6;">{{post.title}}</mat-card-title><br>
+     <p><mat-icon>query_builder</mat-icon>{{post.creation}} &nbsp; 	<mat-icon>perm_identity</mat-icon>Author</p><br>
+     <h3>{{post.description}}</h3>
+    </div>
+
+    <mat-card-actions style="margin: auto 0 0;">
+        <button mat-button color="primary" style="font-size:1.2em;">VIEW</button>
+        <button mat-button color="primary" style="font-size:1.2em;">EDIT</button>
+      </mat-card-actions>
+</mat-card>
+</div>

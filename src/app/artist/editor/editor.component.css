@@ -1,0 +1,83 @@
+.form-group{
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+  }
+
+.EditorSubmitbtn{
+  float: right;
+  margin-right: 6%;
+  margin-top: 1%;
+  background-color:rgba(168, 213, 255, 0.932);
+  color:rgba(0, 0, 0, 0.74);
+  font-size: 1.2em;
+}
+
+.Editorbtn{
+  float: right;
+  margin-right: 1%;
+  margin-top: 1%;
+  background-color:rgba(168, 213, 255, 0.932);
+  color:rgba(0, 0, 0, 0.74);
+  font-size: 1.2em;
+}
+
+.edittoolbar{
+  max-width:90%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:4%;
+  border-radius: 5px;
+  background-color:rgba(168, 213, 255, 0.932);
+  color:rgba(0, 0, 0, 0.74);
+}
+
+.titletype{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    font-size: 1.2em;
+    color: black;
+  }
+  
+  angular-editor{
+    font-size:1.2em;
+  }
+  
+  .boundary {
+    width: 1490px;
+    height: 600px;
+    max-width: 100%;
+    border: dotted #ccc 2px;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:2%;
+  }
+
+  .titletype{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  font-size: 1.2em;
+  color: black;
+}
+
+angular-editor{
+  font-size:1.2em;
+}
+
+.boundary {
+  width: 1490px;
+  height: 600px;
+  max-width: 100%;
+  border: dotted #ccc 2px;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:2%;
+}
+
+.example-margin{
+  margin-left: 6%;
+  margin-top:1%;
+}
+  

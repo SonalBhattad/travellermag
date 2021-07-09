@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArtistComponent } from './artist/artist.component';
+
+import { DraftsComponent } from './artist/drafts/drafts.component';
+import { EditorComponent } from './artist/editor/editor.component';
+import { PublishedComponent } from './artist/published/published.component';
+import { TodoComponent } from './artist/todo/todo.component';
 import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -19,17 +25,25 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
+  {path:'artist', component:ArtistComponent,
+  children:[
+    
+    {path:'drafts',component:DraftsComponent},
+    {path:'editor',component:EditorComponent},
+    {path:'published',component:PublishedComponent},
+    {path:'todo',component:TodoComponent},
+  ]},
   {path:'customer', component:CustomerComponent,
   children:[
     {path:'account', component:AccountComponent},
     {path:'biling', component:BilingComponent},
-    {path: 'campaigns', component:CampaignsComponent},
     {path:'store', component:StoreComponent},
   ]},
   {path:'employee', component:EmployeeComponent,
   children:[
     { path:'employeelist', component:EmployeelistComponent},
     {path:'magzinelist', component:MagzinelistComponent},
+    {path: 'campaigns', component:CampaignsComponent},
     ]},
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},
