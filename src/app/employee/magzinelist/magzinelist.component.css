@@ -7,3 +7,10 @@ table {
  div{
    background-color: rgb(131, 95, 160);
  }
+ .btn{
+  margin: 3% 17% 1% 81%;
+  font-size:1.2em;
+  height:2.5em;
+  background-color:#5680e9;
+  color: white;
+}

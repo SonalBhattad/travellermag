@@ -9,8 +9,8 @@ export class CampaignServiceService {
 
   constructor(private http : HttpClient) { }
 
-  public regCampaign(magzine: Campaign){
-    return this.http.post("http://localhost:8080/save-camp", magzine, {responseType : "text" as "json"});
+  public regCampaign(campaign: Campaign){
+    return this.http.post("http://localhost:8080/save-camp", campaign, {responseType : "text" as "json"});
 }
 public getCampaign(){
   return this.http.get("http://localhost:8080/all-camp");
