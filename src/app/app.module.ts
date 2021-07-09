@@ -49,7 +49,7 @@ import { EditorComponent } from './artist/editor/editor.component';
 import { PublishedComponent } from './artist/published/published.component';
 import { TodoComponent } from './artist/todo/todo.component';
 import { AngularFireModule } from '@angular/fire';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 //import { StepperComponent } from './stepper/stepper.component';
 
 
@@ -79,6 +79,7 @@ import { AngularFireModule } from '@angular/fire';
     EditorComponent,
     PublishedComponent,
     TodoComponent,
+    
   ],
   imports: [
     BrowserModule,
