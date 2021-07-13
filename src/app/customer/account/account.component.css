@@ -1,18 +1,24 @@
 .example-headers-align .mat-expansion-panel-header-title,
 .example-headers-align .mat-expansion-panel-header-description {
   flex-basis: 0;
+  width:50%;
 }
 
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
   align-items: center;
+  width: 50%;
 }
 
 .example-headers-align .mat-form-field + .mat-form-field {
   margin-left: 8px;
   align-items: center;
+  width:50%;
 }
 
 .h1 {
   color: blue;
+}
+.example-full-width {
+  width: 50%;
 }

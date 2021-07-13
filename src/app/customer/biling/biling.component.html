@@ -29,16 +29,17 @@
         </mat-form-field>
         &nbsp;
         <mat-form-field appearance="outline">
-          <mat-label>PhoneNumber</mat-label>
-            <input [(ngModel)]="bil.phoneno" name="PhoneNumber" matInput placeholder="Ex: 0123456789" formControlName="firstCtrl" required>
+          <mat-label>PhoneNumber/Mobile</mat-label>
+            <input [(ngModel)]="bil.phoneno" name="PhoneNumber" matInput placeholder="10 digit PhoneNumber" formControlName="firstCtrl" required>
         </mat-form-field>
         <br>
 
         <!-- <div class="col-md-6"> -->
         <mat-form-field appearance="outline">
-          <mat-label>Address</mat-label>
+          <mat-label>Complete Address</mat-label>
           <input [(ngModel)]="bil.address" name="Address" matInput placeholder="Enter Your full address" formControlName="firstCtrl" required>
         </mat-form-field>
+        
         <!-- </div> -->
         <br>
 
@@ -54,7 +55,7 @@
       </mat-form-field>
 &nbsp;
       <mat-form-field appearance="outline">
-        <mat-label>zip</mat-label>
+        <mat-label>Zip/Pincode</mat-label>
           <input [(ngModel)]="bil.zip" name="zip" matInput placeholder="Enter pincode" formControlName="firstCtrl" required>
       </mat-form-field>
 
