@@ -54,22 +54,16 @@ export class LoginComponent implements OnInit {
         this.message2 = JSON.parse(this.message)
         console.log(this.message2)
         console.log(this.user)
-        
-      
-
-       
-
-        
-        
-        
-      
-        
-  
-      
-      
-        
-    
- 
+        console.log(this.message)
+        if(this.message2.profileid == 2){
+          this.routes.navigate(['/employee'])
+        }
+        if(this.message2.profileid == 1){
+          this.routes.navigate(['/customer'])
+        }
+        if(this.message2.profileid == 3){
+          this.routes.navigate(['/artist'])
+        }
       },
 
       error => {
