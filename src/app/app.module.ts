@@ -50,6 +50,7 @@ import { PublishedComponent } from './artist/published/published.component';
 import { TodoComponent } from './artist/todo/todo.component';
 import { AngularFireModule } from '@angular/fire';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CartComponent } from './customer/cart/cart.component';
 //import { StepperComponent } from './stepper/stepper.component';
 
 
@@ -74,11 +75,11 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     AccountComponent,
     StoreComponent,
     ArtistComponent,
-  
     DraftsComponent,
     EditorComponent,
     PublishedComponent,
     TodoComponent,
+    CartComponent,
     
   ],
   imports: [
