@@ -9,6 +9,7 @@ import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
 import { CustomerComponent } from './customer/customer.component';
 import { StoreComponent } from './customer/store/store.component';
+import { ViewComponent } from './customer/view/view.component';
 import { CampaignsComponent } from './employee/campaigns/campaigns.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
@@ -37,7 +38,7 @@ const routes: Routes = [
     {path:'account', component:AccountComponent},
     {path:'biling', component:BilingComponent},
     {path:'store', component:StoreComponent},
-
+    {path:'view',component:ViewComponent},
   ]},
   {path:'employee', component:EmployeeComponent,
   children:[

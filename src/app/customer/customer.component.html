@@ -26,7 +26,7 @@
 							<mat-icon mat-list-icon>account_balance</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Active Offers</span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['view']">&nbsp; Active Offers</span>
 							<mat-icon mat-list-icon>list</mat-icon>
               <!-- <mat-select>
                 <mat-option value="one">Summer</mat-option>
