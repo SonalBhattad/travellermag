@@ -4,6 +4,7 @@ import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
 import { CustomerComponent } from './customer/customer.component';
 import { StoreComponent } from './customer/store/store.component';
+import { CampaignComponent } from './employee/campaign/campaign.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagzinelistComponent } from './employee/magzinelist/magzinelist.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'employee', component:EmployeeComponent,
   children:[
       {path:'employeelist',component:EmployeelistComponent},
-      {path:'magzinelist',component:MagzinelistComponent}, 
+      {path:'magzinelist',component:MagzinelistComponent},
+      {path:'campaigns',component:CampaignComponent},
     ]},
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},

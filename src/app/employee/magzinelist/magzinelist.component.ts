@@ -1,5 +1,5 @@
 
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { _MatTableDataSource } from '@angular/material/table';
 import { Magzine } from 'src/app/magzine';
 import { MagzineserviceService } from 'src/app/magzineservice.service';
@@ -14,6 +14,7 @@ import { MatSort } from '@angular/material/sort';
 })
 export class MagzinelistComponent implements OnInit {
 
+  show:boolean = false;
   magzine : Magzine = new Magzine();
   ELEMENT_DATA : Magzine[] = [];
   
@@ -25,6 +26,9 @@ export class MagzinelistComponent implements OnInit {
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
   message: any;
+  file: File = null;
+  percentDone: number;
+  uploadSuccess: boolean;
   
 
   constructor(private service : MagzineserviceService) { }
@@ -63,8 +67,17 @@ export class MagzinelistComponent implements OnInit {
 
     alert("magzine added");
     this.refresh()
+    this.show=false;
     
   })
+}
+
+onChange(event) {
+  this.file = event.target.files[0];
+}
+
+showhide(){
+  this.show=!this.show
 }
   
 

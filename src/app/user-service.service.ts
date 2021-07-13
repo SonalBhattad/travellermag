@@ -15,7 +15,7 @@ export class UserServiceService {
   }
 
   public loginuser(user:User){
-    return this.http.post("http://localhost:8080/login",user)
+    return this.http.post("http://localhost:8080/login",user,{responseType : "text" as "json"});
   }
 
   public getUser(){

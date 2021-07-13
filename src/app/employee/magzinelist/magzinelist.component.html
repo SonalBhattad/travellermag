@@ -1,50 +1,77 @@
-
+<div>
+<button mat-raised-button class="btn" (click)="showhide()">Add Magazine</button>
+    <mat-card *ngIf="show" class="mat-elevation-z4">
+        <mat-card-title style="padding: 0.5em 0.5em 0.5em 2em;"> Add New Magazine </mat-card-title><br>
+        <div>
+            <mat-form-field appearance="outline" style="width: 92%; padding-left:3%;">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="magzine.mag_name" name="mag_name" placeholder="Enter Name of Magazine">
+              </mat-form-field>
+              <mat-form-field appearance="outline" style="width: 46%; padding-left:3%;">
+                <mat-label>Type</mat-label>
+                <mat-select [(ngModel)]="magzine.mag_type" name="mag_type">
+                  <mat-option value="Summer">Summer</mat-option>
+                  <mat-option value="Winter">Winter</mat-option>
+                  <mat-option value="Monsoon">Monsoon</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" floatLabel="always" style="width: 44%; padding-left:2%;">
+                <mat-label>Amount</mat-label>
+                <input matInput  [(ngModel)]="magzine.mag_price" name="mag_price" type="number" class="example-right-align" placeholder="0">
+                <span matPrefix>Rs. &nbsp; &nbsp;</span>
+                <span matSuffix>.00</span>
+              </mat-form-field><br>
+          </div>
+    <button mat-raised-button color="primary" (click)="regMagzine()" style="margin-left:90%;">ADD</button>
+</mat-card>
+</div>
 
 <div class="mat-elevation-z8 demo-table">
-<div class="mat-table">
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-
-  <ng-container matColumnDef="mag_id">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'" matInput (keyup)="applyFilter($event.target.value)" #input> Magzine_ID </th>
-    <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_id}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-
-  <ng-container matColumnDef="mag_name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'"> Magzine_Name </th>
-    <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_name}} </td>
-  </ng-container>
-
-  <!-- dob Column -->
-  <ng-container matColumnDef="mag_price">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'"> Magzine_Price</th>
-    <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_price}} </td>
-  </ng-container>
-
-  <!-- email Column -->
-  <ng-container matColumnDef="mag_type">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'"> Magzine_Type </th>
-    <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_type}} </td>
-  </ng-container>
-
-
-  <!-- Actions Column -->
-  <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let row">
-      <button (click)="removeUser(row.mag_name)" mat-icon-button color="warn">
-        <mat-icon>delete_outline</mat-icon>
-      </button>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-</div>
-
-<mat-paginator [pageSizeOptions]="[2, 3, 5,10]" showFirstLastButtons></mat-paginator>
-
-</div>
+  <div class="mat-table">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  
+  
+    <ng-container matColumnDef="mag_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'" matInput (keyup)="applyFilter($event.target.value)" #input> Magzine_ID </th>
+      <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+  
+    <ng-container matColumnDef="mag_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'"> Magzine_Name </th>
+      <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_name}} </td>
+    </ng-container>
+  
+    <!-- dob Column -->
+    <ng-container matColumnDef="mag_price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'"> Magzine_Price</th>
+      <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_price}} </td>
+    </ng-container>
+  
+    <!-- email Column -->
+    <ng-container matColumnDef="mag_type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [style.color]="'blue'"> Magzine_Type </th>
+      <td mat-cell *matCellDef="let element" [style.color]="'green'"> {{element.mag_type}} </td>
+    </ng-container>
+  
+  
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button (click)="removeUser(row.mag_name)" mat-icon-button color="warn">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+  
+  <mat-paginator [pageSizeOptions]="[2, 3, 5,10]" showFirstLastButtons></mat-paginator>
+  
+  </div>
+  

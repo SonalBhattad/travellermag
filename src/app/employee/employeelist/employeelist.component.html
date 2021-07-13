@@ -7,11 +7,17 @@
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th  mat-header-cell *matHeaderCellDef mat-sort-header> Serial No</th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
     <ng-container matColumnDef="empid">
         <th  mat-header-cell *matHeaderCellDef mat-sort-header > 
-            <input [style.color]="'blue'" matInput (keyup)="applyColumnFilter($event.target.value)" placeholder="EmployeeID" #input>
+             <input [style.color]="'blue'" matInput (keyup)="applyColumnFilter($event.target.value)" placeholder="EmployeeID" #input>
         </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.empid}} </td>
     </ng-container>
 
     <!-- Name Column -->
@@ -27,7 +33,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
             <input [style.color]="'blue'" matInput (keyup)="applyColumnFilter($event.target.value)" placeholder="Date Of birth" #input>
         </th>
-        <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.dob | date:'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <!-- email Column -->
@@ -51,7 +57,13 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header> 
             <input [style.color]="'blue'" matInput (keyup)="applyColumnFilter($event.target.value)" placeholder="Profile" #input>
         </th>
-        <td mat-cell *matCellDef="let element"> {{element.profileid}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.profileid | profile}} </td>
+    </ng-container>
+
+      <!-- email Column -->
+      <ng-container matColumnDef="registerdatetime">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Time and Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.datetime | date :'M/d/yy-h:mm'}} </td>
     </ng-container>
 
     <!-- Actions Column -->

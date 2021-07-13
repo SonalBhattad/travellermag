@@ -32,7 +32,7 @@ export class RegisterformComponent implements OnInit {
   profile_id:number=2;
   
  
-  user : User = new User('','','','','','',0,'');
+  user : User = new User();
   constructor(private service: UserServiceService, public routes: ActivatedRoute) { 
 
     console.log("Hello inside constructor---------------->"+this.profile_id);

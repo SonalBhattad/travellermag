@@ -41,6 +41,8 @@ import { StoreComponent } from './customer/store/store.component';
 import { BilingComponent } from './customer/biling/biling.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { AccountComponent } from './customer/account/account.component';
+import { ProfilePipe } from './pipes/profile.pipe';
+import { CampaignComponent } from './employee/campaign/campaign.component';
 
 
 
@@ -61,7 +63,9 @@ import { AccountComponent } from './customer/account/account.component';
     MagzinelistComponent,
     StoreComponent,
     BilingComponent,
-    AccountComponent
+    AccountComponent,
+    ProfilePipe,
+    CampaignComponent
     
   ],
   imports: [
@@ -94,7 +98,8 @@ import { AccountComponent } from './customer/account/account.component';
     MatFormFieldModule,
     MatDialogModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    FormsModule
     
 
   ],

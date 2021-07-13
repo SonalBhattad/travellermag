@@ -17,7 +17,22 @@ td{
 text-align-last: justify;
 }
 
-  ng-container{
+ng-container{
     color: blue;
   }
+
+.btn{
+  margin: 3% 17% 1% 81%;
+  font-size:1.2em;
+  height:2.5em;
+  background-color:#5680e9;
+  color: white;
+}
+
+mat-card {
+  width:87%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:3%;
   
+}

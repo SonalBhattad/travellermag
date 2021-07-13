@@ -2,7 +2,8 @@
     width:90%;
     margin-left:5%;
     margin-right: 10%;
-    margin-top:3%;      
+    margin-top:3%;   
+     
 }
 
 .mat-table{
@@ -10,23 +11,11 @@
  margin-right: 50%;
 }
 
-th{
-  text-align-last: left;
-}
 td{
-  text-align-last: justify;
+  text-align-last:center;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  
+th{
+  text-align:justify;
+}

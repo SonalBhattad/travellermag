@@ -1,0 +1,64 @@
+.demo-table {
+  width:90%;
+  margin-left:5%;
+  margin-right: 10%;
+  margin-top:3%;   
+   
+}
+
+.mat-table{
+width:100%;
+margin-right: 50%;
+}
+
+td{
+text-align:justify;
+
+}
+
+th{
+text-align:justify;
+}
+
+.button{
+  width:90%;
+  margin-left:5%;
+  margin-right: 10%;
+  margin-top:3%;   
+
+}
+
+  
+mat-card {
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:3%;
+  
+}
+
+.btn{
+  margin: 50px;
+  font-size:1.2em;
+  height:2.5em;
+  background-color:#5680e9;
+  color: white;
+}
+
+
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-form {
+  width: fit-content;
+  height: min-content;
+}
+
+
+
+
+
+
+
