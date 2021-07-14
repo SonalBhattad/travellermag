@@ -27,7 +27,6 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'artist', component:ArtistComponent,
   children:[
-    
     {path:'drafts',component:DraftsComponent},
     {path:'editor',component:EditorComponent},
     {path:'published',component:PublishedComponent},
