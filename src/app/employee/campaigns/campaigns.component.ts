@@ -13,8 +13,9 @@ import { CampaignServiceService } from 'src/app/campaign-service.service';
   styleUrls: ['./campaigns.component.css']
 })
 export class CampaignsComponent implements OnInit {
-  show: boolean;
-  file: any;
+  show:boolean = false;
+  
+  
   campaign : Campaign = new Campaign();
 
   ELEMENT_DATA : Campaign[] = [];
@@ -29,6 +30,7 @@ export class CampaignsComponent implements OnInit {
   durationInSeconds: 5;
   
   message: Object;
+  file: any;
   
   
   
@@ -84,6 +86,12 @@ export class CampaignsComponent implements OnInit {
   showhide(){
     this.show=!this.show
   }
+  
+  
+
+   showHideAdd(){
+    this.show=!this.show
+   }
 
   onChange(event) {
     this.file = event.target.files[0];

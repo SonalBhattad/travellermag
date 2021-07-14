@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
   hide = true;
   profile_id: number;
   
-  user : User = new User('','','','','','',2,'');
+  user : User = new User();
   message: any;
-  
+  message2: any;
 
   constructor(private fb: FormBuilder, private service: UserServiceService, public routes: Router, public router: ActivatedRoute) { }
 
@@ -47,37 +47,32 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
    
-    this.service.loginuser(this.user).subscribe(
-      data => {
-        console.log("response Recieved" + this.user.username);
-        console.log("response Recieved" + this.user.password);
-        console.log("response Recieved" + this.user.email);
-        console.log("response Recieved" + this.user.profile_name);
-        console.log("response Recieved" + this.user.profile_id);
-
-         if (this.profile_id == 2) {
-           this.routes.navigate(['/employee'])
-          }else if(this.profile_id == 1){
-            this.routes.navigate(['/customer'])
-          }else if(this.profile_id == 3){
-            this.routes.navigate(['/home'])
-          }
-
-      
-        
-        
-
-      },
-
-      error => {
-        console.log("exception occured")
-        alert("Wrong username or Password");
+    
+  let response =this.service.loginuser(this.user)
+  response.subscribe(
+    data => {this.message= data;
+      this.message2 = (this.message)
+      console.log(this.message2)
+      console.log(this.user)
+      console.log(this.message)
+      if(this.message2.profileid == 2){
+        this.routes.navigate(['/employee'])
       }
+      if(this.message2.profileid == 1){
+        this.routes.navigate(['/customer'])
+      }
+      if(this.message2.profileid == 3){
+        this.routes.navigate(['/artist'])
+      }
+    },
+
+    error => {
+      console.log("exception occured")
+      alert("Wrong username or Password");
+    }
 
 
-    )
-  }
-
-
+  )
+}
 
 }

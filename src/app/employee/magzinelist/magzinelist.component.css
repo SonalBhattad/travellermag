@@ -16,28 +16,7 @@ table {
   width:80%;
   margin: 0% 10% 0% 10%;
 }
-
-mat-card {
-  width:78%;
-  margin: 0% 10% 2% 10%;
-}
-
 mat-paginator{
   width:80%;
   margin: 0% 10% 4% 10%;
-}
-
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-.example-full {
-  width: 50%;
 }

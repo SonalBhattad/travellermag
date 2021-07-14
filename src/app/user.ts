@@ -3,15 +3,14 @@ export class User {
     sort: any;
     filter: string;
 
-    
+        public empid: string;
+        public username : string;
+        public dob : any;
+        public email : string;
+        public password : string;
+        public gender : string;
+        public profile_id : number;
+        public profile_name : string;
     constructor(
-        public empid: string,
-        public username : string,
-        public dob : any,
-        public email : string,
-        public password : string,
-        public gender : string,
-        public profile_id : number,
-        public profile_name : string
     ){}
 }
