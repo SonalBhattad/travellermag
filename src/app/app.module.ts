@@ -49,11 +49,13 @@ import { EditorComponent } from './artist/editor/editor.component';
 import { PublishedComponent } from './artist/published/published.component';
 import { TodoComponent } from './artist/todo/todo.component';
 import { AngularFireModule } from '@angular/fire';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 import { ViewComponent } from './customer/view/view.component';
+import { CartComponent } from './customer/cart/cart.component';
 //import { StepperComponent } from './stepper/stepper.component';
-
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { DiscountComponent } from './discount/discount.component';
 
 
 
@@ -80,6 +82,8 @@ import { ViewComponent } from './customer/view/view.component';
     PublishedComponent,
     TodoComponent,
     ViewComponent,
+    CartComponent,
+    DiscountComponent,
    
     
   ],
@@ -113,6 +117,8 @@ import { ViewComponent } from './customer/view/view.component';
     MatFormFieldModule,
     MatStepperModule,
     MatDialogModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule,
     MatExpansionModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyA6udjfyzSagLVH2KJZOd5Qfvoja9bcHWI",

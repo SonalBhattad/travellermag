@@ -102,6 +102,13 @@ export class CampaignsComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-}
+  toggle:boolean = false;
 
+  doToggle():void{
+    this.toggle = !this.toggle;
+    // Do some other stuff needed
+  }
+}
+export class ButtonToggleOverviewExample {}
+export class SlideToggleOverviewExample {}
 

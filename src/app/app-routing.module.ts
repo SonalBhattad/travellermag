@@ -7,9 +7,11 @@ import { PublishedComponent } from './artist/published/published.component';
 import { TodoComponent } from './artist/todo/todo.component';
 import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
+import { CartComponent } from './customer/cart/cart.component';
 import { CustomerComponent } from './customer/customer.component';
 import { StoreComponent } from './customer/store/store.component';
 import { ViewComponent } from './customer/view/view.component';
+import { DiscountComponent } from './discount/discount.component';
 import { CampaignsComponent } from './employee/campaigns/campaigns.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
@@ -25,6 +27,7 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
+  
   {path:'artist', component:ArtistComponent,
   children:[
     {path:'drafts',component:DraftsComponent},
@@ -38,6 +41,7 @@ const routes: Routes = [
     {path:'biling', component:BilingComponent},
     {path:'store', component:StoreComponent},
     {path:'view',component:ViewComponent},
+    {path:'cart', component:CartComponent},
   ]},
   {path:'employee', component:EmployeeComponent,
   children:[
@@ -48,7 +52,7 @@ const routes: Routes = [
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},
   {path:'regformArt/:profile_id', component:RegisterformComponent,data : {user:3}},
-  
+  {path:'discoun', component:DiscountComponent},
   
   
 ];

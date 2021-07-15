@@ -36,7 +36,7 @@ export class UserServiceService {
   }
 
   public getBlogs(): Observable<Blog[]>{
-    return this.http.get<Blog[]>("http://localhost:8080/all");
+    return this.http.get<Blog[]>("http://localhost:8080/all-ed");
   }
 
   public deleteBlogs(id: string | number){

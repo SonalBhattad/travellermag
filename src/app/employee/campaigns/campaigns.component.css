@@ -1,6 +1,7 @@
 table {
   width:80%;
   margin: 0% 10% 0% 10%;
+  height: 10em;
 }
 
 mat-card {
@@ -32,4 +33,7 @@ mat-paginator{
 
 .example-full {
   width: 50%;
+}
+body{
+  margin: 40px;
 }

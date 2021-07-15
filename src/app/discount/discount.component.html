@@ -1,0 +1,30 @@
+<p>discount works!</p>
+
+<form (ngSubmit)="onSubmit()" #discountForm="ngForm">
+    <div class="form-group">
+      <label for="name">MRP</label>
+        <input type="text" class="form-control" id="mrp"
+                 required [(ngModel)]="mrp" name="mrp" #name="ngModel">
+    </div>
+  
+    <div class="form-group">
+      <label for="value">Discount Value</label>
+      <input type="text" class="form-control" id="value"
+              [(ngModel)]="value" name="value">
+    </div>
+  
+    <div class="form-group">
+      <label for="valueType">Select Discount Type</label>    
+      <select name="city" class="" (change)='onChange($event.target.value)'>
+      <option disabled [value]="0">Select</option>
+    <option *ngFor="let value of valuesType"  [value]="value">{{value}}</option>
+    </select>
+  
+    </div>
+    <div class="form-group">
+      <label for="totalCost">Total Cost</label>
+      <input type="text" class="form-control" id="totalCost"
+              [(ngModel)]="totalCost" name="totalCost">
+    </div>
+  </form>
+  <router-outlet></router-outlet>
