@@ -3,11 +3,11 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { _MatTableDataSource } from '@angular/material/table';
+import { Magzine } from 'src/app/magzine';
 import { MagzineServiceService } from 'src/app/magzine-service.service';
 import { User } from 'src/app/user';
 import { UserServiceService } from 'src/app/user-service.service';
-//import { Magzine } from '../../../../../travellermag-gamma/src/app/magzine';
-import { Magzine } from 'src/app/magzine';
+
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
