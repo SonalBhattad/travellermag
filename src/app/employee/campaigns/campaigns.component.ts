@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { _MatTableDataSource } from '@angular/material/table';
 import { Campaign } from 'src/app/campaign';
 import { CampaignServiceService } from 'src/app/campaign-service.service';
+
 
 @Component({
   selector: 'app-campaigns',
@@ -31,11 +33,19 @@ export class CampaignsComponent implements OnInit {
   
   message: Object;
   file: any;
+  // show1: boolean =false;
   
-  
-  
-  constructor(private service : CampaignServiceService) { }
+
+  constructor(private service : CampaignServiceService, public dialog: MatDialog) { }
  
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
   ngOnInit() {
     this.refresh();
   }
@@ -87,7 +97,9 @@ export class CampaignsComponent implements OnInit {
     this.show=!this.show
   }
   
-  
+  // showactive(){
+  //   this.show1=!this.show1
+  // }
 
    showHideAdd(){
     this.show=!this.show
@@ -111,4 +123,8 @@ export class CampaignsComponent implements OnInit {
 }
 export class ButtonToggleOverviewExample {}
 export class SlideToggleOverviewExample {}
-
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'dialog-content-example-dialog.html',
+})
+export class DialogContentExampleDialog {}

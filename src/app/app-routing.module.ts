@@ -52,7 +52,7 @@ const routes: Routes = [
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},
   {path:'regformArt/:profile_id', component:RegisterformComponent,data : {user:3}},
-  {path:'discoun', component:DiscountComponent},
+  {path:'discount', component:DiscountComponent},
   
   
 ];

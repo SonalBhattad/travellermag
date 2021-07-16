@@ -1,5 +1,4 @@
 <p>discount works!</p>
-
 <form (ngSubmit)="onSubmit()" #discountForm="ngForm">
     <div class="form-group">
       <label for="name">MRP</label>
@@ -19,12 +18,11 @@
       <option disabled [value]="0">Select</option>
     <option *ngFor="let value of valuesType"  [value]="value">{{value}}</option>
     </select>
-  
     </div>
+    
     <div class="form-group">
       <label for="totalCost">Total Cost</label>
       <input type="text" class="form-control" id="totalCost"
               [(ngModel)]="totalCost" name="totalCost">
     </div>
   </form>
-  <router-outlet></router-outlet>

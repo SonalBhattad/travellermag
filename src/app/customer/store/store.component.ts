@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CartService } from 'src/app/cart.service';
 import { Magzine } from 'src/app/magzine';
-import { MagzineServiceService } from 'src/app/magzine-service.service';
-
+import { MagzineServiceService } from 'src/app/magzine-service.service'
 
 @Component({
   selector: 'app-store',
@@ -20,9 +20,9 @@ export class StoreComponent implements OnInit {
     {url: 'assets/Images/winter1.png' },
     {url: 'assets/Images/winter2.png'}
   ]
-  cartService: any;
+  
 
-  constructor(public service : MagzineServiceService) { 
+  constructor(public service : MagzineServiceService, public cartService : CartService) { 
     
   }
 
@@ -34,8 +34,8 @@ export class StoreComponent implements OnInit {
     });
   }
 
-  addtocart(mags){
-    this.cartService.addtoCart(mags);
+  addtocart(mag){
+    this.cartService.addtoCart(mag);
   }
   
 

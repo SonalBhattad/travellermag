@@ -35,7 +35,8 @@
       <div style="padding: 2em; margin-left:65%">
         <button class="btn" (click)="emptycart()" mat-raised-button color="warn">Empty Cart</button>
         <button class="btn" mat-raised-button color="primary" routerLink="/customer/store">Shop More</button>
-        <button class="btn" mat-raised-button color="accent">Checkout</button>
+        <br>
+        <button class="btn" mat-raised-button color="accent" routerLink="/customer/biling">Checkout</button>
     </div>
      </mat-card>
   </ng-container>
@@ -45,7 +46,6 @@
   <div class="emptycart">
       <img src="../../../assets/Images/emptycart.png" style="height: 25vh;margin-top:3%;">
       <h2>Your cart is Empty! </h2>
-      <button mat-raised-button color="primary" routerLink="/customer/store">shop More</button>
-      <button class="btn" mat-raised-button color="accent"  routerLink= "/customer/biling">Checkout</button>
+     
   </div>
   </ng-container>

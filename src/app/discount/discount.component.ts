@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discount.component.css']
 })
 export class DiscountComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  
   mrp:number;
   valuesType = ['flat', 'percent'];
   value:number;

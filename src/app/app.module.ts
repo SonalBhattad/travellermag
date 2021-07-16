@@ -56,7 +56,7 @@ import { CartComponent } from './customer/cart/cart.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DiscountComponent } from './discount/discount.component';
-
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 
@@ -119,6 +119,7 @@ import { DiscountComponent } from './discount/discount.component';
     MatDialogModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
+    MatBadgeModule,
     MatExpansionModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyA6udjfyzSagLVH2KJZOd5Qfvoja9bcHWI",

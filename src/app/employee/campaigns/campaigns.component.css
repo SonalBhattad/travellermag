@@ -37,3 +37,6 @@ mat-paginator{
 body{
   margin: 40px;
 }
+.form-group{
+  display: 100;
+}

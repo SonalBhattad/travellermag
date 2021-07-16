@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { CartService } from 'src/app/cart.service';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -16,8 +16,8 @@ export class CustomerComponent implements OnInit {
   service: any;
   message: any;
  
-
-  constructor(public dialog: MatDialog) { }
+  public totalitems: number;
+  constructor(public dialog: MatDialog, public cartService: CartService) { }
   @ViewChild('sidenav') sidenav: MatSidenavModule | undefined;
   isExpanded = true;
   showSubmenu: boolean = false;
@@ -37,16 +37,12 @@ export class CustomerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  } 
-
-  //  public registerNow(){
-  //    console.log("added to your cart");
-  //    let response = this.service.reguser(this.user);
-  //   console.log(this.user);
-  //   response.subscribe((data: () => void)=>{
-  //       this.message = data;
-  //   })
-  //  }
+    
+    this.cartService.getMagazines()
+    .subscribe(res=>{
+      this.totalitems = res.length;
+    })
+  }
   openDialog() {
     this.dialog.open(DialogElementsExampleDialog);
   }
