@@ -57,6 +57,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DiscountComponent } from './discount/discount.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { FeedbackComponent } from './customer/feedback/feedback.component';
 
 
 
@@ -84,6 +85,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     ViewComponent,
     CartComponent,
     DiscountComponent,
+    FeedbackComponent,
    
     
   ],

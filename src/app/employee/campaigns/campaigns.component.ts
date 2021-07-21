@@ -120,6 +120,7 @@ export class CampaignsComponent implements OnInit {
     this.toggle = !this.toggle;
     // Do some other stuff needed
   }
+  
 }
 export class ButtonToggleOverviewExample {}
 export class SlideToggleOverviewExample {}

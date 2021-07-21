@@ -1,0 +1,123 @@
+
+<br>
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+    <h1 style= "margin-left: 33%; font-size: 1.2em;">We Value Your Feedback </h1>
+  </mat-toolbar>
+  <p style="margin-left: 27%; font-size: 1em;">Complete the following form and help us improve our customer experience </p>
+
+  <!-- <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Magzine Name</mat-label>
+    <textarea matInput placeholder="which you want to review"></textarea>
+  </mat-form-field> -->
+
+  <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button> -->
+  <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Review with name of the magzine</ng-template>
+        <mat-form-field appearance="outline">
+          <mat-label>Magzine Name</mat-label>
+          <input matInput placeholder="which you want to review" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Please share your feedback</ng-template>
+        <p>A: How Satisfied you are?</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Very Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button value="2">Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button value="1">Neutral</mat-radio-button>
+            &nbsp;
+            <mat-radio-button value="2">Unsatisfied</mat-radio-button>
+            <!-- <mat-radio-button value="2">Very Unsatisfied</mat-radio-button> -->
+          </mat-radio-group><br>
+<br>
+         <br> <p>B: How Satisfied with our service?</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Very Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button value="2">Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button value="1">Neutral</mat-radio-button>
+            &nbsp;
+            <mat-radio-button value="2">Unsatisfied</mat-radio-button>
+            <!-- <mat-radio-button value="2">Very Unsatisfied</mat-radio-button> -->
+          </mat-radio-group><br>
+          <br>
+        <br><div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Tell us how can we improve</ng-template>
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field> -->
+          <br>
+          <p>you can share your feedback more detail, the better.</p>
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Write a short description" >
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Rate Your experience</ng-template>
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field> -->
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Reviewer's Name</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Your name</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Submit your feedback </ng-template>
+      <p>Thank you for your valuable feedback, it helps us to improve more.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button >submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
