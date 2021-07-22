@@ -41,20 +41,48 @@ mat-card {
   margin: 50px;
   font-size:1.2em;
   height:2.5em;
+  width: 150px;
   background-color:#5680e9;
   color: white;
 }
+.btn1{
+  margin: 50px;
+  font-size:1.2em;
+  height:2.5em;
+  width: 150px;
+  
+  color: white;
+}
+.edittoolbar{
+  max-width:90%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:4%;
+  border-radius: 5px;
+  background-color:rgba(168, 213, 255, 0.932);
+  color:rgba(0, 0, 0, 0.74);
+}
+
+
 
 
 
 .example-full-width {
   width: 100%;
+  
 }
 
 .example-form {
   width: fit-content;
   height: min-content;
 }
+
+.addform{
+  width:80%;
+  margin :auto;
+
+}
+
 
 
 

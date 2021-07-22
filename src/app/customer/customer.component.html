@@ -1,29 +1,14 @@
 <mat-toolbar class="example-toolbar">
 	<button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
 	<h1 class="example-app-name">&nbsp; Customer Dashboard</h1>
-  <mat-form-field style="margin-left: 60%; width: 12%; color: azure;"><input matInput type="search" value="search here"><mat-icon class="search">search</mat-icon></mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-  <mat-form-field>
-    <mat-label>Sort by Price</mat-label>
-    <mat-select disableRipple>
-      <mat-option value="1">Low to High</mat-option>
-      <mat-option value="2">High to Low</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <mat-icon matBadge={{totalitems}} matBadgeColor="warn" class="cart" routerLink="/customer/cart" style="cursor: pointer;">shopping_cart</mat-icon>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
 					<mat-nav-list>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['store']">&nbsp; Store</span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/customer/store">&nbsp; Store</span>
 							<mat-icon mat-list-icon>store</mat-icon>
-						</mat-list-item>
-						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['biling']">&nbsp; Subscriptions</span>
-							<mat-icon mat-list-icon>shopping_cart</mat-icon>
-						</mat-list-item>
-						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['account']">&nbsp; Account</span>
-							<mat-icon mat-list-icon>account_balance</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Filter</span>
@@ -33,6 +18,14 @@
                 <mat-option value="two">Winter</mat-option>
                 <mat-option value="two">Monsoon</mat-option>
               </mat-select>
+						</mat-list-item>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Subscriptions </span>
+							<mat-icon mat-list-icon>card_membership</mat-icon>
+						</mat-list-item>
+						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/customer/account">&nbsp; Profile </span>
+							<mat-icon mat-list-icon>account_circle</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['/login']">&nbsp; Logout</span>

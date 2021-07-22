@@ -1,0 +1,36 @@
+.card-con{
+    background-color: #e7d1f5;
+    width: 380px;
+    max-width: 500px;
+    margin: 3% 1% 1% 1%; 
+    display: flex; justify-content: start; flex-direction: column; flex-wrap: wrap;
+}
+
+.work{
+  margin: 2% 9% 0% 10%;
+  width: 79%;
+}
+
+  .btn{
+    cursor: pointer;
+    padding: 0.2em;
+  }
+
+  .head{
+    margin-bottom: 5px;
+  }
+
+  mat-icon{
+    vertical-align: sub;
+    font-size: 1.5em;
+  }
+
+  .btn{
+    font-size:1.6em;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% 9% 3% 9%;
+ }

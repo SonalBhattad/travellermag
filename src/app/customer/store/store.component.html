@@ -1,95 +1,25 @@
-<div class="card">
-    <table>
-      <tr>
-        <td style="padding: 2em;">
-  <mat-card class="example-card mat-elevation-z6">
-    <img mat-card-image src="../../assets/Images/summer1.png" style="max-height: 430px; max-width: 480px;">
-    <mat-card-content>
-        <h2> Travel+Leisure <br> Price: Rs 624 </h2>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="accent" (click)="openDialog()" style="font-size: 1.25em;">Subscribe</button>
-    </mat-card-actions>
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+  <h1 style="margin-left: 5%; font-size: 1.2em;">MAGAZINE STORE</h1>
+  <mat-form-field style="margin-left: 40%; width: 12%;"><input matInput type="search" value="search here"><mat-icon class="search">search</mat-icon></mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <mat-form-field style="margin-left:2%;">
+    <mat-label >Sort by Price</mat-label>
+    <mat-select disableRipple>
+      <mat-option value="1">Low to High</mat-option>
+      <mat-option value="2">High to Low</mat-option>
+    </mat-select>
+  </mat-form-field> 
+</mat-toolbar>
+<div class="wrapper">
+  <mat-card class="container" *ngFor="let mag of mags | async">
+    <!-- <div *ngFor="let image of Images">  -->
+    <img src="{{imageSrc}}"  style="max-height: 420px; max-width: 480px;">
+      <div>
+        <h2>{{mag.mag_name}}</h2>
+        <h3 style="line-height: 0.5em;">Rs {{mag.mag_price}}</h3>
+        <mat-card-actions>
+        <button mat-raised-button color="accent" style="font-size: 1.25em;" (click)=addtocart(mag) >Add to Cart</button>
+        </mat-card-actions>
+      <!-- </div>  -->
+    </div>
   </mat-card>
-      </td>
-      <td style="padding: 2em;">
-  <mat-card class="example-card mat-elevation-z6">
-    <img mat-card-image src="../../assets/Images/summer2.png" style="max-height: 430px; max-width: 480px;">
-    <h2> Budget Travel <br><div> Price: Rs 512 </div></h2>
-    <mat-card-actions>
-      <button mat-raised-button color="accent" (click)="openDialog()" style="font-size: 1.25em;">Subscribe</button>
-    </mat-card-actions>
-  </mat-card>
-</td>
-<td style="padding: 2em;">
-    <mat-card class="example-card mat-elevation-z6">
-      <img mat-card-image src="../../assets/Images/summer3.png" style="max-height: 430px; max-width: 480px;">
-      <h2> LA Travel <br> Price: Rs 786 </h2>
-      <mat-card-actions>
-        <button mat-raised-button color="accent" (click)="openDialog()" style="font-size: 1.25em;">Subscribe</button>
-      </mat-card-actions>
-    </mat-card>
-  </td>
-</tr>
-
-<tr>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/winter1.png" style="max-height: 430px; max-width: 480px;">
-<h2> The Newyorker <br> Price: Rs 512 </h2>
-<mat-card-actions>
-<button mat-raised-button color="accent"  (click)="openDialog()" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/winter2.png" style="max-height: 430px; max-width: 480px;">
-<h2> Travel+Leisure <br> Price: Rs 512 </h2>
-<mat-card-actions>
-<button mat-raised-button color="accent" (click)="openDialog()" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/winter3.png" style="max-height: 430px; max-width: 480px;">
-<h2> Traveller <br> Price: Rs 512 </h2>
-<mat-card-actions>
-<button mat-raised-button color="accent" (click)="openDialog()" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-</tr>
-
-<tr>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/monsoon1.png" style="max-height: 430px; max-width: 480px;">
-<h2> World Travel <br> Price: Rs 512 </h2>
-<mat-card-actions>
-<button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/monsoon2.png" style="max-height: 430px; max-width: 480px;"> 
-<h2> Planet-goa <br> Price: Rs 512 </h2>
-<mat-card-actions>
-<button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-<td style="padding: 2em;">
-<mat-card class="example-card mat-elevation-z6">
-<img mat-card-image src="../../assets/Images/monsoon3.png" style="max-height: 430px; max-width: 480px;">
-<h2> Wanderlust <br> Price: Rs 512 </h2>
-<mat-card-actions>
-<button mat-raised-button color="accent" style="font-size: 1.25em;">Subscribe</button>
-</mat-card-actions>
-</mat-card>
-</td>
-</tr>
-</table>
 </div>

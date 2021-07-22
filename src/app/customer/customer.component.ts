@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CartService } from 'src/app/cart.service';
+
 
 @Component({
   selector: 'app-customer',
@@ -9,12 +11,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 export class CustomerComponent implements OnInit {
   contentVisible: boolean =false;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
   @ViewChild('sidenav') sidenav: MatSidenavModule | undefined;
   isExpanded = true;
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
+  public totalitems: number;
 
   mouseenter() {
     if (!this.isExpanded) {
@@ -29,6 +32,10 @@ export class CustomerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.cartService.getMagazines()
+    .subscribe(res=>{
+      this.totalitems = res.length;
+    })
   }
  
 }

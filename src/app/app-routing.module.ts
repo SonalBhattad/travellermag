@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArtistComponent } from './artist/artist.component';
+import { ChartsComponent } from './artist/charts/charts.component';
+import { DraftsComponent } from './artist/drafts/drafts.component';
+import { EditorComponent } from './artist/editor/editor.component';
+import { PublishedComponent } from './artist/published/published.component';
+import { TodoComponent } from './artist/todo/todo.component';
 import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
+import { CartComponent } from './customer/cart/cart.component';
 import { CustomerComponent } from './customer/customer.component';
 import { StoreComponent } from './customer/store/store.component';
 import { CampaignComponent } from './employee/campaign/campaign.component';
@@ -23,12 +30,21 @@ const routes: Routes = [
     {path:'account', component:AccountComponent},
     {path:'biling', component:BilingComponent},
     {path:'store', component:StoreComponent},
+    { path:'cart', component:CartComponent},
   ]},
   {path:'employee', component:EmployeeComponent,
   children:[
       {path:'employeelist',component:EmployeelistComponent},
       {path:'magzinelist',component:MagzinelistComponent},
       {path:'campaigns',component:CampaignComponent},
+    ]},
+    {path:'artist', component:ArtistComponent,
+    children:[
+      { path:'', component:ChartsComponent},
+      { path:'saved', component:PublishedComponent},
+      { path:'editor', component:EditorComponent},
+      { path:'todo', component:TodoComponent},
+      { path:'drafts', component:DraftsComponent}
     ]},
   {path:'regformCust/:profile_id', component:RegisterformComponent,data:{user:1}},
   {path:'regformEmp/:profile_id', component:RegisterformComponent,data : {user:2}},

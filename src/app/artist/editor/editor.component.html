@@ -1,0 +1,40 @@
+<div>
+    <mat-toolbar class="edittoolbar">
+        <h1>Input your thoughts here</h1>
+    </mat-toolbar>
+    <div class="titletype" [formGroup]="formdata">
+        <mat-form-field appearance="outline" style="width: 60%;">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter Title" formControlName="title" [(ngModel)]="Blog.title" name="title">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 37%; padding-left: 3%;">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="type" [(ngModel)]="Blog.type" name="type">
+                <mat-option value="Summer">Summer</mat-option>
+                <mat-option value="Winter">Winter</mat-option>
+                <mat-option value="Monsoon">Monsoon</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Write a short description" formControlName="description"
+                [(ngModel)]="Blog.description" name="description">
+        </mat-form-field>
+    </div>
+
+    <div class="container">
+        <form [formGroup]="formdata" (ngSubmit)="onClickSubmit()">
+            <div class="form-group">
+                <angular-editor [placeholder]="'Enter text here...'" formControlName="body" [(ngModel)]="Blog.body">
+                </angular-editor>
+                <div *ngIf="formdata.controls.description.errors && formdata.controls.description.touched"
+                    class="error">description is required(Max 1000 - Min 5).</div>
+            </div>
+
+            <!-- <input type="checkbox" class="example-margin" (change)="eventCheck($event)">Publish now   -->
+            <button mat-raised-button type="submit" class="EditorSubmitbtn" value="d"
+                (click)="publish()">Publish</button>
+            <button mat-raised-button value="p" class="Editorbtn" (click)="draft()">Save in Drafts</button>
+        </form>
+    </div>
+</div>

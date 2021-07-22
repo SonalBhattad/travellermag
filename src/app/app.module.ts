@@ -43,6 +43,19 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { AccountComponent } from './customer/account/account.component';
 import { ProfilePipe } from './pipes/profile.pipe';
 import { CampaignComponent } from './employee/campaign/campaign.component';
+import { PopupComponent } from './employee/campaign/popup/popup.component';
+import { ArtistComponent } from './artist/artist.component';
+import { DraftsComponent } from './artist/drafts/drafts.component';
+import { EditorComponent } from './artist/editor/editor.component';
+import { PublishedComponent } from './artist/published/published.component';
+import { TodoComponent } from './artist/todo/todo.component';
+import { ChartsComponent } from './artist/charts/charts.component';
+
+
+
+import { MatBadgeModule } from '@angular/material/badge';
+import { CartComponent } from './customer/cart/cart.component';
+
 
 
 
@@ -65,7 +78,17 @@ import { CampaignComponent } from './employee/campaign/campaign.component';
     BilingComponent,
     AccountComponent,
     ProfilePipe,
-    CampaignComponent
+    CampaignComponent,
+    PopupComponent,
+    ArtistComponent,
+    DraftsComponent,
+    EditorComponent,
+    PublishedComponent,
+    TodoComponent,
+    ChartsComponent,
+    CartComponent,
+    
+   
     
   ],
   imports: [
@@ -99,7 +122,9 @@ import { CampaignComponent } from './employee/campaign/campaign.component';
     MatDialogModule,
     MatExpansionModule,
     MatStepperModule,
-    FormsModule
+    FormsModule, 
+    MatBadgeModule,
+
     
 
   ],

@@ -1,0 +1,39 @@
+.card 
+{
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.example-card{
+  padding: 1.8em;
+}
+
+mat-card {
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 850px;
+} 
+
+.work{
+  margin: 2% 10% 0% 10%;
+  width: 80%;
+}
+
+.search{
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+.wrapper {
+  display: flex;
+   flex-wrap: wrap;
+   margin: 1% 10% 3% 10%;
+ }
+
+.container{
+  width: 330px;
+  max-width: 440px;
+  max-height: 550px;
+  /* margin: 3% 1% 1% 1%;  */
+}

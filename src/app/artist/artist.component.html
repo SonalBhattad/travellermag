@@ -1,0 +1,41 @@
+<mat-toolbar class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded">&nbsp;<mat-icon>menu</mat-icon></button>
+	<h1 class="example-app-name" routerLink="/artist/">&nbsp; Artist Dashboard</h1>
+    <div class="spacer"></div>
+    <button mat-icon-button style="margin-right:4%;">
+        <mat-icon style="font-size: 2.5em;" routerLink="/artist/editor">library_add</mat-icon>
+      </button>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize> 
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/artist/todo">&nbsp; To-do</span>
+				<mat-icon mat-list-icon>content_paste</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/artist/editor">&nbsp; Editor</span>
+				<mat-icon mat-list-icon>edit</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/artist/drafts">&nbsp; Drafts</span>
+				<mat-icon mat-list-icon>turned_in</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Payouts</span>
+				<mat-icon mat-list-icon>receipt</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/artist/saved">&nbsp; Published</span>
+				<mat-icon mat-list-icon>inbox</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['/login']">&nbsp; Logout</span>
+				<mat-icon mat-list-icon >power_settings_new</mat-icon>
+			</mat-list-item>
+		</mat-nav-list>
+    <mat-nav-list>
+</mat-nav-list>
+</mat-sidenav> 
+<router-outlet></router-outlet>
+</mat-sidenav-container> 

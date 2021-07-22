@@ -2,11 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { Observable } from 'rxjs';
+import { Blog } from './blog';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
+
+  deleteById(id: number) {
+    throw new Error('Method not implemented.');
+  }
+  getAlldata() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http : HttpClient) { }
 
@@ -29,6 +37,20 @@ export class UserServiceService {
   public getProfile(){
     return this.http.get("http://localhost:8080/profile");
   }
+
+  public addBlog(Blog: Blog){
+    return this.http.post("http://localhost:8080/save-blog",Blog, {responseType : "text" as "json"});
+  }
+
+  public getBlogs(blogtype){
+    return this.http.get<Blog[]>("http://localhost:8080/all"+ '?blogtype=' + blogtype);
+  }
+
+  public deleteBlogs(id){
+    return this.http.get("http://localhost:8080/deleteblog/"+id);
+  }
+
+  
   
 }
 

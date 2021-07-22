@@ -1,0 +1,22 @@
+table {
+    width: 80%;
+    margin: 1% 10% 0% 10%;
+  }
+
+mat-paginator{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+  .mat-header-cell {
+    background: var(#b6e2fa)
+}
+
+.work{
+  max-width:80%;
+  margin: 4% 10% 2% 10%;
+  border-radius: 5px;
+  background-color:rgba(168, 213, 255, 0.932);
+  color:rgba(0, 0, 0, 0.74);
+}

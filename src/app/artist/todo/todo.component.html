@@ -1,0 +1,32 @@
+<div class="todo-container">
+    <mat-toolbar style="font: 2em 'Segoe UI'; height: 65px;"> &nbsp; To do list:</mat-toolbar>
+    <mat-card class="todocard">
+    
+      <form class="example-form">
+            <mat-form-field class="width">
+                <input matInput placeholder="Enter To do" [(ngModel)]="inputValue.content" name="inputValue">
+            </mat-form-field>
+            <span class="example-spacer"></span>
+            <button mat-button (click)="addNewItem()" *ngIf="!editValue" class="btn1">Add</button>
+            <button mat-button (click)="saveNewItem()" *ngIf="editValue" class="btn1">Save</button>
+        </form>
+    
+        <mat-list role="list">
+    
+            <mat-toolbar *ngFor="let item of todoList | async;" class="todoitem" style="background-color:rgba(184, 229, 255, 0.644)">
+                <mat-toolbar-row>
+    
+                    <span [ngClass]="{'done-true': item.isDone, 'done-false': !item.isDone}">{{item.content}}</span>
+                    <span class="example-spacer"></span>
+                    <mat-icon (click)="markItemAsDone(item)" class="btn" *ngIf="!item.isDone"> check</mat-icon>
+                    <mat-icon (click)="markItemAsNotDone(item)" class="btn" *ngIf="item.isDone"> undo</mat-icon>
+    
+                    <mat-icon (click)="editItem(item)" class="btn"> edit</mat-icon>
+                    <mat-icon (click)="deleteItem(item.id)" class="btn">delete</mat-icon>
+                </mat-toolbar-row>
+            </mat-toolbar>
+    
+        </mat-list>
+    
+    </mat-card>
+    </div> 
