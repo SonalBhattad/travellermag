@@ -1,0 +1,72 @@
+
+  <br>
+
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+    <h1 style= "margin-left: 33%; font-size: 1.2em;">We Value Your Feedback </h1>
+  </mat-toolbar>
+  <p style="margin-left: 27%; font-size: 1em; color:rgb(85, 2, 78);">Complete the following form and help us improve our customer experience </p>
+
+  <mat-card class="example-card">
+  <h2 style="background-color:rgba(184, 229, 255, 0.644)">1:Enter Magzine Name</h2>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Magzine name which you want to review</mat-label>
+    <input matInput placeholder="" value="">
+  </mat-form-field>
+
+  <h2 style="background-color:rgba(184, 229, 255, 0.644)">2:Share yout feedback by opting</h2>
+  <h2 style="color: rgb(2, 85, 44);">A: How Satisfied you are?</h2>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button style="color: rgb(15, 15, 26);" value="1">Very Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button style="color: rgb(7, 8, 20);"  value="2">Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button  style="color: rgb(8, 9, 19);" value="1">Neutral</mat-radio-button>
+            &nbsp;
+            <mat-radio-button style="color: rgb(19, 19, 31);" value="2">Unsatisfied</mat-radio-button> 
+            &nbsp;
+            <mat-radio-button value="2">Very Unsatisfied</mat-radio-button>
+          </mat-radio-group><br>
+ <br><h2 style="color: rgb(2, 85, 44);">B: How Satisfied with our service?</h2>
+          <mat-radio-group  aria-label="Select an option">
+            <mat-radio-button style="color: rgb(7, 7, 15);" value="1">Very Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button style="color: rgb(7, 7, 19);"  value="2">Satisfied</mat-radio-button>
+            &nbsp;
+            <mat-radio-button style="color: rgb(10, 12, 27);" value="1">Neutral</mat-radio-button>
+            &nbsp;
+            <mat-radio-button style="color: rgb(4, 5, 29);" value="2">Unsatisfied</mat-radio-button> 
+            &nbsp;
+            <mat-radio-button value="2">Very Unsatisfied</mat-radio-button>
+          </mat-radio-group><br>
+
+<br><h2 style="background-color:rgba(184, 229, 255, 0.644)">3:Tell us how can we improve</h2>
+<form >
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Message</mat-label>
+      <input matInput #message maxlength="256" placeholder="Ex. I need help with...">
+      <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+  </form>
+
+<br><h2 style="background-color:rgba(184, 229, 255, 0.644)" >4:ratings</h2>
+<section class="a">
+    <mat-button-toggle-group style="text-align: center;"  [(ngModel)]="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="1">Poor</mat-button-toggle>
+      <mat-button-toggle value="2">Good</mat-button-toggle>
+      <mat-button-toggle value="3">Better</mat-button-toggle>
+      <mat-button-toggle value="4">Best</mat-button-toggle>
+      <mat-button-toggle value="5">Excellent</mat-button-toggle>
+    </mat-button-toggle-group>
+    <p>Rating value is {{fontStyle}}</p>
+  </section>
+
+  <br><h2 style="background-color:rgba(184, 229, 255, 0.644)">5:Reviewer Name</h2>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Enter Your Name</mat-label>
+    <input matInput placeholder="" value="">
+  </mat-form-field>
+
+  <button  class= "b" mat-raised-button style="text-align: center;" color="primary" >Submit Feedback</button>
+</mat-card>
+  <!-- <mat-card class="example-card">Simple card</mat-card> -->

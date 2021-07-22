@@ -57,9 +57,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DiscountComponent } from './discount/discount.component';
 import { MatBadgeModule } from '@angular/material/badge';
-import { FeedbackComponent } from './customer/feedback/feedback.component';
 
-
+import {StarRatingModule} from 'angular-star-rating';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { FeedbackformComponent } from './customer/feedbackform/feedbackform.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { FeedbackComponent } from './customer/feedback/feedback.component';
     ViewComponent,
     CartComponent,
     DiscountComponent,
-    FeedbackComponent,
+   
+    FeedbackformComponent,
    
     
   ],
@@ -122,6 +124,8 @@ import { FeedbackComponent } from './customer/feedback/feedback.component';
     MatButtonToggleModule,
     MatSlideToggleModule,
     MatBadgeModule,
+    NgxStarRatingModule,
+    StarRatingModule.forRoot(),
     MatExpansionModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyA6udjfyzSagLVH2KJZOd5Qfvoja9bcHWI",

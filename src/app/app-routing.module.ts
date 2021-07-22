@@ -9,7 +9,8 @@ import { AccountComponent } from './customer/account/account.component';
 import { BilingComponent } from './customer/biling/biling.component';
 import { CartComponent } from './customer/cart/cart.component';
 import { CustomerComponent } from './customer/customer.component';
-import { FeedbackComponent } from './customer/feedback/feedback.component';
+
+import { FeedbackformComponent } from './customer/feedbackform/feedbackform.component';
 import { StoreComponent } from './customer/store/store.component';
 import { ViewComponent } from './customer/view/view.component';
 import { DiscountComponent } from './discount/discount.component';
@@ -43,7 +44,8 @@ const routes: Routes = [
     {path:'store', component:StoreComponent},
     {path:'view',component:ViewComponent},
     {path:'cart', component:CartComponent},
-    {path:'feedback', component:FeedbackComponent},
+   
+    {path:'feedbackform',component:FeedbackformComponent},
   ]},
   {path:'employee', component:EmployeeComponent,
   children:[
