@@ -49,7 +49,7 @@ import { EditorComponent } from './artist/editor/editor.component';
 import { PublishedComponent } from './artist/published/published.component';
 import { TodoComponent } from './artist/todo/todo.component';
 import { AngularFireModule } from '@angular/fire';
-
+import { ChartsModule } from 'ng2-charts';
 import { ViewComponent } from './customer/view/view.component';
 import { CartComponent } from './customer/cart/cart.component';
 //import { StepperComponent } from './stepper/stepper.component';
@@ -95,6 +95,7 @@ import { StatisticsComponent } from './employee/statistics/statistics.component'
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
