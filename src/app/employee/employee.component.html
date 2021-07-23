@@ -23,7 +23,7 @@
       </mat-list-item>
       <mat-list-item>
         <mat-icon>equalizer</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">&nbsp;Statistics</span> 
+        <span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['statistics']">&nbsp;Statistics</span> 
         </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
         <mat-icon mat-list-icon >power_settings_new</mat-icon>

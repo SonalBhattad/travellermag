@@ -61,6 +61,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import {StarRatingModule} from 'angular-star-rating';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { FeedbackformComponent } from './customer/feedbackform/feedbackform.component';
+import { StatisticsComponent } from './employee/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { FeedbackformComponent } from './customer/feedbackform/feedbackform.comp
     DiscountComponent,
    
     FeedbackformComponent,
+    StatisticsComponent,
    
     
   ],
