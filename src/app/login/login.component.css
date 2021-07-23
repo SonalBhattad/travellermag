@@ -1,0 +1,53 @@
+.main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h3{
+    font-size: 2.2em;
+    color: midnightblue;
+    padding: 0.4em 0 0.6em 0;
+  }
+   
+  
+  .form-container{
+    width: 30%;
+    display: inline-block;
+  }
+  
+  mat-card {
+    max-width: 600px;
+    margin: 2em auto;
+    background-color:rgba(245, 255, 250, 0.747);
+    text-align: center;
+    max-height: 800px;
+    
+  } 
+  
+  ::ng-deep .mat-form-field {
+    font-size: 14px;
+  }
+  
+  .card-container{
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  .full-width {
+    width: 60%;
+  }
+  
+  .aLink{
+    float: right;
+    padding-right: 60px;
+    text-decoration: none;
+  } 
+  
+
+  
+  
+  

@@ -1,0 +1,11 @@
+table {
+    width:80%;
+    padding-left: inline;
+    margin: 4% 10% 0% 10%;
+}
+
+mat-paginator{
+    width:80%;
+    margin: 0% 10% 4% 10%;
+
+}

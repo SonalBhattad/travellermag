@@ -1,0 +1,19 @@
+:host ::ng-deep .logo {
+    font-size: 2em !important;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.button-title{
+    padding: 2px 5px 2px 5px;
+    font-size: 1em;
+}
+
+a {
+    font-size: 0.9em;
+}

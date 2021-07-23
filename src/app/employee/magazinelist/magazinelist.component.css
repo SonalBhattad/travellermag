@@ -1,0 +1,33 @@
+table {
+  width:80%;
+  margin: 0% 10% 0% 10%;
+}
+
+mat-card {
+  width:78%;
+  margin: 0% 10% 2% 10%;
+}
+
+mat-paginator{
+  width:80%;
+  margin: 0% 10% 4% 10%;
+}
+
+.btn{
+  margin: 3% 17% 1% 81%;
+  font-size:1.2em;
+  height:2.5em;
+  background-color:#5680e9;
+  color: white;
+}
+
+.ibtn{
+  border: 1.6px solid rgba(128, 128, 128, 0.267);
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+

@@ -1,0 +1,48 @@
+ .todo-container{
+    width:70%;
+    margin:4% 15% 1% 15%;
+  }
+
+  .todo-item{
+    margin-bottom: 1%;
+  }
+
+  mat-toolbar{
+    background-color: #7ab8ff;
+  }
+
+  .btn{
+    cursor: pointer;
+    padding: 0.5em;
+  }
+
+.btn1{
+  margin-left:3%;
+  font-size: 1.5em;
+  background-color: #7ab8ff;
+  width:80px;
+  height:40px;
+}
+
+  .width{
+    width: 80%;
+    margin: 1% 0% 1% 5%;
+    font-size: 1.2em;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .todoitem{
+    margin: 1% 5%;
+    text-overflow: ellipsis;
+    width: 90%;
+  }
+  .done-true{
+    text-decoration: line-through #d50000;
+  }
+  .done-false{
+    text-decoration: none;
+  }
+
+
+  

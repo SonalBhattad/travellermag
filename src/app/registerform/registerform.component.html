@@ -1,0 +1,74 @@
+<div>
+    <h4>{{message}}</h4>
+  </div>
+  <div class="main" style="background-image: url(../../assets/Images/blogger.png); height:88vh;">
+      <form class="form-container">
+        <mat-card>
+          <h3>Register</h3>
+          <mat-card-content>
+          <div class="row">
+            <div class="col-md-6" *ngIf="pid==2">
+              <mat-form-field class="full-width">
+                <input [(ngModel)]="user.empid" name="empid" matInput placeholder="Enter Your Employee ID">
+              </mat-form-field>
+            </div>
+              <div class="col-md-6" >
+                <mat-form-field class="full-width">
+                  <input [(ngModel)]="user.username" name="username" matInput placeholder="Enter Username">
+                </mat-form-field>
+              </div>
+              <mat-form-field class="full-width">
+    
+                <mat-label>Select DOB</mat-label>
+    
+                <input [(ngModel)]="user.dob" name="dob" matInput [matDatepicker]="picker">
+    
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    
+                <mat-datepicker #picker></mat-datepicker>
+    
+            </mat-form-field> 
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput [(ngModel)]="user.email" name="email"
+                         placeholder="Ex. pat@example.com">
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div> 
+      
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" name="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6" *ngIf="pid==1 || pid==2">
+                <mat-form-field class="full-width">
+                  <mat-label>Gender</mat-label>
+                  <mat-select [(ngModel)]="user.gender" name="gender">
+                    <mat-option value="male">Male</mat-option>
+                    <mat-option value="female">Female</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+          </div>
+          </mat-card-content>
+          <mat-card-actions style="padding: 0.5em;">
+            <button (click)="registernow()" mat-raised-button color="primary">Register</button>
+          </mat-card-actions>
+          <div class="button-row">
+            <p>Already a member? <a routerLink="login" [routerLink]="['/login']">Login here</a></p>
+          </div>
+        </mat-card>
+      </form> 
+  </div>
+  

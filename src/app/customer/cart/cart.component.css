@@ -1,0 +1,25 @@
+.emptycart{
+    height: 50vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-right: 10%;
+    text-align: center;
+    background-color: white;
+}
+
+mat-card{
+    width: 78%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.work{
+    margin: 2% 10% 0% 10%;
+    width: 80%;
+  }
+
+.btn{
+    margin-left: 2%;
+    margin-right: 2%;
+}
