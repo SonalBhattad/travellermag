@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArtistComponent } from './artist/artist.component';
-import { ChartsComponent } from './artist/charts/charts.component';
 import { DraftsComponent } from './artist/drafts/drafts.component';
 import { EditorComponent } from './artist/editor/editor.component';
 import { PublishedComponent } from './artist/published/published.component';
@@ -40,7 +39,6 @@ const routes: Routes = [
   ]},
   {path:'artist', component:ArtistComponent,
     children:[
-      { path:'', component:ChartsComponent},
       { path:'saved', component:PublishedComponent},
       { path:'editor', component:EditorComponent},
       { path:'todo', component:TodoComponent},

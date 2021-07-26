@@ -42,7 +42,7 @@ import { AngularFirestoreModule} from '@angular/fire/firestore';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { AngularFireModule } from '@angular/fire';
-import { ChartsComponent } from './artist/charts/charts.component';
+
 import { DraftsComponent } from './artist/drafts/drafts.component';
 import { ChartModule } from 'angular-highcharts';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -57,6 +57,7 @@ import { SubscriptionsComponent } from './customer/subscriptions/subscriptions.c
 import { CampaignComponent } from './employee/campaign/campaign.component';
 import { OffersformComponent } from './employee/campaign/offersform/offersform.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
+import { StatisticsComponent } from './employee/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,7 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     TodoComponent,
     PublishedComponent,
     EditorComponent,
-    ChartsComponent,
+    
     DraftsComponent,  
     EmployeelistComponent,
     MagazinelistComponent,
@@ -81,7 +82,8 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     StoreComponent,
     SubscriptionsComponent,
     CampaignComponent,
-    OffersformComponent
+    OffersformComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

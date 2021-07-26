@@ -22,7 +22,6 @@
                   </mat-form-field>
                 <h4 style=" margin-bottom: 0%;">Rate us:</h4>
                 <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" style="margin-left: 10%; ">
-                
                     <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)">
                         <mat-icon>{{star.icon}}</mat-icon>
                     </div>
