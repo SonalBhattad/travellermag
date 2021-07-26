@@ -1,0 +1,8 @@
+.example-form {
+    width: fit-content;
+    height: min-content;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }

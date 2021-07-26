@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from '../../blog';
+import { Blog } from '../../../Classes/blog';
 import {Observable} from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
-import { UserServiceService } from 'src/app/user-service.service';
+import { UserServiceService } from 'src/Services/user-service.service';
 import { ActivatedRoute,ParamMap} from '@angular/router';
 
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from 'src/app/user-service.service';
+import { UserServiceService } from 'src/Services/user-service.service';
 import {ViewChild} from '@angular/core';
 import { MatTableDataSource} from '@angular/material/table';
-import { User } from '../../user';
+import { User } from '../../../Classes/user';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 

@@ -6,10 +6,12 @@ import { DraftsComponent } from './artist/drafts/drafts.component';
 import { EditorComponent } from './artist/editor/editor.component';
 import { PublishedComponent } from './artist/published/published.component';
 import { TodoComponent } from './artist/todo/todo.component';
-import { AccountComponent } from './customer/account/account.component';
 import { CartComponent } from './customer/cart/cart.component';
 import { CustomerComponent } from './customer/customer.component';
+import { FeedbackComponent } from './customer/feedback/feedback.component';
 import { StoreComponent } from './customer/store/store.component';
+import { SubscriptionsComponent } from './customer/subscriptions/subscriptions.component';
+import { CampaignComponent } from './employee/campaign/campaign.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagazinelistComponent } from './employee/magazinelist/magazinelist.component';
@@ -25,14 +27,16 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'customer', component:CustomerComponent,
   children:[
-    { path:'account', component:AccountComponent},
+    { path:'feedback', component:FeedbackComponent},
     { path:'store', component:StoreComponent},
-    { path:'cart', component:CartComponent}
+    { path:'cart', component:CartComponent},
+    { path:'subscriptions', component:SubscriptionsComponent}
   ]},
   {path:'employee', component:EmployeeComponent,
    children:[
    { path:'employees', component:EmployeelistComponent},
     { path:'magazines', component:MagazinelistComponent},
+    { path: 'campaigns', component:CampaignComponent}
   ]},
   {path:'artist', component:ArtistComponent,
     children:[

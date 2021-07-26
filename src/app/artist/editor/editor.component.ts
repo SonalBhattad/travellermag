@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from '../../blog';
-import { UserServiceService } from '../../user-service.service';
+import { Blog } from '../../../Classes/blog';
+import { UserServiceService } from '../../../Services/user-service.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';

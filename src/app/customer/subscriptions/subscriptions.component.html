@@ -1,0 +1,17 @@
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+    <h1 style="margin-left: 42%; font-size: 1.2em;">SUBSCRIPTONS</h1> 
+</mat-toolbar>
+
+  <div class="wrapper">
+    <mat-card class="container" *ngFor="let mag of magazines ">
+      <div class="image">
+      <img src="assets/Images/{{mag.coverimage}}"  style="max-height: 200px;">
+     </div>
+        <div class="elements">
+          <h2>{{mag.magname}}</h2><br>
+          <h3 style="line-height: 0.5em;">Rs {{mag.magprice}}</h3>
+          <h4 style="color: gray;">(1 year subscription)</h4>
+          <button mat-raised-button style="margin-top: 18%;">Subscribed</button>
+      </div>
+    </mat-card>
+  </div>

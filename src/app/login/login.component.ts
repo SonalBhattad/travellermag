@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../user';
-import { UserServiceService } from '../user-service.service';
+import { User } from '../../Classes/user';
+import { UserServiceService } from '../../Services/user-service.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher{
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

@@ -46,13 +46,17 @@ import { ChartsComponent } from './artist/charts/charts.component';
 import { DraftsComponent } from './artist/drafts/drafts.component';
 import { ChartModule } from 'angular-highcharts';
 import { MatBadgeModule } from '@angular/material/badge';
-import { AccountComponent } from './customer/account/account.component';
 import { MatStepperModule } from '@angular/material/stepper';
-import { StoreComponent } from './customer/store/store.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagazinelistComponent } from './employee/magazinelist/magazinelist.component';
 import { CartComponent } from './customer/cart/cart.component';
-
+import { FeedbackComponent } from './customer/feedback/feedback.component';
+import { StoreComponent } from './customer/store/store.component';
+import { SubscriptionsComponent } from './customer/subscriptions/subscriptions.component';
+import { CampaignComponent } from './employee/campaign/campaign.component';
+import { OffersformComponent } from './employee/campaign/offersform/offersform.component';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 @NgModule({
   declarations: [
@@ -69,12 +73,15 @@ import { CartComponent } from './customer/cart/cart.component';
     PublishedComponent,
     EditorComponent,
     ChartsComponent,
-    DraftsComponent,
-    AccountComponent,
-    StoreComponent,
+    DraftsComponent,  
     EmployeelistComponent,
     MagazinelistComponent,
-    CartComponent
+    CartComponent,
+    FeedbackComponent,
+    StoreComponent,
+    SubscriptionsComponent,
+    CampaignComponent,
+    OffersformComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +97,7 @@ import { CartComponent } from './customer/cart/cart.component';
     MatCardModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatDialogModule,
     MatSelectModule,
     MatRadioModule,
     MatDatepickerModule,
@@ -108,16 +116,16 @@ import { CartComponent } from './customer/cart/cart.component';
     MatCheckboxModule,
     MatSortModule,
     AngularFirestoreModule,
+    GooglePayButtonModule,
     MatStepperModule,
     MatSnackBarModule,
     AngularFireModule.initializeApp({
-    apiKey: "AIzaSyA6udjfyzSagLVH2KJZOd5Qfvoja9bcHWI",
-    authDomain: "todo-790e1.firebaseapp.com",
-    projectId: "todo-790e1",
-    storageBucket: "todo-790e1.appspot.com",
-    messagingSenderId: "125185098851",
-    appId: "1:125185098851:web:e280b4177b3a1caa236456",
-    measurementId: "G-2BXL9T2KXR"
+      apiKey: "AIzaSyCysz8O0EuHgF8VNQMaC3aXRWb7uGAwHVI",
+      authDomain: "todolistapp-stackblitz.firebaseapp.com",
+      databaseURL: "https://todolistapp-stackblitz.firebaseio.com",
+      projectId: "todolistapp-stackblitz",
+      storageBucket: "todolistapp-stackblitz.appspot.com",
+      messagingSenderId: "907624983083"
     }),
   ],
   providers: [],

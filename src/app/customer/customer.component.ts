@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { CartService } from '../cart.service';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-customer',

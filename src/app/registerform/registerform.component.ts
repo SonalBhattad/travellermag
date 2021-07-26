@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormsModule, Validators,FormGroupDirective, AbstractControl, NgForm } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-import { UserServiceService } from '../user-service.service';
-import { User } from '../user';
+import { UserServiceService } from '../../Services/user-service.service';
+import { User } from '../../Classes/user';
 import { ActivatedRoute,ParamMap} from '@angular/router';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

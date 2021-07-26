@@ -1,8 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/Services/cart.service';
+import { MagazineserviceService } from 'src/Services/magazineservice.service';
 import {Observable} from 'rxjs';
-import { Magazine } from '../../magazine';
-import { MagazineserviceService } from 'src/app/magazineservice.service';
-import { CartService } from 'src/app/cart.service';
+import { Magazine } from 'src/Classes/magazine';
 
 @Component({
   selector: 'app-store',
@@ -13,16 +13,9 @@ export class StoreComponent implements OnInit {
   mags: Observable<Magazine[]>;
   Add= true;
   public Magazines:any[]=[];
-  imageSrc = 'assets/Images/winter1.png'
 
-  Images = [    
-    {url: 'assets/Images/winter1.png' },
-    {url: 'assets/Images/winter2.png'}
-  ]
 
-  constructor(public service : MagazineserviceService, private cartService : CartService) { 
-    
-  }
+  constructor(public service : MagazineserviceService, private cartService : CartService) { }
 
   ngOnInit(): void {
     this.mags = this.service.getMagazine();
@@ -31,11 +24,8 @@ export class StoreComponent implements OnInit {
       Object.assign(a,{total:a.price});
     });
   }
-
- 
   addtocart(mags){
     this.cartService.addtoCart(mags);
   }
-
 
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Magazine } from 'src/app/magazine';
+import { Magazine } from 'src/Classes/magazine';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Observable } from 'rxjs';
 

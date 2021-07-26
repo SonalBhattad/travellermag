@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Magazine } from '../../magazine';
-import { MagazineserviceService } from 'src/app/magazineservice.service';
+import { Magazine } from '../../../Classes/magazine';
+import { MagazineserviceService } from 'src/Services/magazineservice.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { HttpClient} from '@angular/common/http';

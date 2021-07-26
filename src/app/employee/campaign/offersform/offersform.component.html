@@ -1,0 +1,59 @@
+<mat-card class="mat-elevation-z4">
+
+    <mat-card-title style="padding: 0.5em 0.5em 0.5em 2em;" [style.color]="'purple'"> Edit Campaigns Details Here</mat-card-title><br>
+    <div>
+      <form class="example-form">
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label [style.color]="'black'">Festival ID</mat-label>
+          <input matInput placeholder="Ex. 1,2,3" [(ngModel)]="Campaign.festivalid" name="festivalid">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label [style.color]="'black'">Festival Name</mat-label>
+          <input matInput placeholder="Ex. Holi" [(ngModel)]="Campaign.festivalname" name="festivalname">
+        </mat-form-field>
+      <br> 
+
+      <mat-form-field class="example-full" appearance="outline">
+        <mat-label [style.color]="'black'">Offer Start date</mat-label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="Campaign.startdate" name="startdate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+       
+
+      <mat-form-field class="example-full" appearance="outline">
+        <mat-label [style.color]="'black'">Offer End date</mat-label>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="Campaign.enddate" name="enddate">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+
+       
+       
+
+        <mat-form-field class="example-full" appearance="outline">
+          <mat-label [style.color]="'black'">Offer</mat-label>
+          <mat-select [(ngModel)]="Campaign.offer" name="offer">
+            <mat-option value="10%">10%</mat-option>
+            <mat-option value="15%">15%</mat-option>
+            <mat-option value="30%">30%</mat-option>
+            <mat-option value="50%">50%</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+       
+        <mat-form-field class="example-full" appearance="outline">
+          <mat-label [style.color]="'black'">Status</mat-label>
+          <mat-select [(ngModel)]="Campaign.status" name="status">
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Deactive">Deactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+      </div>
+<button mat-raised-button color="accent" (click)="updateOffers()" style="margin-left:90%;">Save</button>
+
+</mat-card>

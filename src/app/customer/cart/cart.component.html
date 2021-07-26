@@ -17,7 +17,7 @@
     <tbody>
       <tr *ngFor="let item of magazines; let i = index;">
           <td style="width: 5%; text-align: center;">{{i+1}}</td>
-          <td style="width: 32%; text-align: center;"><img alt=""></td>
+          <td style="width: 32%; text-align: center;"><img src="assets/Images/{{item.coverimage}}" style="height:120px;"></td>
           <td style="width: 40%; text-align: center;">{{item.magname}}</td>
           <th style="width: 20%;">Rs {{item.magprice}}</th>
           <td style="width: 5%;">
@@ -27,13 +27,23 @@
   </tbody>
     </table>
   </div>
-    <div style="padding: 1em; margin-left:74%">
+    <div style="padding: 1em; margin-left:73%">
         <h3><strong>Grand Total: Rs {{grandTotal}} </strong></h3>
     </div>
-    <div style="padding: 2em; margin-left:65%">
+    <div style="padding: 2em; margin-left:50%">
       <button class="btn" (click)="emptycart()" mat-raised-button color="warn">Empty Cart</button>
       <button class="btn" mat-raised-button color="primary" routerLink="/customer/store">Shop More</button>
-      <button class="btn" mat-raised-button color="accent">Checkout</button>
+      <google-pay-button class="btn"
+        environment="TEST"
+        buttonType="checkout"
+        buttonSizeMode="static"
+        buttonColor="black"
+        [paymentRequest]="paymentRequest"
+        (loadpaymentdata)="onLoadPaymentData($event)"
+        (error)="onError($event)"
+        [paymentAuthorizedCallback]="onPaymentDataAuthorized"
+      >
+      </google-pay-button>
   </div>
    </mat-card>
 </ng-container>

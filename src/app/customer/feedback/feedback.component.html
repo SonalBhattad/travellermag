@@ -1,0 +1,34 @@
+<mat-card class="example-card mat-elevation-z6">
+    <div class="wrapper">
+        <div class="image">
+                <img Src="../../../assets/Images/feedback.jpg" style="height:490px; width:460px;">
+        </div>  
+        <div class="form">
+            <mat-toolbar class="work" style="background-color:#5680e9; height: 55px; margin-bottom: 5%;">
+                <h1 style="margin-left: 40%; font-size: 1em; color: white;">FEEDBACK</h1>
+            </mat-toolbar>
+            <div class="margin">
+                <h4 style=" margin-bottom: 0%;">Magazine Name:</h4>
+                <mat-form-field class="full-width" appearance="outline">
+                    <input matInput placeholder="Enter the Magazine name you would like to review">
+                </mat-form-field>
+                <h4 style=" margin-bottom: 0%;">Enter Email:</h4>
+                <mat-form-field class="full-width" appearance="outline">
+                    <input matInput placeholder="Enter your email address">
+                </mat-form-field>
+                <h4 style=" margin-bottom: 0%;">Comment down your thoughts</h4>
+                <mat-form-field class="full-width" appearance="outline">
+                    <textarea matInput placeholder="Enter here"></textarea>
+                  </mat-form-field>
+                <h4 style=" margin-bottom: 0%;">Rate us:</h4>
+                <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" style="margin-left: 10%; ">
+                
+                    <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)">
+                        <mat-icon>{{star.icon}}</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" style="margin-left: 73%;">Submit</button>
+        </div>
+    </div>     
+</mat-card>

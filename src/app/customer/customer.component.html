@@ -20,12 +20,12 @@
               </mat-select>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Subscriptions </span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/customer/subscriptions">&nbsp; Subscriptions </span>
 							<mat-icon mat-list-icon>card_membership</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/customer/account">&nbsp; Profile </span>
-							<mat-icon mat-list-icon>account_circle</mat-icon>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/customer/feedback">&nbsp; Feedback </span>
+							<mat-icon mat-list-icon>feedback</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['/login']">&nbsp; Logout</span>
