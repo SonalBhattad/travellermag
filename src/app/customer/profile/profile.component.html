@@ -1,0 +1,11 @@
+<p>works</p>
+<table>
+	<tr *ngFor="let user of users">
+		<td>{{user.name}}</td>
+		<td>
+			<button [ngClass]="{'btn btn-danger':user.active, 'btn btn-success':!user.active}" (click)="click(user)"> {{user.active ? 'Deactive':'Active'}}
+    </button>
+		</td>
+	</tr>
+</table>
+

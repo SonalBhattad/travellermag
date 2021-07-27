@@ -1,15 +1,15 @@
-/* .card 
+.card 
 {
   margin-left: 8%;
   margin-right: 8%;
-} */
+}
 
 .example-card{
   padding: 1.8em;
 }
 
 mat-card {
-    max-width: 200px;
+    max-width: 800px;
     margin: 2em auto;
     text-align: center;
     max-height: 850px;
@@ -26,9 +26,9 @@ mat-card {
 }
 
 .wrapper {
-  display: inline-flex;
+  display: flex;
    flex-wrap: wrap;
-   /* margin: 1% 10% 3% 10%; */
+   margin: 1% 10% 5% 10%;
  }
 
 .container{

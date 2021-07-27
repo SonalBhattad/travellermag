@@ -4,6 +4,33 @@ p {
 
   .a
   {
-      width: 900px;
+      width: 800px;
       box-align: center;
   }
+  mat-card {
+    max-width: 800px;
+    margin: 2em auto;
+    text-align:center;
+    max-height: 800px;
+    
+}
+
+.card{
+    width:800px;
+    margin-left: 0%;
+    margin-right: 10%;
+    
+  }
+
+.b{
+    width: 500px;
+    margin-left: 50%;
+    margin-right: 40%;
+}
+h2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.center{
+    text-align: center;
+}

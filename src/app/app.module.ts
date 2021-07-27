@@ -62,6 +62,7 @@ import {StarRatingModule} from 'angular-star-rating';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { FeedbackformComponent } from './customer/feedbackform/feedbackform.component';
 import { StatisticsComponent } from './employee/statistics/statistics.component';
+import { ProfileComponent } from './customer/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { StatisticsComponent } from './employee/statistics/statistics.component'
    
     FeedbackformComponent,
     StatisticsComponent,
+    ProfileComponent,
    
     
   ],
@@ -97,6 +99,7 @@ import { StatisticsComponent } from './employee/statistics/statistics.component'
     BrowserModule,
     ChartsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,

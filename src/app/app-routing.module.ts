@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArtistComponent } from './artist/artist.component';
 import { DraftsComponent } from './artist/drafts/drafts.component';
@@ -11,6 +11,7 @@ import { CartComponent } from './customer/cart/cart.component';
 import { CustomerComponent } from './customer/customer.component';
 
 import { FeedbackformComponent } from './customer/feedbackform/feedbackform.component';
+import { ProfileComponent } from './customer/profile/profile.component';
 import { StoreComponent } from './customer/store/store.component';
 import { ViewComponent } from './customer/view/view.component';
 import { DiscountComponent } from './discount/discount.component';
@@ -45,7 +46,7 @@ const routes: Routes = [
     {path:'store', component:StoreComponent},
     {path:'view',component:ViewComponent},
     {path:'cart', component:CartComponent},
-   
+    {path:'profile', component:ProfileComponent},
     {path:'feedbackform',component:FeedbackformComponent},
   ]},
   {path:'employee', component:EmployeeComponent,

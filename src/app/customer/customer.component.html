@@ -3,9 +3,10 @@
 	<h1 class="example-app-name">&nbsp; Customer Dashboard</h1>
   <mat-icon matBadge={{totalitems}} matBadgeColor="warn" class="cart" routerLink="/customer/cart" style="cursor: pointer;">shopping_cart</mat-icon>
 </mat-toolbar>
-<mat-sidenav-container class="example-container" autosize>
+
+<mat-sidenav-container class="example-container"  autosize>
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-					<mat-nav-list>
+					<mat-nav-list >
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['store']">&nbsp; Store</span>
 							<mat-icon mat-list-icon>store</mat-icon>
@@ -15,7 +16,7 @@
 							<mat-icon mat-list-icon>shopping_cart</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['account']">&nbsp; Account</span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" [routerLink]="['profile']">&nbsp; Account</span>
 							<mat-icon mat-list-icon>account_balance</mat-icon>
 						</mat-list-item>
             <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
@@ -36,7 +37,12 @@
 							<mat-icon mat-list-icon>power_settings_new</mat-icon>
 						</mat-list-item>
       </mat-nav-list>
+   
 </mat-sidenav>
+
+<!-- <mat-card>
+  <img mat-card-image src="../../assets/Images/welcomecust.jpg">
+</mat-card> -->
 
 	<!-- <div class="card">
         <table>

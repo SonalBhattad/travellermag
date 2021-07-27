@@ -97,8 +97,11 @@
 </div>
 
 </app-customer> -->
-
-<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+<!-- <marquee>{{mag.active_offer}}</marquee> -->
+<!-- <marquee><h2>{{mags.active_offer}}</h2>
+  <h1 style="color: crimson;"> Diwali Offer is active , 10%, Starts at 12-August-2021 to Ends by 28-August-2021 </h1>
+</marquee> -->
+<!-- <mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
   <h1 style="margin-left: 8%; font-size: 1.2em;">MAGAZINE STORE</h1>
   <mat-form-field style="margin-left: 50%; width: 12%;"><input matInput type="search" value="search here"><mat-icon class="search">search</mat-icon></mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
   <mat-form-field style="margin-left:2%;">
@@ -109,18 +112,48 @@
     </mat-select>
   </mat-form-field> 
 </mat-toolbar>
-
+<marquee><h2>{{mags.active_offer}}</h2>
+  <h1 style="color:darkmagenta"> Diwali Offer is active , 10%, Starts at 12-August-2021 to Ends by 28-August-2021 </h1>
+</marquee>
 <div class="wrapper">
   <mat-card class="container"  *ngFor="let mag of mags | async" style="background-color: rgb(240, 178, 203);">
-    <!-- <div *ngFor="let image of Images">  -->
-    <!-- <img src="../../../assets/Images/summer2.png"  style="max-height: 420px; max-width: 480px;"> -->
+ 
+      <img src="assets/Images/{{mag.coverimage}}"  style="max-height: 420px; max-width: 480px;">
+   
       <div>
         
         <h2>{{mag.magname}}</h2>
-        <h3 style="line-height: 0.5em;">Rs {{mag.mag_price}}</h3>
-        <h3>Discount price: {{mag.mag_price}}</h3>
+        <h3 style="line-height: 0.5em;" ><strike>Rs {{mag.mag_price}}</strike></h3>
+     
+        <h3> Discounted price:{{mag.discount_price}}  [ {{mag.active_offer}} offer]</h3>
+
         <mat-card-actions>
         <button mat-raised-button color="accent" style="font-size: 1.25em;" (click)="addtocart(mag)" >Add to Cart</button>
+        </mat-card-actions>
+ 
+    </div>
+  </mat-card>
+</div> -->
+<marquee direction="left" style="font-family: Rajdhani, sans-serif; color: #FFFFFF" bgcolor="#00224f"  behavior="loop">Diwali Offer is active , 10%, Starts at 12-August-2021 to Ends by 28-August-2021</marquee>
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+  <h1 style="margin-left: 42%; font-size: 1.2em;">MAGAZINE STORE</h1>
+</mat-toolbar>
+<!-- <marquee direction="left" style="font-family: Rajdhani, sans-serif; color: #FFFFFF" bgcolor="#00224f"  behavior="loop">Diwali Offer is active , 10%, Starts at 12-August-2021 to Ends by 28-August-2021</marquee> -->
+<!-- <marquee><h2>{{mags.active_offer}}</h2>
+  <h1 style="color:darkmagenta"> Diwali Offer is active , 10%, Starts at 12-August-2021 to Ends by 28-August-2021 </h1>
+</marquee> -->
+
+<div class="wrapper">
+  <mat-card class="container" *ngFor="let mag of mags | async">
+    <!-- <div *ngFor="let image of Images">  -->
+    <img src="assets/Images/{{mag.coverimage}}"  style="max-height: 420px; max-width: 480px;">
+      <div>
+        <h2>{{mag.magname}}</h2>
+        <h3 style="line-height: 0.5em;" ><strike>Rs {{mag.mag_price}}</strike></h3>
+        <!-- <h3> offer: {{mag.active_offer}}</h3> -->
+        <h3> Discounted price:{{mag.discount_price}}  [ {{mag.active_offer}} offer]</h3>
+        <mat-card-actions>
+        <button mat-raised-button color="accent" style="font-size: 1.25em;" (click)=addtocart(mag) >Add to Cart</button>
         </mat-card-actions>
       <!-- </div>  -->
     </div>

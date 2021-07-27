@@ -1,51 +1,58 @@
-<!-- <p>cart works!</p> -->
 <mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
-    <h1 style="margin-left: 47%; font-size: 1.2em;">CART</h1>
-  </mat-toolbar>
-
-  <ng-container *ngIf="magazines.length != 0">
-     <mat-card>
-       <div style="padding: 1.5em 2em 1.5em 2em; font-size:16px">
-      <table>
-        <thead>
-          <tr>
-              <th style="width: 5%;">Sr.No</th>
-              <th style="width: 30%;">Image</th>
-              <th style="width: 40%;">Name</th>
-              <th style="width: 20%;">Price</th>
-              <th style="width: 5%;"></th>
-          </tr><hr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of magazines; let i = index;">
-            <td style="width: 5%; text-align: center;">{{i+1}}</td>
-            <td style="width: 32%; text-align: center;"><img alt=""></td>
-            <td style="width: 40%; text-align: center;">{{item.magname}}</td>
-            <th style="width: 20%;">Rs {{item.mag_price}}</th>
-            <td style="width: 5%;">
-              <a button mat-icon-button color="primary" (click)="removeItem(item)"><mat-icon>delete</mat-icon></a>
-            </td><hr>
-        </tr>      
-    </tbody>
-      </table>
-    </div>
-      <div style="padding: 1em; margin-left:74%">
-          <h3><strong>Grand Total: Rs {{grandTotal}} </strong></h3>
-      </div>
-      <div style="padding: 2em; margin-left:65%">
-        <button class="btn" (click)="emptycart()" mat-raised-button color="warn">Empty Cart</button>
-        <button class="btn" mat-raised-button color="primary" routerLink="/customer/store">Shop More</button>
-        <br>
-        <button class="btn" mat-raised-button color="accent" routerLink="/customer/biling">Checkout</button>
-    </div>
-     </mat-card>
-  </ng-container>
-   
-  
-  <ng-container *ngIf= "magazines.length == 0">
-  <div class="emptycart">
-      <img src="../../../assets/Images/emptycart.png" style="height: 25vh;margin-top:3%;">
-      <h2>Your cart is Empty! </h2>
-     
+  <h1 style="margin-left: 47%; font-size: 1.2em;">CART</h1>
+</mat-toolbar>
+<ng-container *ngIf="magazines.length != 0">
+   <mat-card>
+     <div style="padding: 1.5em 2em 1.5em 2em; font-size:16px">
+    <table>
+      <thead>
+        <tr>
+            <th style="width: 5%;">Sr.No</th>
+            <th style="width: 30%;">Image</th>
+            <th style="width: 40%;">Name</th>
+            <th style="width: 20%;">Price</th>
+            <th style="width: 5%;"></th>
+        </tr><hr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of magazines; let i = index;">
+          <td style="width: 5%; text-align: center;">{{i+1}}</td>
+          <td style="width: 32%; text-align: center;"><img src="assets/Images/{{item.coverimage}}" style="height:120px;"></td>
+          <td style="width: 40%; text-align: center;">{{item.magname}}</td>
+          <th style="width: 20%;">Rs {{item.discount_price}}</th>
+          <td style="width: 5%;">
+            <a button mat-icon-button color="primary" (click)="removeItem(item)"><mat-icon>delete</mat-icon></a>
+          </td><hr>
+      </tr>      
+  </tbody>
+    </table>
   </div>
-  </ng-container>
+    <div style="padding: 1em; margin-left:73%">
+        <h3><strong>Grand Total: Rs {{grandTotal}} </strong></h3>
+    </div>
+    <div style="padding: 2em; margin-left:50%">
+      <button class="btn" (click)="emptycart()" mat-raised-button color="warn">Empty Cart</button>
+      <button class="btn" mat-raised-button color="primary" routerLink="/customer/store">Shop More</button>
+      <google-pay-button class="btn"
+        environment="TEST"
+        buttonType="checkout"
+        buttonSizeMode="static"
+        buttonColor="black"
+        [paymentRequest]="paymentRequest"
+        (loadpaymentdata)="onLoadPaymentData($event)"
+        (error)="onError($event)"
+        [paymentAuthorizedCallback]="onPaymentDataAuthorized"
+      >
+      </google-pay-button>
+  </div>
+   </mat-card>
+</ng-container>
+ 
+
+<ng-container *ngIf= "magazines.length == 0">
+<div class="emptycart">
+    <img src="../../../assets/Images/emptycart.png" style="height: 25vh;margin-top:3%;">
+    <h2>Your cart is Empty! </h2>
+    <button mat-raised-button color="primary" routerLink="/customer/store">shop now</button>
+</div>
+</ng-container>
