@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { _MatTableDataSource } from '@angular/material/table';
+import { elementAt } from 'rxjs-compat/operator/elementAt';
 import { Campaign } from 'src/app/campaign';
 import { CampaignServiceService } from 'src/app/campaign-service.service';
 
@@ -15,6 +16,9 @@ import { CampaignServiceService } from 'src/app/campaign-service.service';
   styleUrls: ['./campaigns.component.css']
 })
 export class CampaignsComponent implements OnInit {
+
+
+
   show:boolean = false;
   
   
@@ -37,7 +41,9 @@ export class CampaignsComponent implements OnInit {
   
 
   constructor(private service : CampaignServiceService, public dialog: MatDialog) { }
- 
+  
+
+  
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentExampleDialog);
 
