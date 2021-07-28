@@ -3,6 +3,16 @@ table {
   margin: 0% 10% 0% 10%;
 }
 
+.toolbar{
+  max-width:80%;
+  margin-left:10%;
+  margin-right:10%;
+  margin-top:3%;
+  border-radius: 5px;
+  background-color:rgba(168, 213, 255, 0.932);
+  color:rgba(0, 0, 0, 0.74);
+}
+
 mat-card {
   width:78%;
   margin: 0% 10% 2% 10%;
@@ -14,7 +24,7 @@ mat-paginator{
 }
 
 .btn{
-  margin: 3% 17% 1% 81%;
+  margin: 2% 17% 1% 81%;
   font-size:1.2em;
   height:2.5em;
   background-color:#5680e9;

@@ -26,8 +26,6 @@ export class CampaignService {
 
   public deleteOffers(festivalid){
     return this.http.delete("http://localhost:8080/deletecamp/"+festivalid);
-
-
   }
 
   public getStatus(){

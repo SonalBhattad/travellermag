@@ -4,15 +4,13 @@
 
   <div class="wrapper">
     <mat-card class="container" *ngFor="let mag of mags | async">
-      <!-- <div *ngFor="let image of Images">  -->
       <img src="assets/Images/{{mag.coverimage}}"  style="max-height: 420px; max-width: 480px;">
         <div>
           <h2>{{mag.magname}}</h2>
-          <h3 style="line-height: 0.5em;">Rs {{mag.magprice}}</h3>
+          <h3 style="line-height: 0.5em;"><strike> Rs.{{mag.magprice}}</strike> &nbsp; <span style="color: green;">Rs.{{mag.discountprice}}</span> &nbsp; &nbsp;<span style="color: gray;">(10% off)</span></h3>
           <mat-card-actions>
           <button mat-raised-button color="accent" style="font-size: 1.25em;" (click)=addtocart(mag) >Add to Cart</button>
           </mat-card-actions>
-        <!-- </div>  -->
       </div>
     </mat-card>
   </div>

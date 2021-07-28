@@ -9,16 +9,18 @@
             </mat-toolbar>
             <div class="margin">
                 <h4 style=" margin-bottom: 0%;">Magazine Name:</h4>
-                <mat-form-field class="full-width" appearance="outline">
-                    <input matInput placeholder="Enter the Magazine name you would like to review">
+                <mat-form-field appearance="outline"  class="full-width">
+                    <mat-select [formControl]="magazines" placeholder="Magazine you want to review" [(ngModel)]="Feedback.magname" name="magname">
+                      <mat-option *ngFor="let magazine of magazineList" [value]="magazine">{{magazine}}</mat-option>
+                    </mat-select>
                 </mat-form-field>
                 <h4 style=" margin-bottom: 0%;">Enter Email:</h4>
                 <mat-form-field class="full-width" appearance="outline">
-                    <input matInput placeholder="Enter your email address">
+                    <input matInput [(ngModel)]="Feedback.email" name="email" placeholder="Enter your email address">
                 </mat-form-field>
                 <h4 style=" margin-bottom: 0%;">Comment down your thoughts</h4>
                 <mat-form-field class="full-width" appearance="outline">
-                    <textarea matInput placeholder="Enter here"></textarea>
+                    <textarea matInput [(ngModel)]="Feedback.comments" name="comments" placeholder="Enter here"></textarea>
                   </mat-form-field>
                 <h4 style=" margin-bottom: 0%;">Rate us:</h4>
                 <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" style="margin-left: 10%; ">
@@ -27,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <button mat-raised-button color="primary" style="margin-left: 73%;">Submit</button>
+            <button mat-raised-button color="primary" style="margin-left: 73%;" (click)="saveform()">Submit</button>
         </div>
     </div>     
 </mat-card>

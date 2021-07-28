@@ -42,9 +42,7 @@ import { AngularFirestoreModule} from '@angular/fire/firestore';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { AngularFireModule } from '@angular/fire';
-
 import { DraftsComponent } from './artist/drafts/drafts.component';
-import { ChartModule } from 'angular-highcharts';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -58,6 +56,8 @@ import { CampaignComponent } from './employee/campaign/campaign.component';
 import { OffersformComponent } from './employee/campaign/offersform/offersform.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { StatisticsComponent } from './employee/statistics/statistics.component';
+import { HighchartsChartComponent, HighchartsChartModule } from 'highcharts-angular';
+import { ProfilesPipe } from './profiles.pipe';
 
 @NgModule({
   declarations: [
@@ -73,7 +73,6 @@ import { StatisticsComponent } from './employee/statistics/statistics.component'
     TodoComponent,
     PublishedComponent,
     EditorComponent,
-    
     DraftsComponent,  
     EmployeelistComponent,
     MagazinelistComponent,
@@ -83,7 +82,8 @@ import { StatisticsComponent } from './employee/statistics/statistics.component'
     SubscriptionsComponent,
     CampaignComponent,
     OffersformComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    ProfilesPipe
   ],
   imports: [
     BrowserModule,
@@ -111,12 +111,12 @@ import { StatisticsComponent } from './employee/statistics/statistics.component'
     BidiModule,
     AngularEditorModule,
     DragDropModule,
-    ChartModule,
     MatBadgeModule,
     MatPaginatorModule,
     MatTableModule,
     MatCheckboxModule,
     MatSortModule,
+    HighchartsChartModule,
     AngularFirestoreModule,
     GooglePayButtonModule,
     MatStepperModule,

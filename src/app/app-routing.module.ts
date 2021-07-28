@@ -14,6 +14,7 @@ import { CampaignComponent } from './employee/campaign/campaign.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeelistComponent } from './employee/employeelist/employeelist.component';
 import { MagazinelistComponent } from './employee/magazinelist/magazinelist.component';
+import { StatisticsComponent } from './employee/statistics/statistics.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,9 +34,10 @@ const routes: Routes = [
   ]},
   {path:'employee', component:EmployeeComponent,
    children:[
-   { path:'employees', component:EmployeelistComponent},
+   { path:'profiles', component:EmployeelistComponent},
     { path:'magazines', component:MagazinelistComponent},
-    { path: 'campaigns', component:CampaignComponent}
+    { path: 'campaigns', component:CampaignComponent},
+    { path: 'statistics', component:StatisticsComponent}
   ]},
   {path:'artist', component:ArtistComponent,
     children:[

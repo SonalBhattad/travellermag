@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Magazine } from '../../../Classes/magazine';
+import { Feedback } from 'src/Classes/feedback';
+import { FeedbackService } from 'src/Services/feedback.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-feedback',
@@ -6,6 +11,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
+
+  Feedback : Feedback = new Feedback(0,'','','',null)
+  feedback: Observable<Feedback[]>;
+  message: any;
+
+  magazines = new FormControl();
+
+  magazineList: string[] = ['Travel+Leisure', 'The Newyorker', 'World Travel', 'Traveller', 'LA Travel', 'Planet Goa','Budget Travel','Wanderlust'];
+
 
   selectedRating = 0;
   stars = [
@@ -37,9 +51,10 @@ export class FeedbackComponent implements OnInit {
 
   ];
 
-  constructor() { }
+  constructor(public feedbackservice:FeedbackService) { }
 
   ngOnInit(): void {
+    this.feedback = this.feedbackservice.getFeedbacks();
   }
 
   selectStar(value): void{
@@ -66,6 +81,14 @@ export class FeedbackComponent implements OnInit {
 
     this.selectedRating = value;
 
+  }
+
+  saveform(){
+    this.Feedback.rating= this.selectedRating;
+    let response = this.feedbackservice.saveFeedback(this.Feedback);
+  console.log(this.feedback);
+  response.subscribe(data=>{
+      this.message = data;})
   }
 
 }

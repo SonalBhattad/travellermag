@@ -8,10 +8,11 @@
       <img src="assets/Images/{{mag.coverimage}}"  style="max-height: 200px;">
      </div>
         <div class="elements">
-          <h2>{{mag.magname}}</h2><br>
+          <h2>{{mag.magname}}</h2>
           <h3 style="line-height: 0.5em;">Rs {{mag.magprice}}</h3>
           <h4 style="color: gray;">(1 year subscription)</h4>
-          <button mat-raised-button style="margin-top: 18%;">Subscribed</button>
+          <h4 style="color: gray;">Valid till: {{this.date | date :'dd/MM/yyyy'}} </h4>
+          <button mat-raised-button style="margin-top: 5%;">Subscribed</button>
       </div>
     </mat-card>
   </div>

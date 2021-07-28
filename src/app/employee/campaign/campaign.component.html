@@ -45,11 +45,7 @@
               <mat-icon>edit_outline</mat-icon>
             </button>
   
-            <button (click)="uploadOffer()" mat-icon-button color="warn">
-              <mat-icon>visibility</mat-icon>
-            </button>
-  
-            <button (click)="removeUser(row.festid)" mat-icon-button color="warn">
+            <button (click)="removeUser(row.festivalid)" mat-icon-button color="warn">
               <mat-icon>delete_outline</mat-icon>
             </button>
           </td>
@@ -89,7 +85,7 @@
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
   
-              <mat-form-field style="margin-left: 3%;" appearance="outline">
+              <mat-form-field style="margin-left: 2.8%;" appearance="outline">
                 <mat-label [style.color]="'black'">Discount</mat-label>
                 <mat-select [(ngModel)]="Campaign.offer" name="offer">
                   <mat-option value="10%">10%</mat-option>

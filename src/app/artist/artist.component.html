@@ -21,10 +21,10 @@
 				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/artist/drafts">&nbsp; Drafts</span>
 				<mat-icon mat-list-icon>turned_in</mat-icon>
 			</mat-list-item>
-			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+			<!-- <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Payouts</span>
 				<mat-icon mat-list-icon>receipt</mat-icon>
-			</mat-list-item>
+			</mat-list-item> -->
 			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 				<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/artist/saved">&nbsp; Published</span>
 				<mat-icon mat-list-icon>inbox</mat-icon>

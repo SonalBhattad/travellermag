@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from 'src/Services/user-service.service';
 import {ViewChild} from '@angular/core';
-import { MatTableDataSource} from '@angular/material/table';
+import { _MatTableDataSource} from '@angular/material/table';
 import { User } from '../../../Classes/user';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -16,7 +16,7 @@ export class EmployeelistComponent implements OnInit {
   UserData : User[] = [];
   
   displayedColumns: string[] = ['id','empid', 'username', 'dob', 'email', 'pid', 'actions'];
-  dataSource = new MatTableDataSource<User>(this.UserData);
+  dataSource = new _MatTableDataSource<User>(this.UserData);
   
   @ViewChild(MatPaginator)paginator : MatPaginator;
 
@@ -43,8 +43,6 @@ export class EmployeelistComponent implements OnInit {
     response.subscribe(report=>this.dataSource.data=report as User[]);
   }
 
-  
-
 
   public removeUser(username : string){
     if(confirm('are you sure to delete??')){
@@ -55,10 +53,9 @@ export class EmployeelistComponent implements OnInit {
     
   }
   
-
-  applyColumnFilter(filterValue: String) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
   
+  applyFilter(filterValue: String) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 

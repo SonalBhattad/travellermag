@@ -7,7 +7,7 @@
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
 					<mat-nav-list>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/employee/employees">&nbsp; Profiles</span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/employee/profiles">&nbsp; Profiles</span>
 							<mat-icon mat-list-icon>group</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
@@ -19,7 +19,7 @@
 							<mat-icon mat-list-icon>new_releases</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;">&nbsp; Statistics</span>
+							<span class="full-width" *ngIf="isExpanded || isShowing" style="font-size: 1.2em;" routerLink="/employee/statistics">&nbsp; Statistics</span>
 							<mat-icon mat-list-icon>equalizer</mat-icon>
 						</mat-list-item>
 						<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">

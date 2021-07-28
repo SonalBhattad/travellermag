@@ -48,5 +48,9 @@ export class UserServiceService {
   public deleteBlogs(id){
     return this.http.get("http://localhost:8080/deleteblog/"+id);
   }
+
+  public editBlog(){
+    return this.http.get("http://localhost:8080/updateblog/");
+  }
 }
 

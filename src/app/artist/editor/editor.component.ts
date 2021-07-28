@@ -14,6 +14,7 @@ import { resetFakeAsyncZone } from '@angular/core/testing';
 export class EditorComponent implements OnInit {
   message: any;
   formdata: any;
+  id: number = 0;
   Blog : Blog = new Blog(0,'','','','','','');
   public displayedColumns = ['id', 'title', 'type'];
   public dataSource = new MatTableDataSource<Blog>();
@@ -38,6 +39,7 @@ export class EditorComponent implements OnInit {
       body: ['', [Validators.required,
         Validators.maxLength(1000), Validators.minLength(5)]]
   });
+  
 }
 
  public draft(){
@@ -58,10 +60,8 @@ export class EditorComponent implements OnInit {
       this.formdata.reset();
 }
 
-
-
- goToDarft() {
-  this.router.navigate(['artist/drafts']);
+onEdit() {
+  this.router.navigate(['/editor', this.formdata.value]);
 }
 
 

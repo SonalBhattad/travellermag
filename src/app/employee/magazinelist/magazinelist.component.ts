@@ -14,7 +14,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class MagazinelistComponent implements OnInit {
 
-  Magazine : Magazine = new Magazine(0,null,'',0,'');
+  Magazine : Magazine = new Magazine(0,null,'',null,'',null);
   MagData : Magazine[] = [];
   displayedColumns: string[] = ['magid','magname', 'magprice', 'magtype', 'actions'];
   dataSource = new MatTableDataSource<Magazine>(this.MagData);
