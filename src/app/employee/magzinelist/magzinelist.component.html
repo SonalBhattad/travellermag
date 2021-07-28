@@ -3,7 +3,11 @@
   <input [style.color]="'blue'" matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Mia" #input>
 </mat-form-field>
 <br> -->
-
+<br>
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+  <h1 style="margin-left: 42%; font-size: 1.2em;">MAGZINES</h1>
+</mat-toolbar>
+<br>
 <mat-accordion class="example-headers-align">
   <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
     <mat-expansion-panel-header style="background-color: white">

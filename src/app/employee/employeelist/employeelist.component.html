@@ -3,7 +3,10 @@
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Mia" #input>
 </mat-form-field> -->
-
+<br>
+<mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+  <h1 style="margin-left: 42%; font-size: 1.2em;">EMPLOYEES</h1>
+</mat-toolbar>
 <br><table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">>
 
     <!--- Note that these columns can be defined in any order.
@@ -59,3 +62,14 @@
 
 <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
 
+<!-- Footer -->
+<footer  class="work" style="background-color:rgba(184, 229, 255, 0.644)">
+
+    <!-- Copyright -->
+    <div style="margin-left: 42%; font-size: 1.2em;">© Travellers:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
