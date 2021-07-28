@@ -40,3 +40,10 @@ body{
 .form-group{
   display: 100;
 }
+.myClass{
+  color :limegreen;
+}
+.button1{
+ 
+  width: 300%;
+}
