@@ -79,24 +79,24 @@ export class MagazinelistComponent implements OnInit {
   })
   }
 
-public onFileChanged(event) {
-  this.Magazine.coverimage = event.target.files[0];
-}
+// public onFileChanged(event) {
+//   this.Magazine.coverimage = event.target.files[0];
+// }
 
-onUpload() {
-  console.log(this.Magazine.coverimage);
-  const uploadImage = new FormData();
-    uploadImage.append('file', this.Magazine.coverimage, this.Magazine.coverimage.name);
-    this.http.post('http://localhost:8080/savemag', uploadImage, { observe: 'response' })
-   .subscribe((response) => {
-    if (response.status === 200) {
-       this.message = 'Image uploaded successfully';
-    } else {
-      this.message = 'Image not uploaded successfully';
-    }
-  }
-  );
-}
+// onUpload() {
+//   console.log(this.Magazine.coverimage);
+//   const uploadImage = new FormData();
+//     uploadImage.append('file', this.Magazine.coverimage, this.Magazine.coverimage.name);
+//     this.http.post('http://localhost:8080/savemag', uploadImage, { observe: 'response' })
+//    .subscribe((response) => {
+//     if (response.status === 200) {
+//        this.message = 'Image uploaded successfully';
+//     } else {
+//       this.message = 'Image not uploaded successfully';
+//     }
+//   }
+//   );
+// }
 
 }
 

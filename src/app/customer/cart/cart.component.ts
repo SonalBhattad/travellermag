@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
     transactionInfo: {
       totalPriceStatus: 'FINAL',
       totalPriceLabel: 'Total',
-      totalPrice:'1882',
+      totalPrice:'1676',
       currencyCode: 'INR',
       countryCode: 'IN'
     },

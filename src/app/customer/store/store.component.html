@@ -1,8 +1,8 @@
 <mat-toolbar class="work" style="background-color:rgba(184, 229, 255, 0.644)">
-    <h1 style="margin-left: 42%; font-size: 1.2em;">MAGAZINE STORE</h1>
+    <h1 style="margin-left: 42%; font-size: 1.1em;">MAGAZINE STORE</h1>
 </mat-toolbar>
-
-  <div class="wrapper">
+<marquee style="font-family: Rajdhani, sans-serif; background-color:rgba(184, 229, 255, 0.788);"  behavior="loop">Get 10% off on all magazines from 01-August-2021 to 06-August-2021</marquee>
+<div class="wrapper">
     <mat-card class="container" *ngFor="let mag of mags | async">
       <img src="assets/Images/{{mag.coverimage}}"  style="max-height: 420px; max-width: 480px;">
         <div>

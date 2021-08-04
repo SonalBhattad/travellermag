@@ -4,6 +4,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import { UserServiceService } from '../../Services/user-service.service';
 import { User } from '../../Classes/user';
 import { ActivatedRoute,ParamMap} from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -27,7 +28,7 @@ export class RegisterformComponent implements OnInit {
 
  user : User = new User(0,'','','','','','',0);
 
-  constructor(private service : UserServiceService , public routes:ActivatedRoute) {}
+  constructor(private service : UserServiceService , public routes:ActivatedRoute, public snackBar: MatSnackBar) {}
 
   // Form=this.fb.group({
   //   UserName:['',Validators.required, Validators.minLength(5)],
@@ -66,11 +67,17 @@ export class RegisterformComponent implements OnInit {
   public registernow(){
     this.user.pid = this.pid;
     let response = this.service.reguser(this.user);
-    console.log(this.user);
+    this.openSnackBar("Added Successfuly!", "Dismiss");
     response.subscribe(data=>{
         this.message = data;
     })
   }
 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      verticalPosition: 'top',
+    });
+  }
 
 }

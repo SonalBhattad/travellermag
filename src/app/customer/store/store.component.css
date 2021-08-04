@@ -10,13 +10,18 @@
 
 mat-card {
     max-width: 600px;
-    margin: 2em auto;
+    margin: 1em auto;
     text-align: center;
     max-height: 850px;
 } 
 
 .work{
   margin: 2% 10% 0% 10%;
+  width: 80%;
+}
+
+marquee{
+  margin: 0% 10% 0% 10%;
   width: 80%;
 }
 

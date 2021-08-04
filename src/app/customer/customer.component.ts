@@ -37,6 +37,8 @@ export class CustomerComponent implements OnInit {
       this.totalitems = res.length;
     })
   }
+
+ 
  
 }
 

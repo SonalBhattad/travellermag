@@ -23,12 +23,16 @@
                 <span matPrefix>Rs. &nbsp; &nbsp;</span>
                 <span matSuffix>.00</span>
               </mat-form-field><br>
-              <div style="padding-left: 3%;">
+              <mat-form-field appearance="outline" style="width: 46%; padding-left:3%;">
+                <mat-label>Image</mat-label>
+                <input matInput [(ngModel)]="Magazine.coverimage" name="coverimage" placeholder="Enter Image Name ">
+              </mat-form-field>
+              <!-- <div style="padding-left: 3%;">
                 <input class="ibtn" type="file" name="file" (change)="onFileChanged($event)">
               
                 <button mat-raised-button (click)="onUpload()">Upload</button>
-              </div>
-          </div>
+              </div>-->
+          </div> 
     <button mat-raised-button color="primary" (click)="regMagazine()" style="margin-left:90%;">ADD</button>
     </mat-card>
 

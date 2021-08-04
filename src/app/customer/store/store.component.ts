@@ -13,7 +13,7 @@ export class StoreComponent implements OnInit {
   mags: Observable<Magazine[]>;
   Add= true;
   public Magazines:any[]=[];
-
+  mag = [];
 
   constructor(public service : MagazineserviceService, private cartService : CartService) { }
 

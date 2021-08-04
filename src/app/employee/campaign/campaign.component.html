@@ -85,7 +85,7 @@
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
   
-              <mat-form-field style="margin-left: 2.8%;" appearance="outline">
+              <mat-form-field style="margin-left: 2%;" appearance="outline">
                 <mat-label [style.color]="'black'">Discount</mat-label>
                 <mat-select [(ngModel)]="Campaign.offer" name="offer">
                   <mat-option value="10%">10%</mat-option>
@@ -103,6 +103,7 @@
                 </mat-select>
               </mat-form-field>
             </form>
-            </div>
-      <button mat-raised-button color="accent" (click)="regCam()" style="margin-left:90%;">Save</button>
+            </div><br>
+
+      <button mat-raised-button color="accent" (click)="regCam()" style="margin-left:85%;">Save</button>
   </mat-card>
